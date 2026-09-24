@@ -222,7 +222,7 @@ hr { border-color: var(--jp-border); opacity: 1; }
   .navbar-toggler { border: 0; }
 
   // Móvil: los perfiles ya están en la portada y en "Sobre mí"; así el navbar cabe en una fila
-  @media (max-width: 767.98px) {
+  @media (max-width: 991.98px) {
     .quarto-navbar-tools .quarto-navigation-tool:not(.quarto-color-scheme-toggle) { display: none; }
   }
 }
@@ -412,7 +412,7 @@ hr { border-color: var(--jp-border); opacity: 1; }
   grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
-  padding-block: clamp(2.5rem, 9vw, 6.5rem) clamp(3rem, 8vw, 5.5rem);
+  padding-block: clamp(2rem, 7vw, 5rem) clamp(1rem, 4vw, 2.5rem);
 
   @media (max-width: 900px) { grid-template-columns: 1fr; }
 }
@@ -558,6 +558,12 @@ hr { border-color: var(--jp-border); opacity: 1; }
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
   gap: 1rem;
 }
+// Si hay dos columnas y el número de tarjetas es impar, la última ocupa toda la fila
+@media (min-width: 640px) and (max-width: 1099.98px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
 .project-card {
   position: relative;
   display: flex;
@@ -676,13 +682,18 @@ hr { border-color: var(--jp-border); opacity: 1; }
   gap: .25rem 1.5rem;
   padding: 1.1rem 0;
   border-top: 1px solid var(--jp-border);
+  > p { margin: 0; }
   .cv-when { font-family: var(--jp-font-mono); font-size: .8rem; color: var(--jp-muted); padding-top: .2rem; }
   .cv-what {
+    > p:first-child { margin-top: 0; }
     strong { display: block; font-size: 1.02rem; }
     span { color: var(--jp-muted); }
     p { margin: .4rem 0 0; font-size: .95rem; }
   }
-  @media (max-width: 575px) { grid-template-columns: 1fr; }
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+    .cv-when { padding-top: 0; }
+  }
 }
 
 .skill-groups {
@@ -851,6 +862,8 @@ hr { border-color: var(--jp-border); opacity: 1; }
   }
 }
 
+.print-only { display: none; }
+
 // ---------------------------------------------------------------------------
 // Impresión (el CV se puede guardar como PDF desde el navegador)
 // ---------------------------------------------------------------------------
@@ -858,6 +871,9 @@ hr { border-color: var(--jp-border); opacity: 1; }
   #quarto-header, .nav-footer, .cv-actions, .skip-link, #quarto-margin-sidebar,
   .quarto-color-scheme-toggle, .anchorjs-link { display: none !important; }
   body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  .print-only { display: block !important; }
+  .cv-print-head { margin: .5rem 0 1.5rem; font-size: 10.5pt; color: #333; }
+  #title-block-header .subtitle { display: none; }
   a { color: inherit !important; text-decoration: none; }
   #title-block-header.quarto-title-block.default { margin: 0 0 1rem; }
   .cv-item { break-inside: avoid; }

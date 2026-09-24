@@ -4,6 +4,11 @@ description: "Currículum de José Pablo Torres: formación en Ingeniería Infor
 subtitle: "Versión web. Puedes imprimirla o guardarla como PDF desde el navegador."
 ---
 
+::: {.print-only .cv-print-head}
+**José Pablo Torres** · Estudiante de Ingeniería Informática, Universidad de Jaén\
+psoriano@ujaen.es · linkedin.com/in/thisisjosepablo · github.com/thisisjosepablo
+:::
+
 ::: {.cv-actions}
 ```{=html}
 <button type="button" class="btn btn-primary" onclick="window.print()"><i class="bi bi-printer" aria-hidden="true"></i>Imprimir / guardar PDF</button>

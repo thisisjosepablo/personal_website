@@ -35,7 +35,7 @@ website:
     logo: assets/img/logo.png
     logo-alt: "Inicio"
     title: "José Pablo Torres"
-    collapse-below: md
+    collapse-below: lg
     left:
       - href: projects.qmd
         text: Proyectos
