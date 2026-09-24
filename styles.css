@@ -1,0 +1,71 @@
+/* css styles */
+
+/* ---------- Biblioteca ---------- */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2rem;
+}
+
+.book-card {
+  display: flex;
+  gap: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(128, 128, 128, 0.25);
+  border-radius: 0.5rem;
+}
+
+.book-cover {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.book-title { font-weight: 600; line-height: 1.25; }
+.book-author { opacity: 0.75; font-size: 0.9rem; }
+.book-rating { color: #f5a623; letter-spacing: 1px; margin-top: 0.25rem; }
+.book-desc { font-size: 0.85rem; margin-top: 0.4rem; }
+.book-date { font-size: 0.75rem; opacity: 0.6; margin-top: 0.4rem; }
+
+/* ---------- Deporte (cronología) ---------- */
+.timeline {
+  border-left: 3px solid var(--bs-primary);
+  margin: 1rem 0 2rem 0.5rem;
+  padding-left: 1.25rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.75rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.25rem - 8px);
+  top: 0.35rem;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: var(--bs-primary);
+}
+
+.timeline-date { font-size: 0.8rem; opacity: 0.65; }
+.timeline-title { font-weight: 600; font-size: 1.1rem; }
+
+.timeline-mark {
+  font-size: 0.8rem;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  background: var(--bs-primary);
+  color: #fff;
+}
+
+.timeline-desc { margin: 0.35rem 0 0; }
+.timeline-img { max-width: 320px; border-radius: 0.5rem; margin-top: 0.5rem; }

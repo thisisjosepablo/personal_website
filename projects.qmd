@@ -1,0 +1,13 @@
+---
+title: "Proyectos"
+toc: false
+listing:
+  contents: projects
+  type: grid
+  sort: "date desc"
+  categories: true
+  fields: [image, title, description, categories, date]
+  grid-columns: 3
+---
+
+Una selección de cosas que he construido. Cada proyecto es una carpeta dentro de `projects/` con su `index.qmd`.

@@ -1,0 +1,8 @@
+---
+title: "Bienvenida"
+description: "Primera entrada del blog: por qué he creado esta web."
+date: 2026-09-24
+categories: [personal]
+---
+
+TODO: escribe aquí tu primera entrada.

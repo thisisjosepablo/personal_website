@@ -1,0 +1,28 @@
+# Cada libro es un elemento de la lista.
+#   estado:  leyendo | leido | pendiente
+#   rating:  1-5 (solo para leídos)
+#   image:   portada; con ISBN puedes usar https://covers.openlibrary.org/b/isbn/<ISBN>-M.jpg
+#   date:    fecha en que lo terminaste (o empezaste, si lo estás leyendo)
+
+- title: "Dune"
+  autor: "Frank Herbert"
+  image: https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg
+  categories: [leyendo]
+  date: 2026-09-10
+  description: "TODO: primeras impresiones."
+
+- title: "Sapiens"
+  autor: "Yuval Noah Harari"
+  image: https://covers.openlibrary.org/b/isbn/9780062316097-M.jpg
+  categories: [leido]
+  date: 2026-08-15
+  rating: 4
+  description: "TODO: tu opinión en una línea."
+
+- title: "Hábitos atómicos"
+  autor: "James Clear"
+  image: https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg
+  categories: [leido]
+  date: 2026-06-02
+  rating: 5
+  description: "TODO: tu opinión en una línea."

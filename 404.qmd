@@ -1,0 +1,8 @@
+---
+title: "Página no encontrada"
+toc: false
+---
+
+La página que buscas no existe o ha cambiado de sitio.
+
+Prueba con el buscador o vuelve al [inicio](/index.qmd).

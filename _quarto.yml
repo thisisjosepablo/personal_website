@@ -1,0 +1,53 @@
+project:
+  type: website
+  resources:
+    - files/
+
+website:
+  title: "José Pablo Torres"
+  description: "Web personal de José Pablo Torres: proyectos, blog, lecturas y deporte."
+  # site-url: https://thisisjosepablo.github.io   # descomentar al desplegar (necesario para open-graph y RSS)
+  favicon: img/images.png
+  open-graph: true
+  search: true
+  page-navigation: true
+
+  navbar:
+    background: primary
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: about.qmd
+        text: Sobre mí
+      - href: projects.qmd
+        text: Proyectos
+      - href: blog.qmd
+        text: Blog
+      - href: cv.qmd
+        text: CV
+      - text: Personal
+        menu:
+          - href: biblioteca.qmd
+            text: "📚 Biblioteca"
+          - href: deporte.qmd
+            text: "🏅 Deporte"
+    tools:
+      - icon: github
+        href: https://github.com/thisisjosepablo
+      - icon: linkedin
+        href: https://www.linkedin.com/in/TU-USUARIO   # TODO
+      - icon: envelope
+        href: mailto:TU-EMAIL                          # TODO
+
+  page-footer:
+    left: "© 2026 José Pablo Torres"
+    right: "Hecho con [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    css: styles.css
+    toc: true
+    lang: es

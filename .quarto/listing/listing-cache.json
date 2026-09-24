@@ -1,0 +1,16 @@
+{
+  "listingMap": {
+    "projects.qmd": [
+      "projects"
+    ],
+    "blog.qmd": [
+      "posts"
+    ],
+    "biblioteca.qmd": [
+      "data/libros.yml"
+    ],
+    "deporte.qmd": [
+      "data/logros.yml"
+    ]
+  }
+}

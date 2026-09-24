@@ -1,0 +1,35 @@
+---
+title: "Sobre mí"
+image: img/images.png
+toc: false
+about:
+  template: trestles
+  image-shape: rounded
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/thisisjosepablo
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/TU-USUARIO
+    - icon: envelope
+      text: Email
+      href: mailto:TU-EMAIL
+---
+
+TODO: tu historia en unos párrafos. De dónde vienes, qué estudias o a qué te dedicas y qué te motiva.
+
+## Formación
+
+**Universidad de Jaén** | Titulación (TODO)
+<br>AAAA – actualidad
+
+## Experiencia
+
+**Empresa / Grupo de investigación** | Puesto (TODO)
+<br>AAAA – AAAA
+
+## Intereses
+
+- TODO
+- TODO

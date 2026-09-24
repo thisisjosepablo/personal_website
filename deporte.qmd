@@ -1,0 +1,31 @@
+---
+title: "Deporte"
+subtitle: "Retos, marcas y logros."
+toc: false
+listing:
+  id: logros
+  contents: data/logros.yml
+  template: _templates/logros.ejs
+  sort: "date desc"
+  categories: true
+---
+
+## 🏆 Marcas personales
+
+| Prueba          | Marca   | Fecha      | Dónde        |
+|-----------------|---------|------------|--------------|
+| 5 km            | TODO    | AAAA-MM-DD | TODO         |
+| 10 km           | 49:12   | 2025-11-09 | TODO         |
+| Media maratón   | 1:52:30 | 2026-03-15 | TODO         |
+
+## 🎯 Próximos retos
+
+- [ ] TODO: siguiente objetivo
+- [ ] TODO
+
+## 📅 Cronología de logros
+
+Para añadir un logro, edita `data/logros.yml`.
+
+::: {#logros}
+:::

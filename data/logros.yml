@@ -1,0 +1,22 @@
+# Cada logro es un elemento de la lista (el más reciente se muestra primero).
+#   categories: disciplina (running, ciclismo, natación, gimnasio…)
+#   marca:      tiempo, distancia, peso… (opcional)
+#   image:      foto del evento o medalla (opcional, p. ej. img/deporte/foto.jpg)
+
+- title: "Primera media maratón"
+  date: 2026-03-15
+  categories: [running]
+  marca: "1:52:30"
+  description: "TODO: cómo fue."
+
+- title: "Primer 10K por debajo de 50 minutos"
+  date: 2025-11-09
+  categories: [running]
+  marca: "49:12"
+  description: "TODO: cómo fue."
+
+- title: "Ruta de 100 km en bici"
+  date: 2025-06-21
+  categories: [ciclismo]
+  marca: "100 km"
+  description: "TODO: cómo fue."

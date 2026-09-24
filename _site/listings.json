@@ -1,0 +1,22 @@
+[
+  {
+    "listing": "/deporte.html",
+    "items": []
+  },
+  {
+    "listing": "/biblioteca.html",
+    "items": []
+  },
+  {
+    "listing": "/blog.html",
+    "items": [
+      "/posts/bienvenida/index.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/proyecto-ejemplo/index.html"
+    ]
+  }
+]

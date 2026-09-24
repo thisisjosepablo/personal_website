@@ -1,0 +1,149 @@
+[
+  {
+    "objectID": "deporte.html",
+    "href": "deporte.html",
+    "title": "Deporte",
+    "section": "",
+    "text": "Prueba\nMarca\nFecha\nDónde\n\n\n\n\n5 km\nTODO\nAAAA-MM-DD\nTODO\n\n\n10 km\n49:12\n2025-11-09\nTODO\n\n\nMedia maratón\n1:52:30\n2026-03-15\nTODO"
+  },
+  {
+    "objectID": "deporte.html#marcas-personales",
+    "href": "deporte.html#marcas-personales",
+    "title": "Deporte",
+    "section": "",
+    "text": "Prueba\nMarca\nFecha\nDónde\n\n\n\n\n5 km\nTODO\nAAAA-MM-DD\nTODO\n\n\n10 km\n49:12\n2025-11-09\nTODO\n\n\nMedia maratón\n1:52:30\n2026-03-15\nTODO"
+  },
+  {
+    "objectID": "deporte.html#próximos-retos",
+    "href": "deporte.html#próximos-retos",
+    "title": "Deporte",
+    "section": "🎯 Próximos retos",
+    "text": "🎯 Próximos retos\n\nTODO: siguiente objetivo\nTODO"
+  },
+  {
+    "objectID": "deporte.html#cronología-de-logros",
+    "href": "deporte.html#cronología-de-logros",
+    "title": "Deporte",
+    "section": "📅 Cronología de logros",
+    "text": "📅 Cronología de logros\nPara añadir un logro, edita data/logros.yml.\n\n\n\n  \n    15 mar 2026\n    \n      \n        Primera media maratón\n        1:52:30\n      \n      \n        \n          \n            running\n          \n        \n      \n      TODO: cómo fue.\n      \n    \n  \n\n  \n    9 nov 2025\n    \n      \n        Primer 10K por debajo de 50 minutos\n        49:12\n      \n      \n        \n          \n            running\n          \n        \n      \n      TODO: cómo fue.\n      \n    \n  \n\n  \n    21 jun 2025\n    \n      \n        Ruta de 100 km en bici\n        100 km\n      \n      \n        \n          \n            ciclismo\n          \n        \n      \n      TODO: cómo fue.\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "biblioteca.html",
+    "href": "biblioteca.html",
+    "title": "Biblioteca",
+    "section": "",
+    "text": "Para añadir un libro, edita data/libros.yml."
+  },
+  {
+    "objectID": "biblioteca.html#leyendo-ahora",
+    "href": "biblioteca.html#leyendo-ahora",
+    "title": "Biblioteca",
+    "section": "📖 Leyendo ahora",
+    "text": "📖 Leyendo ahora\n\n\n\n  \n    \n      \n    \n    \n      Dune\n      Frank Herbert\n      \n      \n        TODO: primeras impresiones.\n      \n      \n        10 sept 2026\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "biblioteca.html#leídos",
+    "href": "biblioteca.html#leídos",
+    "title": "Biblioteca",
+    "section": "✅ Leídos",
+    "text": "✅ Leídos\n\n\n\n  \n    \n      \n    \n    \n      Sapiens\n      Yuval Noah Harari\n      \n        ★★★★☆\n      \n      \n        TODO: tu opinión en una línea.\n      \n      \n        15 ago 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Hábitos atómicos\n      James Clear\n      \n        ★★★★★\n      \n      \n        TODO: tu opinión en una línea.\n      \n      \n        2 jun 2026\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "blog.html",
+    "href": "blog.html",
+    "title": "Blog",
+    "section": "",
+    "text": "Bienvenida\n\n\n\npersonal\n\n\n\nPrimera entrada del blog: por qué he creado esta web.\n\n\n\n\n\n24 sept 2026\n\n\nJosé Pablo Torres\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact",
+    "section": "",
+    "text": "psoriano@ujaen.es"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "Sobre mí",
+    "section": "",
+    "text": "TODO: tu historia en unos párrafos. De dónde vienes, qué estudias o a qué te dedicas y qué te motiva."
+  },
+  {
+    "objectID": "about.html#formación",
+    "href": "about.html#formación",
+    "title": "Sobre mí",
+    "section": "Formación",
+    "text": "Formación\nUniversidad de Jaén | Titulación (TODO) AAAA – actualidad"
+  },
+  {
+    "objectID": "about.html#experiencia",
+    "href": "about.html#experiencia",
+    "title": "Sobre mí",
+    "section": "Experiencia",
+    "text": "Experiencia\nEmpresa / Grupo de investigación | Puesto (TODO) AAAA – AAAA"
+  },
+  {
+    "objectID": "about.html#intereses",
+    "href": "about.html#intereses",
+    "title": "Sobre mí",
+    "section": "Intereses",
+    "text": "Intereses\n\nTODO\nTODO"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Una selección de cosas que he construido. Cada proyecto es una carpeta dentro de projects/ con su index.qmd.\n\n\n\n\n\n\n\n\n\n\n\n\nProyecto de ejemplo\n\n\n\nPython\n\nDatos\n\n\n\nDescripción corta que aparece en la tarjeta.\n\n\n\n1 sept 2026\n\n\n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "José Pablo Torres",
+    "section": "",
+    "text": "TODO: dos o tres frases de presentación. Qué haces, qué te interesa y qué puede encontrar aquí quien visite la web.\n\n🛠️ Proyectos: lo que he construido.\n✍️ Blog: notas y artículos.\n📚 Biblioteca: lo que leo.\n🏅 Deporte: mis retos y logros."
+  },
+  {
+    "objectID": "posts/bienvenida/index.html",
+    "href": "posts/bienvenida/index.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "TODO: escribe aquí tu primera entrada."
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Currículum",
+    "section": "",
+    "text": "Descargar CV en PDF\n\n\n\nTu navegador no puede mostrar el PDF. Descárgalo aquí."
+  },
+  {
+    "objectID": "projects/proyecto-ejemplo/index.html",
+    "href": "projects/proyecto-ejemplo/index.html",
+    "title": "Proyecto de ejemplo",
+    "section": "",
+    "text": "TODO: problema que resuelve."
+  },
+  {
+    "objectID": "projects/proyecto-ejemplo/index.html#qué-es",
+    "href": "projects/proyecto-ejemplo/index.html#qué-es",
+    "title": "Proyecto de ejemplo",
+    "section": "",
+    "text": "TODO: problema que resuelve."
+  },
+  {
+    "objectID": "projects/proyecto-ejemplo/index.html#cómo-lo-hice",
+    "href": "projects/proyecto-ejemplo/index.html#cómo-lo-hice",
+    "title": "Proyecto de ejemplo",
+    "section": "Cómo lo hice",
+    "text": "Cómo lo hice\nTODO: tecnologías y decisiones."
+  },
+  {
+    "objectID": "projects/proyecto-ejemplo/index.html#enlaces",
+    "href": "projects/proyecto-ejemplo/index.html#enlaces",
+    "title": "Proyecto de ejemplo",
+    "section": "Enlaces",
+    "text": "Enlaces\n\nCódigo en GitHub"
+  }
+]

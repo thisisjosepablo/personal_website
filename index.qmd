@@ -1,0 +1,27 @@
+---
+title: "José Pablo Torres"
+subtitle: "TODO: una línea sobre ti (p. ej. Estudiante de … en la Universidad de Jaén)"
+image: img/images.png
+toc: false
+about:
+  template: jolla
+  image-shape: round
+  image-width: 12em
+  links:
+    - icon: github
+      text: GitHub
+      href: https://github.com/thisisjosepablo
+    - icon: linkedin
+      text: LinkedIn
+      href: https://www.linkedin.com/in/TU-USUARIO
+    - icon: file-earmark-person
+      text: CV
+      href: cv.qmd
+---
+
+TODO: dos o tres frases de presentación. Qué haces, qué te interesa y qué puede encontrar aquí quien visite la web.
+
+- 🛠️ [Proyectos](projects.qmd): lo que he construido.
+- ✍️ [Blog](blog.qmd): notas y artículos.
+- 📚 [Biblioteca](biblioteca.qmd): lo que leo.
+- 🏅 [Deporte](deporte.qmd): mis retos y logros.

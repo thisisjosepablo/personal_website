@@ -1,0 +1,11 @@
+---
+title: "Currículum"
+toc: false
+---
+
+[<i class="bi bi-download"></i> Descargar CV en PDF](files/cv.pdf){.btn .btn-primary}
+
+<!-- Guarda tu CV como files/cv.pdf y se mostrará aquí -->
+<object data="files/cv.pdf" type="application/pdf" width="100%" height="900px">
+  <p>Tu navegador no puede mostrar el PDF. <a href="files/cv.pdf">Descárgalo aquí</a>.</p>
+</object>

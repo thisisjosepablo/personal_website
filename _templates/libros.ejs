@@ -1,0 +1,24 @@
+```{=html}
+<div class="list books-grid">
+<% for (const item of items) { %>
+  <div class="book-card" <%= metadataAttrs(item) %>>
+    <% if (item.image) { %>
+      <img class="book-cover" src="<%- item.image %>" alt="Portada de <%= item.title %>" loading="lazy">
+    <% } %>
+    <div class="book-body">
+      <div class="book-title listing-title"><%= item.title %></div>
+      <div class="book-author"><%= item.autor %></div>
+      <% if (item.rating) { %>
+        <div class="book-rating" title="<%= item.rating %>/5"><%= "★".repeat(item.rating) + "☆".repeat(5 - item.rating) %></div>
+      <% } %>
+      <% if (item.description) { %>
+        <div class="book-desc"><%= item.description %></div>
+      <% } %>
+      <% if (item.date) { %>
+        <div class="book-date listing-date"><%= item.date %></div>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```
