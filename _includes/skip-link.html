@@ -1,0 +1,33 @@
+<script>
+  // Mejoras de accesibilidad sobre el HTML que genera Quarto
+  (function () {
+    // 1. Enlace "Saltar al contenido" como primer elemento enfocable del <body>
+    var main = document.getElementById("quarto-document-content");
+    if (main) {
+      var a = document.createElement("a");
+      a.className = "skip-link";
+      a.setAttribute("aria-label", "Saltar al contenido principal");
+      a.href = "#quarto-document-content";
+      a.textContent = "Saltar al contenido";
+      main.setAttribute("tabindex", "-1");
+      var header = document.getElementById("quarto-header");
+      // Dentro del <header> (landmark banner) para que no quede contenido fuera de regiones
+      if (header) header.insertBefore(a, header.firstChild); else document.body.insertBefore(a, document.body.firstChild);
+    }
+    // 2. Nombre accesible para el conmutador de tema claro/oscuro
+    document.querySelectorAll(".quarto-color-scheme-toggle").forEach(function (t) {
+      t.setAttribute("role", "button");
+      t.setAttribute("aria-label", "Cambiar entre tema claro y oscuro");
+    });
+    // 3. El botón del menú móvil no es un menú ARIA (Quarto le pone role="menu")
+    document.querySelectorAll(".navbar-toggler[role=menu]").forEach(function (b) { b.removeAttribute("role"); });
+    // 4. El logo y el título enlazan ambos al inicio: se deja solo el título en el orden de tabulación
+    document.querySelectorAll("a.navbar-brand-logo").forEach(function (l) { l.setAttribute("tabindex", "-1"); l.setAttribute("aria-hidden", "true"); });
+    // 5. Portadas externas que no cargan: se deja el hueco en lugar del icono roto
+    document.querySelectorAll("img.book-cover").forEach(function (img) {
+      function hide() { img.style.visibility = "hidden"; }
+      if (img.complete && img.naturalWidth === 0) hide();
+      img.addEventListener("error", hide);
+    });
+  })();
+</script>

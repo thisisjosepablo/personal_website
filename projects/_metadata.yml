@@ -1,0 +1,5 @@
+# Opciones comunes a todas las fichas de proyecto.
+# Campos propios: kind (tipo), repo (URL del código), demo (URL de la demo), featured (true = sale en la portada)
+template-partials:
+  - ../_partials/project/title-block.html
+date-format: "YYYY"

@@ -1,0 +1,26 @@
+---
+title: "AHP Solver"
+description: "Aplicación web para resolver problemas de decisión multicriterio con el Proceso Analítico Jerárquico (AHP)."
+kind: "Apoyo a la decisión"
+date: 2024-11-15
+categories: [Python, Flask, pandas, Bootstrap]
+repo: https://github.com/thisisjosepablo/AHP_Solver
+demo: https://thisisjosepablo3.pythonanywhere.com/
+order: 5
+---
+
+## Qué es
+
+Una aplicación Flask para analizar decisiones con varios criterios mediante el **Proceso Analítico Jerárquico (AHP)**. Cargas los datos, eliges el método y obtienes un ranking de alternativas.
+
+## Funcionalidades
+
+- **Carga de CSV** con las matrices de criterios y alternativas.
+- **Tres métodos de resolución**: autovalores, método aproximado y media geométrica.
+- **Ranking de alternativas** con sus puntuaciones ponderadas.
+- **Información de consistencia** (CI, RI y CR) para el método de autovalores.
+- Interfaz adaptable basada en Bootstrap.
+
+## Stack
+
+Python 3.10, Flask, pandas y Bootstrap. Hay una versión desplegada en PythonAnywhere para probarla sin instalar nada.

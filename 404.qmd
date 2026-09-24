@@ -1,8 +1,12 @@
 ---
 title: "Página no encontrada"
-toc: false
+subtitle: "La página que buscas no existe o ha cambiado de sitio."
+search: false
 ---
 
-La página que buscas no existe o ha cambiado de sitio.
+::: {.hero-actions}
+[Volver al inicio](index.qmd){.btn .btn-primary}
+[Ver proyectos](projects.qmd){.btn .btn-ghost}
+:::
 
-Prueba con el buscador o vuelve al [inicio](/index.qmd).
+También puedes usar el buscador de la barra superior.

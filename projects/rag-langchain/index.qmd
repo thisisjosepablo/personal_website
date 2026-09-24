@@ -1,0 +1,27 @@
+---
+title: "Sistema RAG con LangChain"
+description: "Asistente que responde preguntas sobre tus propios PDF citando la fuente: archivo, autor y página."
+kind: "IA generativa"
+date: 2026-09-21
+categories: [Python, LangChain, ChromaDB, LLM]
+repo: https://github.com/thisisjosepablo/RAG_langchain
+featured: true
+order: 2
+---
+
+## El problema
+
+Un modelo de lenguaje solo conoce los datos con los que se entrenó. La **generación aumentada por recuperación (RAG)** resuelve esa limitación: antes de responder, el sistema busca los fragmentos relevantes en tus documentos y se los pasa al modelo como contexto.
+
+## Qué hace
+
+- **Procesa PDF** y los divide en fragmentos.
+- **Genera *embeddings*** y los guarda en una base de datos vectorial **ChromaDB**.
+- **Responde con atribución de fuentes**: nombre del archivo, autor y número de página.
+- Las respuestas se basan en tus documentos y no solo en lo que el modelo aprendió durante el entrenamiento.
+
+## Stack
+
+- **LangChain** como framework de orquestación.
+- **API de Anthropic** como modelo de lenguaje, configurable para usar otros LLM.
+- **ChromaDB** como almacén vectorial y **Poetry** para gestionar dependencias.

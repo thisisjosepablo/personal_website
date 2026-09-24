@@ -1,27 +1,184 @@
 ---
 title: "José Pablo Torres"
-subtitle: "TODO: una línea sobre ti (p. ej. Estudiante de … en la Universidad de Jaén)"
-image: img/images.png
-toc: false
-about:
-  template: jolla
-  image-shape: round
-  image-width: 12em
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/thisisjosepablo
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/TU-USUARIO
-    - icon: file-earmark-person
-      text: CV
-      href: cv.qmd
+pagetitle: "Ingeniería Informática, IA y datos"
+open-graph:
+  title: "José Pablo Torres · Ingeniería Informática, IA y datos"
+twitter-card:
+  title: "José Pablo Torres · Ingeniería Informática, IA y datos"
+description: "Estudiante de Ingeniería Informática en la Universidad de Jaén. Construyo proyectos de IA, datos y software: sistemas RAG, recuperación de información y aprendizaje automático."
+page-layout: full
+
+body-classes: home
+listing:
+  id: destacados
+  contents: projects
+  template: _templates/projects.ejs
+  include:
+    featured: true
+  sort: "order"
+  fields: [title, description, categories, date, kind, repo, demo]
+  date-format: "YYYY"
+include-in-header:
+  - text: |
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "José Pablo Soriano Torres",
+        "alternateName": "José Pablo Torres",
+        "jobTitle": "Estudiante de Ingeniería Informática",
+        "affiliation": { "@type": "CollegeOrUniversity", "name": "Universidad de Jaén", "url": "https://www.ujaen.es" },
+        "knowsAbout": ["Inteligencia artificial", "Machine learning", "Recuperación de información", "RAG", "Python"],
+        "sameAs": ["https://github.com/thisisjosepablo", "https://www.linkedin.com/in/thisisjosepablo/"]
+      }
+      </script>
 ---
 
-TODO: dos o tres frases de presentación. Qué haces, qué te interesa y qué puede encontrar aquí quien visite la web.
+::: {.wrap}
 
-- 🛠️ [Proyectos](projects.qmd): lo que he construido.
-- ✍️ [Blog](blog.qmd): notas y artículos.
-- 📚 [Biblioteca](biblioteca.qmd): lo que leo.
-- 🏅 [Deporte](deporte.qmd): mis retos y logros.
+::: {.hero}
+
+::: {.hero-text .reveal}
+[[]{.status-dot} Ingeniería Informática · Universidad de Jaén]{.eyebrow}
+
+```{=html}
+<h1 class="hero-title">José Pablo <em>Torres</em></h1>
+```
+
+::: {.hero-lead}
+Estudio Ingeniería Informática y me gusta **convertir datos y modelos de IA en herramientas que funcionan**: asistentes RAG que citan sus fuentes, motores de búsqueda, clasificadores y aplicaciones de apoyo a la decisión.
+:::
+
+::: {.hero-actions}
+[Ver proyectos](projects.qmd){.btn .btn-primary}
+[Sobre mí](about.qmd){.btn .btn-ghost}
+
+```{=html}
+<ul class="icon-links" aria-label="Perfiles">
+  <li><a href="https://github.com/thisisjosepablo" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a></li>
+  <li><a href="https://www.linkedin.com/in/thisisjosepablo/" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a></li>
+  <li><a href="about.html#contacto" aria-label="Contacto"><i class="bi bi-envelope" aria-hidden="true"></i></a></li>
+</ul>
+```
+:::
+:::
+
+::: {.now-card .reveal .reveal-2}
+```{=html}
+<div class="now-head">
+  <span class="eyebrow"><span class="status-dot"></span>Actividad reciente</span>
+  <a class="eyebrow" href="https://github.com/thisisjosepablo">GitHub ↗</a>
+</div>
+<!-- Actualiza esta lista a mano cuando tengas trabajo nuevo que destacar -->
+<ul>
+  <li>
+    <span class="now-date">sep 2026</span>
+    <a href="projects/rag-langchain/index.html">Sistema RAG con LangChain</a>
+    <span class="now-desc">Preguntas sobre tus PDF con respuestas que citan archivo y página.</span>
+  </li>
+  <li>
+    <span class="now-date">jul 2026</span>
+    <a href="projects/papers2code/index.html">Papers2Code</a>
+    <span class="now-desc">Implementar artículos de investigación desde cero.</span>
+  </li>
+  <li>
+    <span class="now-date">jul 2026</span>
+    <a href="projects/cutout-studio/index.html">Cutout Studio</a>
+    <span class="now-desc">Quitar fondos con BiRefNet y refinar con SAM2.</span>
+  </li>
+</ul>
+```
+:::
+
+:::
+
+::: {.block}
+::: {.section-head}
+::: {}
+[Trabajo seleccionado]{.eyebrow}
+
+## Proyectos destacados
+:::
+
+[Todos los proyectos](projects.qmd){.link-arrow}
+:::
+
+::: {#destacados}
+:::
+:::
+
+::: {.block}
+::: {.section-head}
+::: {}
+[Áreas]{.eyebrow}
+
+## Qué me interesa
+:::
+
+Los temas a los que dedico mis proyectos, con un ejemplo de cada uno.
+:::
+
+::: {.area-grid}
+::: {.area}
+[<i class="bi bi-stars"></i>]{.area-icon aria-hidden="true"}
+
+### IA generativa y LLMs
+
+Sistemas RAG con bases de datos vectoriales, agentes y la implementación de *papers* desde cero para entenderlos por dentro.
+
+[RAG con LangChain](projects/rag-langchain/index.qmd){.link-arrow}
+:::
+
+::: {.area}
+[<i class="bi bi-graph-up"></i>]{.area-icon aria-hidden="true"}
+
+### Machine learning y datos
+
+Modelos de clasificación y predicción de principio a fin: preparación de datos, entrenamiento, evaluación y una interfaz para usarlos.
+
+[PhysiCKD](projects/physickd/index.qmd){.link-arrow}
+:::
+
+::: {.area}
+[<i class="bi bi-search"></i>]{.area-icon aria-hidden="true"}
+
+### Búsqueda y decisión
+
+Recuperación de información con TF-IDF y BM25, y herramientas de optimización y decisión multicriterio como símplex y AHP.
+
+[Motor de búsqueda SRI](projects/sri/index.qmd){.link-arrow}
+:::
+:::
+
+::: {.stack-row}
+[Herramientas habituales]{.eyebrow}
+
+```{=html}
+<ul class="tags" aria-label="Herramientas habituales">
+  <li class="tag">Python</li><li class="tag">scikit-learn</li><li class="tag">pandas</li><li class="tag">PyTorch</li>
+  <li class="tag">LangChain</li><li class="tag">Flask</li><li class="tag">FastAPI</li><li class="tag">React</li>
+  <li class="tag">Docker</li><li class="tag">SQL</li><li class="tag">C/C++</li><li class="tag">Git</li>
+</ul>
+```
+:::
+:::
+
+::: {.block}
+::: {.contact-band}
+::: {}
+[Contacto]{.eyebrow}
+
+## ¿Hablamos?
+
+Si te interesa alguno de mis proyectos o quieres proponerme algo, escríbeme. Puedes hacerlo por correo o por LinkedIn.
+<!-- TODO: indicar qué buscas ahora mismo (prácticas, TFG, primer empleo, colaboraciones…) para dar contexto a quien te escriba. -->
+:::
+
+::: {.contact-actions}
+[<i class="bi bi-envelope" aria-hidden="true"></i> Escríbeme](mailto:psoriano@ujaen.es){.btn .btn-primary}
+[<i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn](https://www.linkedin.com/in/thisisjosepablo/){.btn .btn-ghost}
+:::
+:::
+:::
+
+:::

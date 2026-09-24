@@ -1,0 +1,30 @@
+---
+title: "PhysiCKD"
+description: "Aplicación web que estima el riesgo de enfermedad renal crónica a partir de datos clínicos, con visualizaciones para el profesional sanitario."
+kind: "Machine learning · Salud"
+date: 2026-01-21
+categories: [React, Flask, scikit-learn, Chart.js, pandas]
+repo: https://github.com/thisisjosepablo/PhysiCKD
+featured: true
+order: 3
+---
+
+## Qué es
+
+Una aplicación web pensada para profesionales sanitarios: introducen los datos del paciente (presión arterial, edad, valores de laboratorio…) y obtienen una **estimación del riesgo de enfermedad renal crónica (ERC)** acompañada de analíticas visuales.
+
+## Funcionalidades
+
+- **Predicción con *machine learning*** mediante un modelo de *Gradient Boosting*.
+- **Formulario interactivo** con validación en tiempo real y diseño adaptable.
+- **Visualizaciones**: distribución del riesgo, comparación de parámetros y estadísticas de población.
+- **Análisis estadístico** que sitúa los valores del paciente frente a referencias poblacionales.
+
+## Stack
+
+- **Frontend:** React 19, Vite, Chart.js y React Chart.js 2.
+- **Backend:** Flask, scikit-learn, pandas, joblib y Flask-CORS.
+
+::: {.callout-note appearance="simple"}
+Proyecto con fines educativos y de investigación. No sustituye el consejo, diagnóstico ni tratamiento médico profesional.
+:::

@@ -1,12 +1,21 @@
 ---
 title: "Blog"
-toc: false
-listing:
-  contents: posts
-  type: default
-  sort: "date desc"
-  categories: true
-  sort-ui: false
-  filter-ui: true
-  feed: true
+description: "Notas y artículos de José Pablo Torres sobre IA, datos y desarrollo de software."
+subtitle: "Notas y artículos sobre lo que aprendo mientras construyo."
+# Cuando publiques la primera entrada:
+#   1. Quita `draft: true` de posts/bienvenida/index.qmd (o crea otra carpeta en posts/).
+#   2. Descomenta el bloque `listing` y borra el aviso de abajo.
+#   3. Añade el Blog al navbar en _quarto.yml.
+# listing:
+#   contents: posts
+#   type: default
+#   sort: "date desc"
+#   categories: false
+#   sort-ui: false
+#   filter-ui: false
+#   feed: true          # requiere site-url en _quarto.yml
+#   fields: [date, title, description, reading-time]
+#   date-format: "D MMM YYYY"
 ---
+
+Todavía no hay entradas publicadas. Mientras tanto, puedes ver mis [proyectos](projects.qmd).

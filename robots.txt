@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# TODO: descomenta al configurar site-url en _quarto.yml (misma URL base)
+# Sitemap: https://thisisjosepablo.github.io/personal_website/sitemap.xml

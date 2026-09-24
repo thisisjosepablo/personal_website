@@ -1,24 +1,24 @@
 ```{=html}
 <div class="list books-grid">
 <% for (const item of items) { %>
-  <div class="book-card" <%= metadataAttrs(item) %>>
+  <article class="book-card" <%= metadataAttrs(item) %>>
     <% if (item.image) { %>
-      <img class="book-cover" src="<%- item.image %>" alt="Portada de <%= item.title %>" loading="lazy">
+      <img class="book-cover" src="<%- item.image %>" alt="" width="72" height="108" loading="lazy" decoding="async">
     <% } %>
     <div class="book-body">
-      <div class="book-title listing-title"><%= item.title %></div>
+      <h3 class="book-title listing-title h6 mb-0"><%= item.title %></h3>
       <div class="book-author"><%= item.autor %></div>
       <% if (item.rating) { %>
-        <div class="book-rating" title="<%= item.rating %>/5"><%= "★".repeat(item.rating) + "☆".repeat(5 - item.rating) %></div>
+        <div class="book-rating" role="img" aria-label="Valoración: <%= item.rating %> de 5"><%= "★".repeat(item.rating) + "☆".repeat(5 - item.rating) %></div>
       <% } %>
-      <% if (item.description) { %>
-        <div class="book-desc"><%= item.description %></div>
+      <% if (item.description && !String(item.description).startsWith("TODO")) { %>
+        <p class="book-desc mb-0"><%= item.description %></p>
       <% } %>
       <% if (item.date) { %>
         <div class="book-date listing-date"><%= item.date %></div>
       <% } %>
     </div>
-  </div>
+  </article>
 <% } %>
 </div>
 ```

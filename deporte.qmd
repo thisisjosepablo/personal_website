@@ -1,31 +1,47 @@
 ---
 title: "Deporte"
+description: "Marcas personales y retos deportivos de José Pablo Torres."
 subtitle: "Retos, marcas y logros."
-toc: false
 listing:
   id: logros
   contents: data/logros.yml
   template: _templates/logros.ejs
   sort: "date desc"
-  categories: true
+  date-format: "D MMM YYYY"
 ---
 
-## 🏆 Marcas personales
+## Marcas personales
 
-| Prueba          | Marca   | Fecha      | Dónde        |
-|-----------------|---------|------------|--------------|
-| 5 km            | TODO    | AAAA-MM-DD | TODO         |
-| 10 km           | 49:12   | 2025-11-09 | TODO         |
-| Media maratón   | 1:52:30 | 2026-03-15 | TODO         |
+<!-- TODO: completar la marca de 5 km (tiempo, fecha y carrera) y la carrera/lugar de cada marca. -->
+```{=html}
+<ul class="stat-grid">
+  <li>
+    <span class="stat-label">10 km</span>
+    <span class="stat-value">49:12</span>
+    <span class="stat-note">9 nov 2025</span>
+  </li>
+  <li>
+    <span class="stat-label">Media maratón</span>
+    <span class="stat-value">1:52:30</span>
+    <span class="stat-note">15 mar 2026</span>
+  </li>
+  <li>
+    <span class="stat-label">Ciclismo · ruta más larga</span>
+    <span class="stat-value">100 km</span>
+    <span class="stat-note">21 jun 2025</span>
+  </li>
+</ul>
+```
 
-## 🎯 Próximos retos
+<!-- TODO: "Próximos retos": siguiente objetivo (prueba, fecha y marca objetivo). Ejemplo:
+## Próximos retos
 
-- [ ] TODO: siguiente objetivo
-- [ ] TODO
+- Bajar de 1:45 en media maratón (fecha de la carrera).
+-->
 
-## 📅 Cronología de logros
+## Cronología
 
-Para añadir un logro, edita `data/logros.yml`.
+<!-- Para añadir un logro, edita data/logros.yml -->
 
 ::: {#logros}
 :::

@@ -1,35 +1,52 @@
 ---
 title: "Sobre mí"
-image: img/images.png
-toc: false
-about:
-  template: trestles
-  image-shape: rounded
-  links:
-    - icon: github
-      text: GitHub
-      href: https://github.com/thisisjosepablo
-    - icon: linkedin
-      text: LinkedIn
-      href: https://www.linkedin.com/in/TU-USUARIO
-    - icon: envelope
-      text: Email
-      href: mailto:TU-EMAIL
+description: "Quién es José Pablo Torres: estudiante de Ingeniería Informática en la Universidad de Jaén interesado en IA, datos y recuperación de información."
+aliases:
+  - contact.html
 ---
 
-TODO: tu historia en unos párrafos. De dónde vienes, qué estudias o a qué te dedicas y qué te motiva.
+::: {.about-intro}
+![](assets/img/avatar.webp){width="112" height="112" alt="Monograma jp de José Pablo Torres"}
+<!-- TODO: sustituir el monograma por una foto tuya (cuadrada, ≥ 400 px, en WebP) en assets/img/ -->
 
-## Formación
+::: {}
+[Hola, soy José Pablo]{.eyebrow}
 
-**Universidad de Jaén** | Titulación (TODO)
-<br>AAAA – actualidad
+Estudio **Ingeniería Informática en la Universidad de Jaén**. Me interesa sobre todo la inteligencia artificial y los datos, y la forma en que los aprendo es construyendo cosas con ellos.
+:::
+:::
 
-## Experiencia
+<!-- TODO: añadir 2–3 frases propias: de dónde eres, qué te llevó a la informática y qué quieres hacer después de la carrera. -->
 
-**Empresa / Grupo de investigación** | Puesto (TODO)
-<br>AAAA – AAAA
+Mis proyectos van desde un **asistente RAG** que responde sobre documentos PDF citando la página exacta, hasta una **aplicación de estimación del riesgo de enfermedad renal crónica** o un **motor de búsqueda** con índice invertido y BM25. También disfruto de la parte más matemática: he implementado el **algoritmo símplex** y el **proceso analítico jerárquico (AHP)** como aplicaciones web.
 
-## Intereses
+Últimamente estoy centrado en los modelos de lenguaje: sistemas RAG, agentes y **implementar *papers* de investigación desde cero** para entender de verdad cómo funcionan.
 
-- TODO
-- TODO
+## Fuera del código
+
+Leo y hago deporte, y llevo un registro de ambas cosas.
+
+```{=html}
+<div class="link-cards">
+  <a href="biblioteca.html">
+    <i class="bi bi-book" aria-hidden="true"></i>
+    <strong>Biblioteca</strong>
+    <span>Lo que estoy leyendo y lo que he leído, con mi valoración.</span>
+  </a>
+  <a href="deporte.html">
+    <i class="bi bi-activity" aria-hidden="true"></i>
+    <strong>Deporte</strong>
+    <span>Marcas personales y una cronología de retos conseguidos.</span>
+  </a>
+</div>
+```
+
+## Contacto {#contacto}
+
+La forma más directa de contactar conmigo es por correo. También estoy en LinkedIn y en GitHub.
+
+::: {.hero-actions}
+[<i class="bi bi-envelope" aria-hidden="true"></i> psoriano@ujaen.es](mailto:psoriano@ujaen.es){.btn .btn-primary}
+[<i class="bi bi-linkedin" aria-hidden="true"></i> LinkedIn](https://www.linkedin.com/in/thisisjosepablo/){.btn .btn-ghost}
+[<i class="bi bi-github" aria-hidden="true"></i> GitHub](https://github.com/thisisjosepablo){.btn .btn-ghost}
+:::

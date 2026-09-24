@@ -1,0 +1,24 @@
+```{=html}
+<div class="list project-grid">
+<% for (const item of items) { %>
+  <article class="project-card" <%= metadataAttrs(item) %>>
+    <div class="project-meta">
+      <span><%= item.kind || 'Proyecto' %></span>
+      <% if (item.date) { %><span class="listing-date"><%= item.date %></span><% } %>
+    </div>
+    <h3 class="project-title listing-title"><a href="<%- item.path %>"><%= item.title %></a></h3>
+    <% if (item.description) { %><p class="project-desc listing-description"><%= item.description %></p><% } %>
+    <% if (item.categories) { %>
+    <ul class="tags" aria-label="Tecnologías">
+      <% for (const cat of item.categories.slice(0, 4)) { %><li class="tag"><%= cat %></li><% } %>
+    </ul>
+    <% } %>
+    <div class="project-links">
+      <a href="<%- item.path %>" aria-hidden="true" tabindex="-1">Detalles</a>
+      <% if (item.repo) { %><a href="<%- item.repo %>"><i class="bi bi-github" aria-hidden="true"></i>Código<span class="visually-hidden"> de <%= item.title %></span></a><% } %>
+      <% if (item.demo) { %><a href="<%- item.demo %>"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Demo<span class="visually-hidden"> de <%= item.title %></span></a><% } %>
+    </div>
+  </article>
+<% } %>
+</div>
+```
