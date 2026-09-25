@@ -1,3 +1,5 @@
 # Opciones comunes a todas las entradas del blog
 author: "José Pablo Torres"
-title-block-banner: true
+date-format: "D [de] MMMM [de] YYYY"
+toc: true
+toc-title: "En esta entrada"

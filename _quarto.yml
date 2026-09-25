@@ -1,53 +1,98 @@
 project:
   type: website
   resources:
-    - files/
+    - assets/fonts/
+    - assets/img/
+    - robots.txt
 
 website:
   title: "José Pablo Torres"
-  description: "Web personal de José Pablo Torres: proyectos, blog, lecturas y deporte."
-  # site-url: https://thisisjosepablo.github.io   # descomentar al desplegar (necesario para open-graph y RSS)
-  favicon: img/images.png
-  open-graph: true
-  search: true
-  page-navigation: true
+  description: "Estudiante de Ingeniería Informática en la Universidad de Jaén. Proyectos de IA, datos y software: RAG, recuperación de información y aprendizaje automático."
+  # TODO: URL pública definitiva de la web (sin barra final). Al activarla, Quarto
+  # genera sitemap.xml, URLs canónicas, Open Graph absolutas y el RSS del blog.
+  # Recuerda actualizar también la línea "Sitemap:" de robots.txt.
+  # site-url: https://thisisjosepablo.github.io/personal_website
+  repo-url: https://github.com/thisisjosepablo/personal_website
+  favicon: assets/img/favicon.png
+  image: assets/img/og-image.png
+  open-graph:
+    locale: es_ES
+    image-width: 1200
+    image-height: 630
+  twitter-card:
+    card-style: summary_large_image
+    image-width: 1200
+    image-height: 630
+  search:
+    location: navbar
+    type: overlay
+  page-navigation: false
+  back-to-top-navigation: false
+  reader-mode: false
 
   navbar:
-    background: primary
+    background: light
+    logo: assets/img/logo.png
+    logo-alt: "Inicio"
+    title: "José Pablo Torres"
+    collapse-below: lg
     left:
-      - href: index.qmd
-        text: Inicio
-      - href: about.qmd
-        text: Sobre mí
       - href: projects.qmd
         text: Proyectos
-      - href: blog.qmd
-        text: Blog
+      - href: about.qmd
+        text: Sobre mí
       - href: cv.qmd
         text: CV
+      # Añade el blog al menú cuando publiques la primera entrada:
+      # - href: blog.qmd
+      #   text: Blog
       - text: Personal
         menu:
           - href: biblioteca.qmd
-            text: "📚 Biblioteca"
+            text: Biblioteca
           - href: deporte.qmd
-            text: "🏅 Deporte"
+            text: Deporte
     tools:
       - icon: github
         href: https://github.com/thisisjosepablo
+        aria-label: "GitHub de José Pablo"
       - icon: linkedin
-        href: https://www.linkedin.com/in/TU-USUARIO   # TODO
-      - icon: envelope
-        href: mailto:TU-EMAIL                          # TODO
+        href: https://www.linkedin.com/in/thisisjosepablo/
+        aria-label: "LinkedIn de José Pablo"
 
   page-footer:
     left: "© 2026 José Pablo Torres"
-    right: "Hecho con [Quarto](https://quarto.org)"
+    center:
+      - text: Proyectos
+        href: projects.qmd
+      - text: Sobre mí
+        href: about.qmd
+      - text: CV
+        href: cv.qmd
+      - text: Contacto
+        href: "about.qmd#contacto"
+    right: "Hecho con [Quarto](https://quarto.org) · [Código fuente](https://github.com/thisisjosepablo/personal_website)"
+
+language:
+  toggle-navigation: "Abrir o cerrar el menú"
+  search-no-results-text: "Sin resultados"
 
 format:
   html:
+    css: assets/css/fonts.css
     theme:
-      light: cosmo
-      dark: darkly
-    css: styles.css
-    toc: true
+      light: [styles/common.scss, styles/light.scss]
+      dark: [styles/common.scss, styles/dark.scss]
+    respect-user-color-scheme: true
     lang: es
+    toc: false
+    hide-description: true  # la description se usa solo como meta (SEO); el texto visible va en subtitle
+    anchor-sections: false
+    smooth-scroll: true
+    code-copy: false
+    link-external-icon: false
+    link-external-newwindow: false
+    html-math-method: plain
+    email-obfuscation: none
+    include-in-header: _includes/head.html
+    include-after-body: _includes/skip-link.html

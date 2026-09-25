@@ -1,0 +1,22 @@
+---
+title: "Papers2Code"
+description: "Implementaciones desde cero de artículos de investigación, junto con mis notas de estudio de cada paper."
+kind: "Aprendizaje · En curso"
+date: 2026-07-30
+categories: [Python, Poetry, Investigación]
+repo: https://github.com/thisisjosepablo/Papers2Code
+order: 8
+---
+
+## La idea
+
+Una forma de aprender a fondo: **estudiar un artículo de investigación y programarlo desde cero**. El repositorio combina teoría y práctica.
+
+## Estructura
+
+- **`papers/`**: los artículos con anotaciones y notas de estudio.
+- **`src/`**: las implementaciones.
+
+Es un proyecto vivo que va creciendo a medida que estudio nuevos trabajos.
+
+<!-- TODO: enumerar aquí los papers ya implementados (título, autores, año y enlace) cuando estén en el repositorio. -->

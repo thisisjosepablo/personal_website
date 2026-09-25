@@ -1,11 +1,119 @@
 ---
 title: "Currículum"
-toc: false
+description: "Currículum de José Pablo Torres: formación en Ingeniería Informática, proyectos de IA y datos, y habilidades técnicas."
+subtitle: "Versión web. Puedes imprimirla o guardarla como PDF desde el navegador."
 ---
 
-[<i class="bi bi-download"></i> Descargar CV en PDF](files/cv.pdf){.btn .btn-primary}
+::: {.print-only .cv-print-head}
+**José Pablo Torres** · Estudiante de Ingeniería Informática, Universidad de Jaén\
+psoriano@ujaen.es · linkedin.com/in/thisisjosepablo · github.com/thisisjosepablo
+:::
 
-<!-- Guarda tu CV como files/cv.pdf y se mostrará aquí -->
-<object data="files/cv.pdf" type="application/pdf" width="100%" height="900px">
-  <p>Tu navegador no puede mostrar el PDF. <a href="files/cv.pdf">Descárgalo aquí</a>.</p>
-</object>
+::: {.cv-actions}
+```{=html}
+<button type="button" class="btn btn-primary" onclick="window.print()"><i class="bi bi-printer" aria-hidden="true"></i>Imprimir / guardar PDF</button>
+```
+<!-- TODO: si prefieres ofrecer tu CV maquetado, guarda el PDF como files/cv.pdf, añade "files/" a
+     project > resources en _quarto.yml y descomenta el botón siguiente. -->
+<!-- [<i class="bi bi-download" aria-hidden="true"></i> Descargar PDF](files/cv.pdf){.btn .btn-ghost} -->
+[<i class="bi bi-linkedin" aria-hidden="true"></i> Perfil de LinkedIn](https://www.linkedin.com/in/thisisjosepablo/){.btn .btn-ghost}
+:::
+
+## Formación
+
+::: {.cv-item}
+[<!-- TODO: año de inicio -->En curso]{.cv-when}
+
+::: {.cv-what}
+**Grado en Ingeniería Informática**
+[Universidad de Jaén]{}
+<!-- TODO: confirmar mención/especialidad (¿Sistemas de Información?), curso actual y año previsto de finalización. -->
+:::
+:::
+
+<!-- TODO: sección "Experiencia" (prácticas, becas, trabajos, grupos de investigación) con fechas, organización y 1–2 logros por puesto.
+## Experiencia
+
+::: {.cv-item}
+[AAAA – AAAA]{.cv-when}
+
+::: {.cv-what}
+**Puesto**
+[Organización]{}
+
+Qué hiciste y qué conseguiste.
+:::
+:::
+-->
+
+## Proyectos
+
+::: {.cv-item}
+[2026]{.cv-when}
+
+::: {.cv-what}
+**[Sistema RAG con LangChain](projects/rag-langchain/index.qmd)**
+[LangChain · ChromaDB · LLM]{}
+
+Preguntas y respuestas sobre documentos PDF con atribución de fuentes (archivo, autor y página).
+:::
+:::
+
+::: {.cv-item}
+[2026]{.cv-when}
+
+::: {.cv-what}
+**[Cutout Studio](projects/cutout-studio/index.qmd)**
+[FastAPI · PyTorch · Docker]{}
+
+Eliminación de fondos autoalojada: recorte automático con BiRefNet y refinado interactivo con SAM2.
+:::
+:::
+
+::: {.cv-item}
+[2026]{.cv-when}
+
+::: {.cv-what}
+**[PhysiCKD](projects/physickd/index.qmd)**
+[React · Flask · scikit-learn]{}
+
+Estimación del riesgo de enfermedad renal crónica con *Gradient Boosting* y panel de visualizaciones.
+:::
+:::
+
+::: {.cv-item}
+[2024]{.cv-when}
+
+::: {.cv-what}
+**[Sistema de Recuperación de Información](projects/sri/index.qmd)**
+[Python · NLTK · SciPy]{}
+
+Índice invertido con TF-IDF, búsqueda BM25 y *reranking* sobre un corpus de Wikipedia.
+:::
+:::
+
+::: {.cv-item}
+[2024]{.cv-when}
+
+::: {.cv-what}
+**[AHP Solver](projects/ahp-solver/index.qmd) y [Simplex App](projects/simplex-app/index.qmd)**
+[Flask · pandas]{}
+
+Aplicaciones web de decisión multicriterio (AHP) y programación lineal (símplex tabular).
+:::
+:::
+
+[Ver todos los proyectos](projects.qmd){.link-arrow}
+
+## Habilidades técnicas
+
+```{=html}
+<dl class="skill-groups">
+  <div><dt>Lenguajes</dt><dd><ul class="tags"><li class="tag">Python</li><li class="tag">JavaScript</li><li class="tag">SQL</li><li class="tag">C</li><li class="tag">C++</li><li class="tag">LaTeX</li></ul></dd></div>
+  <div><dt>IA y datos</dt><dd><ul class="tags"><li class="tag">scikit-learn</li><li class="tag">pandas</li><li class="tag">PyTorch</li><li class="tag">LangChain</li><li class="tag">ChromaDB</li><li class="tag">NLTK</li><li class="tag">Jupyter</li></ul></dd></div>
+  <div><dt>Desarrollo web</dt><dd><ul class="tags"><li class="tag">Flask</li><li class="tag">FastAPI</li><li class="tag">React</li><li class="tag">Vite</li><li class="tag">Bootstrap</li></ul></dd></div>
+  <div><dt>Herramientas</dt><dd><ul class="tags"><li class="tag">Git</li><li class="tag">Docker</li><li class="tag">Poetry</li><li class="tag">Linux</li></ul></dd></div>
+</dl>
+```
+
+<!-- TODO: sección "Idiomas" (p. ej. Español: nativo · Inglés: nivel y certificación) y "Certificaciones/cursos" si los tienes. -->

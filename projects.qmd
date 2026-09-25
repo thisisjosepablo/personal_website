@@ -1,13 +1,19 @@
 ---
 title: "Proyectos"
-toc: false
+description: "Proyectos de José Pablo Torres en IA generativa, machine learning, recuperación de información y optimización, con código abierto en GitHub."
+subtitle: "Cosas que he construido, desde asistentes RAG y visión por computador hasta herramientas de optimización. Todo el código es abierto."
 listing:
+  id: proyectos
   contents: projects
-  type: grid
-  sort: "date desc"
-  categories: true
-  fields: [image, title, description, categories, date]
-  grid-columns: 3
+  template: _templates/projects.ejs
+  sort: "order"
+  fields: [title, description, categories, date, kind, repo, demo]
+  date-format: "YYYY"
 ---
 
-Una selección de cosas que he construido. Cada proyecto es una carpeta dentro de `projects/` con su `index.qmd`.
+## Todos los proyectos {.visually-hidden}
+
+::: {#proyectos}
+:::
+
+Hay más experimentos, prácticas y apuntes en mi [perfil de GitHub](https://github.com/thisisjosepablo){.link-arrow}

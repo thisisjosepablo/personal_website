@@ -1,0 +1,23 @@
+<header id="title-block-header" class="project-header">
+<a class="back" href="../../projects.html">← Todos los proyectos</a>
+<div class="eyebrow">$if(kind)$$kind$$else$Proyecto$endif$$if(date)$ · $date$$endif$</div>
+<h1 class="title">$title$</h1>
+$if(description)$
+<p class="description">$description$</p>
+$endif$
+$if(categories)$
+<ul class="tags" aria-label="Tecnologías">
+$for(categories)$
+<li class="tag">$categories$</li>
+$endfor$
+</ul>
+$endif$
+<div class="actions">
+$if(repo)$
+<a class="btn btn-primary" href="$repo$"><i class="bi bi-github" aria-hidden="true"></i>Ver código</a>
+$endif$
+$if(demo)$
+<a class="btn btn-ghost" href="$demo$"><i class="bi bi-box-arrow-up-right" aria-hidden="true"></i>Probar demo</a>
+$endif$
+</div>
+</header>

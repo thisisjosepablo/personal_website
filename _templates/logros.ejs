@@ -1,24 +1,20 @@
 ```{=html}
-<div class="list timeline">
+<ol class="list timeline list-unstyled">
 <% for (const item of items) { %>
-  <div class="timeline-item" <%= metadataAttrs(item) %>>
+  <li class="timeline-item" <%= metadataAttrs(item) %>>
     <div class="timeline-date listing-date"><%= item.date %></div>
-    <div class="timeline-content">
-      <div class="timeline-title listing-title">
-        <%= item.title %>
-        <% if (item.marca) { %><span class="timeline-mark"><%= item.marca %></span><% } %>
-      </div>
-      <% if (item.categories) { %>
-        <div class="listing-categories">
-          <% for (const cat of item.categories) { %>
-            <div class="listing-category" onclick="window.quartoListingCategory('<%= utils.b64encode(cat) %>'); return false;"><%= cat %></div>
-          <% } %>
-        </div>
-      <% } %>
-      <% if (item.description) { %><p class="timeline-desc"><%= item.description %></p><% } %>
-      <% if (item.image) { %><img class="timeline-img" src="<%- item.image %>" alt="<%= item.title %>" loading="lazy"><% } %>
-    </div>
-  </div>
+    <h3 class="timeline-title listing-title h6 mb-0">
+      <%= item.title %>
+      <% if (item.marca) { %><span class="timeline-mark"><%= item.marca %></span><% } %>
+    </h3>
+    <% if (item.description && !String(item.description).startsWith("TODO")) { %><p class="timeline-desc"><%= item.description %></p><% } %>
+    <% if (item.categories) { %>
+      <ul class="tags" aria-label="Disciplina">
+        <% for (const cat of item.categories) { %><li class="tag"><%= cat %></li><% } %>
+      </ul>
+    <% } %>
+    <% if (item.image) { %><img class="timeline-img" src="<%- item.image %>" alt="<%= item['image-alt'] || item.title %>" loading="lazy" decoding="async"><% } %>
+  </li>
 <% } %>
-</div>
+</ol>
 ```

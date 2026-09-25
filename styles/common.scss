@@ -1,0 +1,881 @@
+/*-- scss:defaults --*/
+// Reglas y variables comunes a los temas claro y oscuro.
+// Los tokens $jp-* se definen en light.scss / dark.scss.
+
+$font-family-sans-serif: "Geist", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+$font-family-monospace:  "Geist Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+$jp-font-display:        "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+
+$font-size-root:     17px;
+$line-height-base:   1.65;
+$headings-font-weight: 600;
+$headings-line-height: 1.2;
+$headings-color:     $jp-text;
+
+$body-bg:            $jp-bg;
+$body-color:         $jp-text;
+$primary:            $jp-accent;
+$secondary:          $jp-muted;
+$link-color:         $jp-accent;
+$link-hover-color:   $jp-text;
+$link-decoration:    underline;
+$border-color:       $jp-border;
+$text-muted:         $jp-muted;
+
+$border-radius:      .625rem;
+$border-radius-lg:   1rem;
+$border-radius-sm:   .375rem;
+
+$navbar-bg:          $jp-bg;
+$navbar-fg:          $jp-muted;
+$navbar-hl:          $jp-text;
+$footer-bg:          $jp-bg;
+$footer-fg:          $jp-muted;
+
+$code-color:         $jp-text;
+$code-bg:            $jp-surface-2;
+$code-block-bg:      $jp-surface-2;
+$table-border-color: $jp-border;
+$input-bg:           $jp-surface;
+$dropdown-bg:        $jp-surface;
+$dropdown-border-color: $jp-border;
+$dropdown-link-color: $jp-text;
+$dropdown-link-hover-bg: $jp-surface-2;
+$dropdown-link-hover-color: $jp-text;
+$dropdown-link-active-bg: $jp-accent-soft;
+$dropdown-link-active-color: $jp-text;
+$btn-border-radius:  999px;
+$btn-font-weight:    500;
+$callout-color-note: $jp-accent;
+$callout-color-tip:  $jp-accent;
+
+/*-- scss:rules --*/
+
+// Las fuentes autoalojadas se declaran en assets/css/fonts.css
+
+// ---------------------------------------------------------------------------
+// Tokens
+// ---------------------------------------------------------------------------
+:root {
+  color-scheme: $jp-scheme;
+  --jp-bg: #{$jp-bg};
+  --jp-surface: #{$jp-surface};
+  --jp-surface-2: #{$jp-surface-2};
+  --jp-border: #{$jp-border};
+  --jp-text: #{$jp-text};
+  --jp-muted: #{$jp-muted};
+  --jp-accent: #{$jp-accent};
+  --jp-accent-ink: #{$jp-accent-ink};
+  --jp-accent-soft: #{$jp-accent-soft};
+  --jp-shadow: #{$jp-shadow};
+  --jp-radius: #{$border-radius};
+  --jp-radius-lg: #{$border-radius-lg};
+  --jp-font-display: #{$jp-font-display};
+  --jp-font-mono: #{$font-family-monospace};
+  --jp-wrap: 72rem;
+  --jp-gutter: clamp(1rem, 4vw, 2rem);
+  --jp-ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+// ---------------------------------------------------------------------------
+// Base
+// ---------------------------------------------------------------------------
+html { scroll-padding-top: 5rem; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection { background: var(--jp-accent-soft); color: var(--jp-text); }
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3 {
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+p, li { text-wrap: pretty; }
+
+// Encabezados dentro del contenido: sin la raya inferior de Bootstrap/Quarto
+// :where() deja la especificidad a cero para que los componentes puedan sobrescribirlo
+:where(#quarto-content main) h2, :where(#quarto-content main) .h2 {
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-top: 2.75rem;
+  font-size: 1.45rem;
+}
+:where(#quarto-content main) h3 { font-size: 1.15rem; margin-top: 2rem; }
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: .2em;
+  text-decoration-color: color-mix(in srgb, currentColor 40%, transparent);
+  transition: color .15s ease, text-decoration-color .15s ease;
+  &:hover { text-decoration-color: currentColor; }
+}
+
+:focus-visible {
+  outline: 2px solid var(--jp-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+code { font-size: .875em; padding: .1em .35em; border-radius: .3rem; }
+
+hr { border-color: var(--jp-border); opacity: 1; }
+
+// Enlace para saltar al contenido (teclado / lectores de pantalla)
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 2000;
+  padding: .6rem 1rem;
+  border-radius: var(--jp-radius);
+  background: var(--jp-text);
+  color: var(--jp-bg) !important;
+  text-decoration: none;
+  font-weight: 500;
+  &:focus { top: 1rem; }
+}
+
+// Filas de botones: los <p> que genera Pandoc no deben romper el flex
+.hero-actions, .cv-actions, .contact-actions {
+  align-items: center;
+  > p { display: contents; }
+}
+
+// Utilidades tipográficas
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-family: var(--jp-font-mono);
+  font-size: .78rem;
+  font-weight: 500;
+  letter-spacing: .02em;
+  color: var(--jp-muted);
+}
+.serif { font-family: var(--jp-font-display); font-weight: 400; }
+.muted { color: var(--jp-muted); }
+.lead { font-size: 1.2rem; line-height: 1.55; color: var(--jp-muted); font-weight: 400; }
+
+// ---------------------------------------------------------------------------
+// Navbar
+// ---------------------------------------------------------------------------
+.headroom { transition: transform .25s var(--jp-ease); }
+
+#quarto-header {
+  background: color-mix(in srgb, var(--jp-bg) 82%, transparent);
+  backdrop-filter: saturate(1.4) blur(12px);
+  -webkit-backdrop-filter: saturate(1.4) blur(12px);
+  border-bottom: 1px solid var(--jp-border);
+
+  .navbar { background: transparent !important; padding-block: .35rem; }
+
+  .navbar-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+  }
+  .navbar-title {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--jp-text);
+    letter-spacing: -0.01em;
+  }
+  .navbar-logo { max-height: 30px; border-radius: 8px; }
+
+  .navbar-nav .nav-link {
+    font-size: .94rem;
+    font-weight: 500;
+    padding: .5rem .8rem;
+    border-radius: 999px;
+    transition: color .15s ease, background-color .15s ease;
+    &:hover { background: var(--jp-surface-2); color: var(--jp-text); }
+    &.active { color: var(--jp-text); background: var(--jp-surface-2); }
+  }
+
+  .quarto-navbar-tools .quarto-navigation-tool,
+  .quarto-color-scheme-toggle {
+    color: var(--jp-muted);
+    padding: .5rem;
+    border-radius: 999px;
+    &:hover { color: var(--jp-text); background: var(--jp-surface-2); }
+  }
+
+  .dropdown-menu {
+    --bs-dropdown-bg: var(--jp-surface);
+    --bs-dropdown-border-color: var(--jp-border);
+    --bs-dropdown-link-color: var(--jp-text);
+    --bs-dropdown-link-hover-color: var(--jp-text);
+    --bs-dropdown-link-hover-bg: var(--jp-surface-2);
+    --bs-dropdown-link-active-color: var(--jp-text);
+    --bs-dropdown-link-active-bg: var(--jp-accent-soft);
+    border-radius: var(--jp-radius);
+    box-shadow: var(--jp-shadow);
+    padding: .35rem;
+    .dropdown-item { border-radius: .45rem; padding: .5rem .75rem; }
+  }
+
+  .navbar-toggler { border: 0; }
+
+  // Móvil: los perfiles ya están en la portada y en "Sobre mí"; así el navbar cabe en una fila
+  @media (max-width: 991.98px) {
+    .quarto-navbar-tools .quarto-navigation-tool:not(.quarto-color-scheme-toggle) { display: none; }
+  }
+}
+
+// Buscador
+.aa-DetachedSearchButton,
+#quarto-search .aa-Autocomplete { border-radius: 999px; }
+
+// ---------------------------------------------------------------------------
+// Botones
+// ---------------------------------------------------------------------------
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 44px;
+  padding: .55rem 1.2rem;
+  text-decoration: none;
+  transition: transform .15s var(--jp-ease), background-color .15s ease, border-color .15s ease, color .15s ease;
+  &:active { transform: translateY(1px); }
+  .bi { font-size: 1.05em; }
+}
+.btn-primary {
+  background: var(--jp-accent);
+  border-color: var(--jp-accent);
+  color: var(--jp-accent-ink);
+  &:hover, &:focus-visible {
+    background: var(--jp-text);
+    border-color: var(--jp-text);
+    color: var(--jp-bg);
+  }
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--jp-border);
+  color: var(--jp-text);
+  &:hover, &:focus-visible {
+    background: var(--jp-surface-2);
+    border-color: var(--jp-muted);
+    color: var(--jp-text);
+  }
+}
+.btn-sm { min-height: 36px; padding: .35rem .85rem; font-size: .88rem; }
+
+.link-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  font-weight: 500;
+  text-decoration: none;
+  &::after { content: "→"; transition: transform .2s var(--jp-ease); }
+  &:hover::after { transform: translateX(3px); }
+}
+
+.icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 999px;
+    color: var(--jp-muted);
+    font-size: 1.15rem;
+    text-decoration: none;
+    &:hover { color: var(--jp-text); background: var(--jp-surface-2); }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Etiquetas (stack tecnológico)
+// ---------------------------------------------------------------------------
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tag {
+  display: inline-block;
+  font-family: var(--jp-font-mono);
+  font-size: .74rem;
+  line-height: 1;
+  padding: .4rem .6rem;
+  border-radius: 999px;
+  background: var(--jp-surface-2);
+  color: var(--jp-muted);
+  white-space: nowrap;
+}
+
+// ---------------------------------------------------------------------------
+// Cabecera de página (title block)
+// ---------------------------------------------------------------------------
+#title-block-header.quarto-title-block.default {
+  margin-top: clamp(1rem, 4vw, 2.5rem);
+  margin-bottom: 2.5rem;
+
+  .title {
+    font-family: var(--jp-font-display);
+    font-weight: 400;
+    font-size: clamp(2.6rem, 6vw, 3.75rem);
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+  }
+  .subtitle, .description {
+    font-size: 1.15rem;
+    color: var(--jp-muted);
+    margin-top: .75rem;
+    max-width: 40rem;
+  }
+  .quarto-title-meta { display: none; }
+}
+
+// Cabecera propia de las fichas de proyecto (_partials/title-block.html)
+.project-header {
+  margin: clamp(1rem, 4vw, 2.5rem) 0 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--jp-border);
+
+  .back {
+    display: flex;
+    width: fit-content;
+    margin-bottom: 1.5rem;
+    font-size: .9rem;
+    color: var(--jp-muted);
+    text-decoration: none;
+    &:hover { color: var(--jp-text); }
+  }
+  .title {
+    font-family: var(--jp-font-display);
+    font-weight: 400;
+    font-size: clamp(2.4rem, 6vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: .5rem 0 0;
+  }
+  .description { font-size: 1.15rem; color: var(--jp-muted); margin: .9rem 0 1.25rem; max-width: 40rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.5rem; }
+}
+
+// ---------------------------------------------------------------------------
+// Layout de páginas "full" (inicio)
+// ---------------------------------------------------------------------------
+.wrap {
+  width: 100%;
+  max-width: var(--jp-wrap);
+  margin-inline: auto;
+}
+
+.block { padding-block: clamp(3rem, 8vw, 5.5rem); }
+.block + .block { border-top: 1px solid var(--jp-border); }
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-family: var(--jp-font-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 4.5vw, 2.75rem);
+    line-height: 1.05;
+    margin: .35rem 0 0;
+  }
+  p { margin: 0; color: var(--jp-muted); max-width: 34rem; }
+}
+
+// En la portada el título de la página lo pone el hero
+.home #title-block-header { display: none; }
+#quarto-document-content:focus { outline: none; }
+
+// Hero -----------------------------------------------------------------------
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+  padding-block: clamp(2rem, 7vw, 5rem) clamp(1rem, 4vw, 2.5rem);
+
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+
+.hero-title {
+  font-family: var(--jp-font-display);
+  font-weight: 400;
+  font-size: clamp(3rem, 9vw, 5.75rem);
+  line-height: .95;
+  letter-spacing: -0.03em;
+  margin: 1rem 0 1.5rem;
+  em { font-style: italic; color: var(--jp-accent); }
+}
+
+.hero-lead {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  line-height: 1.55;
+  color: var(--jp-muted);
+  max-width: 36rem;
+  margin-bottom: 2rem;
+  strong { color: var(--jp-text); font-weight: 500; }
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  .icon-links { margin-left: .25rem; }
+}
+
+.status-dot {
+  width: .5rem;
+  height: .5rem;
+  border-radius: 50%;
+  background: var(--jp-accent);
+  box-shadow: 0 0 0 4px var(--jp-accent-soft);
+}
+
+// Tarjeta "Ahora mismo"
+.now-card {
+  background: var(--jp-surface);
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-lg);
+  box-shadow: var(--jp-shadow);
+  padding: 1.5rem;
+
+  .now-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    margin-bottom: .25rem;
+    border-bottom: 1px solid var(--jp-border);
+  }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: .15rem .9rem;
+    padding: .9rem 0;
+    border-bottom: 1px dashed var(--jp-border);
+    &:last-child { border-bottom: 0; padding-bottom: 0; }
+  }
+  .now-date {
+    grid-row: span 2;
+    font-family: var(--jp-font-mono);
+    font-size: .75rem;
+    color: var(--jp-muted);
+    padding-top: .2rem;
+    min-width: 4.2rem;
+  }
+  a { font-weight: 500; color: var(--jp-text); text-decoration: none; &:hover { color: var(--jp-accent); } }
+  .now-desc { font-size: .9rem; color: var(--jp-muted); line-height: 1.45; }
+}
+
+// Áreas de trabajo -------------------------------------------------------------
+.area-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  @media (max-width: 900px) { grid-template-columns: 1fr; }
+}
+.area {
+  padding: 1.5rem;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-lg);
+  background: var(--jp-surface);
+
+  .area-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: .7rem;
+    background: var(--jp-accent-soft);
+    color: var(--jp-accent);
+    font-size: 1.15rem;
+  }
+  p:has(> .area-icon) { margin-bottom: 1rem; }
+  h3 { font-size: 1.1rem; margin: 0 0 .5rem; }
+  p { color: var(--jp-muted); font-size: .95rem; margin-bottom: 1rem; }
+}
+
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1.25rem;
+  margin-top: 2rem;
+  .eyebrow { flex: none; }
+}
+
+// Banda de contacto -------------------------------------------------------------
+.contact-band {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) auto;
+  gap: 1.5rem 3rem;
+  align-items: center;
+  padding: clamp(1.75rem, 5vw, 3rem);
+  border-radius: calc(var(--jp-radius-lg) * 1.5);
+  background: var(--jp-surface-2);
+  border: 1px solid var(--jp-border);
+
+  h2 {
+    font-family: var(--jp-font-display);
+    font-weight: 400;
+    font-size: clamp(2rem, 5vw, 3rem);
+    line-height: 1.05;
+    margin: .4rem 0 .75rem;
+  }
+  p { color: var(--jp-muted); margin: 0; max-width: 34rem; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: .6rem; }
+  @media (max-width: 760px) { grid-template-columns: 1fr; }
+}
+
+// ---------------------------------------------------------------------------
+// Tarjetas de proyecto (_templates/projects.ejs)
+// ---------------------------------------------------------------------------
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
+  gap: 1rem;
+}
+// Si hay dos columnas y el número de tarjetas es impar, la última ocupa toda la fila
+@media (min-width: 640px) and (max-width: 1099.98px) {
+  .project-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+}
+
+.project-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  height: 100%;
+  padding: 1.5rem;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-lg);
+  background: var(--jp-surface);
+  transition: border-color .2s ease, box-shadow .25s var(--jp-ease), transform .25s var(--jp-ease);
+
+  &:hover {
+    border-color: color-mix(in srgb, var(--jp-accent) 45%, var(--jp-border));
+    box-shadow: var(--jp-shadow);
+    transform: translateY(-2px);
+  }
+  &:focus-within { border-color: var(--jp-accent); }
+
+  .project-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    font-family: var(--jp-font-mono);
+    font-size: .75rem;
+    color: var(--jp-muted);
+  }
+  .project-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin: 0;
+    a {
+      color: var(--jp-text);
+      font-weight: inherit;
+      text-decoration: none;
+      // Hace clicable toda la tarjeta sin anidar enlaces
+      &::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+      &:focus-visible { outline: none; }
+    }
+  }
+  &:has(.project-title a:focus-visible) { outline: 2px solid var(--jp-accent); outline-offset: 3px; }
+  .project-desc { color: var(--jp-muted); font-size: .95rem; margin: 0; flex: 1; }
+  .project-links {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .25rem 1rem;
+    padding-top: .75rem;
+    border-top: 1px solid var(--jp-border);
+    a {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      min-height: 32px;
+      font-size: .88rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: var(--jp-muted);
+      &:hover { color: var(--jp-accent); }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Sobre mí
+// ---------------------------------------------------------------------------
+.about-intro {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.5rem 2rem;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  img, .avatar {
+    width: 112px;
+    height: 112px;
+    border-radius: 28px;
+    box-shadow: var(--jp-shadow);
+  }
+  p { margin: 0; }
+  @media (max-width: 575px) { grid-template-columns: 1fr; }
+}
+
+.link-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+  a {
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    padding: 1.25rem;
+    border: 1px solid var(--jp-border);
+    border-radius: var(--jp-radius-lg);
+    background: var(--jp-surface);
+    color: var(--jp-text);
+    text-decoration: none;
+    transition: border-color .2s ease, transform .25s var(--jp-ease);
+    &:hover { border-color: var(--jp-accent); transform: translateY(-2px); }
+    strong { font-size: 1.05rem; }
+    span { color: var(--jp-muted); font-size: .92rem; }
+    .bi { color: var(--jp-accent); font-size: 1.3rem; }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// CV
+// ---------------------------------------------------------------------------
+.cv-actions { display: flex; flex-wrap: wrap; gap: .6rem; margin: -1rem 0 2.5rem; }
+
+.cv-item {
+  display: grid;
+  grid-template-columns: 9rem minmax(0, 1fr);
+  gap: .25rem 1.5rem;
+  padding: 1.1rem 0;
+  border-top: 1px solid var(--jp-border);
+  > p { margin: 0; }
+  .cv-when { font-family: var(--jp-font-mono); font-size: .8rem; color: var(--jp-muted); padding-top: .2rem; }
+  .cv-what {
+    > p:first-child { margin-top: 0; }
+    strong { display: block; font-size: 1.02rem; }
+    span { color: var(--jp-muted); }
+    p { margin: .4rem 0 0; font-size: .95rem; }
+  }
+  @media (max-width: 575px) {
+    grid-template-columns: 1fr;
+    .cv-when { padding-top: 0; }
+  }
+}
+
+.skill-groups {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+  > div {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: .5rem 1.5rem;
+    align-items: baseline;
+    @media (max-width: 575px) { grid-template-columns: 1fr; }
+  }
+  dt { font-weight: 500; font-size: .95rem; }
+  dd { margin: 0; }
+}
+
+// ---------------------------------------------------------------------------
+// Biblioteca
+// ---------------------------------------------------------------------------
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0;
+}
+.book-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--jp-border);
+  border-radius: var(--jp-radius-lg);
+  background: var(--jp-surface);
+}
+.book-cover {
+  width: 72px;
+  height: 108px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: .3rem;
+  background: var(--jp-surface-2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .12), 0 6px 14px -6px rgba(0, 0, 0, .35);
+}
+.book-title { font-weight: 600; line-height: 1.3; }
+.book-author { color: var(--jp-muted); font-size: .9rem; }
+.book-rating { color: #d9901a; letter-spacing: 1px; margin-top: .35rem; font-size: .95rem; }
+.book-desc { font-size: .9rem; margin-top: .45rem; }
+.book-date { font-family: var(--jp-font-mono); font-size: .72rem; color: var(--jp-muted); margin-top: .45rem; }
+
+// ---------------------------------------------------------------------------
+// Deporte
+// ---------------------------------------------------------------------------
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+  li {
+    padding: 1.25rem;
+    border: 1px solid var(--jp-border);
+    border-radius: var(--jp-radius-lg);
+    background: var(--jp-surface);
+  }
+  .stat-label { font-family: var(--jp-font-mono); font-size: .78rem; color: var(--jp-muted); }
+  .stat-value {
+    display: block;
+    font-family: var(--jp-font-display);
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin: .35rem 0 .2rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat-note { font-size: .82rem; color: var(--jp-muted); }
+}
+
+.timeline {
+  position: relative;
+  margin: 1.25rem 0 2rem;
+  padding-left: 1.75rem;
+  &::before {
+    content: "";
+    position: absolute;
+    left: .35rem;
+    top: .5rem;
+    bottom: .5rem;
+    width: 1px;
+    background: var(--jp-border);
+  }
+}
+.timeline-item {
+  position: relative;
+  padding-bottom: 1.75rem;
+  &:last-child { padding-bottom: 0; }
+  &::before {
+    content: "";
+    position: absolute;
+    left: calc(-1.75rem + .35rem - 5px);
+    top: .4rem;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--jp-bg);
+    border: 2px solid var(--jp-accent);
+  }
+}
+.timeline-date { font-family: var(--jp-font-mono); font-size: .75rem; color: var(--jp-muted); }
+.timeline-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .35rem .6rem;
+  font-weight: 600;
+  font-size: 1.08rem;
+  margin-top: .15rem;
+}
+.timeline-mark {
+  font-family: var(--jp-font-mono);
+  font-size: .75rem;
+  font-weight: 500;
+  padding: .25rem .55rem;
+  border-radius: 999px;
+  background: var(--jp-accent-soft);
+  color: var(--jp-text);
+}
+.timeline-desc { margin: .35rem 0 0; color: var(--jp-muted); }
+.timeline-img { max-width: min(100%, 320px); border-radius: var(--jp-radius); margin-top: .6rem; }
+.timeline .tags { margin-top: .5rem; }
+
+// ---------------------------------------------------------------------------
+// Blog / listados de Quarto
+// ---------------------------------------------------------------------------
+.quarto-listing-default .quarto-post { border-bottom: 1px solid var(--jp-border); }
+.quarto-listing .listing-no-matching { color: var(--jp-muted); }
+.quarto-listing-category-title { font-family: var(--jp-font-mono); font-size: .8rem; color: var(--jp-muted); }
+
+// ---------------------------------------------------------------------------
+// Footer
+// ---------------------------------------------------------------------------
+.nav-footer {
+  border-top: 1px solid var(--jp-border);
+  font-size: .88rem;
+  padding-block: 1.25rem;
+  a { color: var(--jp-muted); text-decoration: none; &:hover { color: var(--jp-text); } }
+  .nav-footer-center .footer-items { gap: .25rem; }
+}
+
+// ---------------------------------------------------------------------------
+// Animación de entrada (solo si el usuario no pide menos movimiento)
+// ---------------------------------------------------------------------------
+@media (prefers-reduced-motion: no-preference) {
+  .reveal { animation: jp-rise .7s var(--jp-ease) both; }
+  .reveal-2 { animation-delay: .08s; }
+  .reveal-3 { animation-delay: .16s; }
+  @keyframes jp-rise {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: none; }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.print-only { display: none; }
+
+// ---------------------------------------------------------------------------
+// Impresión (el CV se puede guardar como PDF desde el navegador)
+// ---------------------------------------------------------------------------
+@media print {
+  #quarto-header, .nav-footer, .cv-actions, .skip-link, #quarto-margin-sidebar,
+  .quarto-color-scheme-toggle, .anchorjs-link { display: none !important; }
+  body { background: #fff !important; color: #000 !important; font-size: 11pt; }
+  .print-only { display: block !important; }
+  .cv-print-head { margin: .5rem 0 1.5rem; font-size: 10.5pt; color: #333; }
+  #title-block-header .subtitle { display: none; }
+  a { color: inherit !important; text-decoration: none; }
+  #title-block-header.quarto-title-block.default { margin: 0 0 1rem; }
+  .cv-item { break-inside: avoid; }
+  .tag { border: 1px solid #ccc; background: none; }
+}

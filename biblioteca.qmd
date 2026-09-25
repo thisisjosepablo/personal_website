@@ -1,29 +1,31 @@
 ---
 title: "Biblioteca"
+description: "Los libros que está leyendo y ha leído José Pablo Torres, con su valoración."
 subtitle: "Lo que estoy leyendo y lo que he leído."
-toc: false
 listing:
   - id: leyendo
     contents: data/libros.yml
     template: _templates/libros.ejs
     include:
       categories: leyendo
+    date-format: "MMM YYYY"
   - id: leidos
     contents: data/libros.yml
     template: _templates/libros.ejs
     sort: "date desc"
     include:
       categories: leido
+    date-format: "MMM YYYY"
 ---
 
-Para añadir un libro, edita `data/libros.yml`.
+<!-- Para añadir un libro, edita data/libros.yml -->
 
-## 📖 Leyendo ahora
+## Leyendo ahora
 
 ::: {#leyendo}
 :::
 
-## ✅ Leídos
+## Leídos
 
 ::: {#leidos}
 :::
