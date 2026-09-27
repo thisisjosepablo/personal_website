@@ -1,0 +1,8 @@
+# Reconocimientos y premios.
+# Campos: title, entidad (quién lo concede), fecha ("AAAA-MM"), asociado (opcional), description
+# Para ocultar la sección, borra su bloque ("::: {.perfil-card}" … ":::") en sobre-mi/index.qmd.
+
+- title: "TODO: nombre del reconocimiento"
+  entidad: "TODO: entidad que lo concede"
+  fecha: "TODO"
+  description: "TODO: breve descripción."

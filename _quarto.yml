@@ -1,53 +1,79 @@
+# =====================================================================
+#  Configuración global de la web
+#  Estructura y cómo añadir contenido: ver README.md
+# =====================================================================
+
 project:
   type: website
+  output-dir: _site
+  render:
+    - "**/*.qmd"            # solo se publican las páginas .qmd (README.md queda fuera)
   resources:
-    - files/
+    - recursos/img/          # imágenes comunes que se usan desde el CSS
 
 website:
-  title: "José Pablo Torres"
-  description: "Web personal de José Pablo Torres: proyectos, blog, lecturas y deporte."
-  # site-url: https://thisisjosepablo.github.io   # descomentar al desplegar (necesario para open-graph y RSS)
-  favicon: img/images.png
+  title: "José Pablo Soriano Torres"
+  description: "Web personal de José Pablo Soriano Torres: proyectos, notas, lecturas y aventuras."
+  site-url: https://thisisjosepablo.github.io/personal_website/
+  repo-url: https://github.com/thisisjosepablo/personal_website
+  favicon: recursos/img/logo/favicon.svg
+  image: recursos/img/logo/og-exlibris.png
   open-graph: true
   search: true
   page-navigation: true
 
   navbar:
-    background: primary
     left:
       - href: index.qmd
         text: Inicio
-      - href: about.qmd
+      - href: sobre-mi/index.qmd
         text: Sobre mí
-      - href: projects.qmd
-        text: Proyectos
-      - href: blog.qmd
-        text: Blog
-      - href: cv.qmd
-        text: CV
-      - text: Personal
-        menu:
-          - href: biblioteca.qmd
-            text: "📚 Biblioteca"
-          - href: deporte.qmd
-            text: "🏅 Deporte"
+      - href: notas/index.qmd
+        text: Notas
+      - href: biblioteca/index.qmd
+        text: Biblioteca
+      - href: aventuras/index.qmd
+        text: Aventuras
     tools:
       - icon: github
+        aria-label: GitHub
         href: https://github.com/thisisjosepablo
-      - icon: linkedin
-        href: https://www.linkedin.com/in/TU-USUARIO   # TODO
       - icon: envelope
-        href: mailto:TU-EMAIL                          # TODO
+        aria-label: Email
+        href: "#email"   # se completa con _sistema/includes/email.html
 
   page-footer:
-    left: "© 2026 José Pablo Torres"
+    left: "© 2026 José Pablo Soriano Torres"
+    # ex libris dibujado con una máscara CSS (.exlibris-pie en recursos/css/base.css)
+    center: "[Ex libris de José Pablo Soriano Torres](/biblioteca/index.qmd){.exlibris-pie}"
     right: "Hecho con [Quarto](https://quarto.org)"
+
+# Identidad visual: colores y tipografías (modo claro y oscuro)
+brand:
+  light: _sistema/marca/claro.yml
+  dark: _sistema/marca/oscuro.yml
+
+# Las notas con código guardan sus resultados en _freeze/: al publicar no hace falta volver a ejecutarlo
+execute:
+  freeze: auto
 
 format:
   html:
     theme:
-      light: cosmo
-      dark: darkly
-    css: styles.css
+      light: [brand, _sistema/tema/claro.scss]
+      dark: [brand, _sistema/tema/oscuro.scss]
+    css:
+      - recursos/css/base.css
+      - recursos/css/inicio.css
+      - recursos/css/sobre-mi.css
+      - recursos/css/notas.css
+      - recursos/css/biblioteca.css
+      - recursos/css/aventuras.css
     toc: true
     lang: es
+    respect-user-color-scheme: true
+    include-after-body: _sistema/includes/email.html
+    filters:
+      # vídeos de YouTube en modo de privacidad mejorada (youtube-nocookie.com)
+      - at: post-quarto
+        path: _sistema/filtros/youtube-nocookie.lua

@@ -1,0 +1,32 @@
+---
+title: "Biblioteca"
+subtitle: "Lo que estoy leyendo y lo que he leído."
+toc: false
+# Los libros están en biblioteca/datos/libros.yml (añade uno con: ./web libro)
+listing:
+  - id: leyendo
+    contents: datos/libros.yml
+    template: ../_sistema/plantillas/libros.ejs
+    include:
+      categories: leyendo
+  - id: leidos
+    contents: datos/libros.yml
+    template: ../_sistema/plantillas/libros.ejs
+    sort: "date desc"
+    include:
+      categories: leido
+---
+
+[Ex libris de José Pablo Soriano Torres]{.exlibris-cabecera role="img" aria-label="Ex libris de José Pablo Soriano Torres"}
+
+Para añadir un libro, edita `biblioteca/datos/libros.yml`.
+
+## 📖 Leyendo ahora
+
+::: {#leyendo}
+:::
+
+## ✅ Leídos
+
+::: {#leidos}
+:::

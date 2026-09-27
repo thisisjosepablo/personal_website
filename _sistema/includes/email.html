@@ -1,0 +1,11 @@
+<script>
+  // Los enlaces que terminan en "#email" se convierten en mailto: al cargar la página.
+  // Así la dirección no aparece completa en el HTML y los bots de spam no la encuentran.
+  (function () {
+    var usuario = "sorianotorresjosepablo";
+    var dominio = ["com", "gmail"].reverse().join(".");
+    document.querySelectorAll('a[href$="#email"]').forEach(function (a) {
+      a.href = "mailto:" + usuario + "@" + dominio;
+    });
+  })();
+</script>

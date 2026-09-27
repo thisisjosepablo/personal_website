@@ -1,0 +1,39 @@
+# Identidad visual "Sendero" — modo claro (de día en el bosque)
+# Colores extraídos de _fuentes/fotos/bosque.jpeg
+meta:
+  name: José Pablo Soriano Torres
+
+color:
+  palette:
+    bosque: "#2d6a2e"   # hojas en sombra — color principal
+    hoja: "#6ca145"     # hojas al sol — acento decorativo (poco contraste para texto)
+    luz: "#e8efdc"      # brotes a contraluz — fondos suaves
+    musgo: "#1a3017"    # sombras — texto
+    tierra: "#4a4e38"   # el sendero
+    cielo: "#7ea8b5"    # huecos de cielo
+    crema: "#f8f6ef"    # luz filtrada — fondo
+  background: crema
+  foreground: musgo
+  primary: bosque
+  secondary: tierra
+  success: hoja
+  info: cielo
+  light: luz
+  dark: musgo
+
+typography:
+  fonts:
+    - family: Inter
+      source: google
+      weight: [400, 500, 600]
+    - family: Fraunces
+      source: google
+      weight: [500, 600, 700]
+  base:
+    family: Inter
+    line-height: 1.65
+  headings:
+    family: Fraunces
+    weight: 600
+  link:
+    color: bosque

@@ -1,0 +1,7 @@
+# Opciones comunes a todas las notas (notas/<año>/<mes>-<nombre>/index.qmd)
+author: "José Pablo Soriano Torres"
+template-partials:
+  - ../_sistema/parciales/title-block.html
+migas:
+  - texto: Notas
+    enlace: /notas/index.qmd

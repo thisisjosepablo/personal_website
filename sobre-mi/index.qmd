@@ -1,0 +1,107 @@
+---
+pagetitle: "Sobre mí"
+toc: false
+# Cada tarjeta carga sus datos de sobre-mi/datos/*.yml (y los proyectos de sobre-mi/proyectos/)
+listing:
+  - id: trayectoria
+    contents: datos/trayectoria.yml
+    template: ../_sistema/plantillas/perfil-entrada.ejs
+    sort: false
+  - id: formacion
+    contents: datos/formacion.yml
+    template: ../_sistema/plantillas/perfil-entrada.ejs
+    sort: false
+  - id: proyectos
+    contents: "proyectos/*/index.qmd"
+    template: ../_sistema/plantillas/perfil-proyectos.ejs
+    sort: "date desc"
+  - id: publicaciones
+    contents: datos/publicaciones.yml
+    template: ../_sistema/plantillas/perfil-entrada.ejs
+    sort: false
+  - id: idiomas
+    contents: datos/idiomas.yml
+    template: ../_sistema/plantillas/perfil-idiomas.ejs
+    sort: false
+  - id: reconocimientos
+    contents: datos/reconocimientos.yml
+    template: ../_sistema/plantillas/perfil-entrada.ejs
+    sort: false
+---
+
+```{=html}
+<section class="perfil-card perfil-cabecera">
+  <div class="perfil-portada">
+    <img src="imagenes/portada-sierra.webp" alt="Sierra de Segura y el embalse">
+    <span class="perfil-coords" aria-label="Coordenadas del lugar de la foto: 38°13′N 2°43′W"><i class="bi bi-geo-alt"></i> 38°13′N 2°43′W</span>
+  </div>
+  <div class="perfil-cabecera-cuerpo">
+    <img class="perfil-avatar" src="../recursos/img/perfil-avatar.webp" alt="Foto de José Pablo">
+    <div class="perfil-cabecera-columnas">
+      <div class="perfil-identidad">
+        <div class="perfil-nombre" role="heading" aria-level="1">José Pablo Soriano Torres</div>
+        <p class="perfil-titular">Investigador en la Universidad de Jaén · Máster en Health Data Science (URV)</p>
+        <p class="perfil-ubicacion">Jaén, Andalucía, España · <a href="#email">Información de contacto</a></p>
+        <div class="perfil-acciones">
+          <a class="btn perfil-boton" href="#email"><i class="bi bi-envelope"></i> Contactar</a>
+          <a class="btn perfil-boton-sec perfil-boton-icono" href="https://github.com/thisisjosepablo" aria-label="GitHub"><i class="bi bi-github"></i></a>
+        </div>
+      </div>
+      <ul class="perfil-organizaciones">
+        <li><span class="perfil-logo perfil-siglas perfil-logo-mini">UJA</span> Universidad de Jaén</li>
+        <li><span class="perfil-logo perfil-siglas perfil-logo-mini">URV</span> Universitat Rovira i Virgili</li>
+      </ul>
+    </div>
+  </div>
+</section>
+```
+
+::: {.perfil-card}
+## Acerca de
+
+Soy investigador en la Universidad de Jaén, donde aplico ciencia de datos, *machine learning* y *deep learning* al análisis de imágenes de pacientes ostomizados en el proyecto [EPPIA](https://proyectoeppia.com). Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible.
+
+TODO: amplía con tu historia. De dónde vienes, cómo llegaste a la informática y a la salud, y qué te motiva.
+:::
+
+::: {.perfil-card}
+## Trayectoria
+
+::: {#trayectoria}
+:::
+:::
+
+::: {.perfil-card}
+## Formación
+
+::: {#formacion}
+:::
+:::
+
+::: {.perfil-card}
+## Proyectos
+
+::: {#proyectos}
+:::
+:::
+
+::: {.perfil-card}
+## Publicaciones
+
+::: {#publicaciones}
+:::
+:::
+
+::: {.perfil-card}
+## Idiomas
+
+::: {#idiomas}
+:::
+:::
+
+::: {.perfil-card}
+## Reconocimientos y premios
+
+::: {#reconocimientos}
+:::
+:::

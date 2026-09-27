@@ -1,0 +1,303 @@
+#!/usr/bin/env python3
+"""Herramienta para gestionar la web desde la terminal.
+
+  ./web ver                         abre la vista previa en el navegador
+  ./web nota "Título"               crea una nota nueva
+  ./web aventura "Título"           crea una aventura nueva (con su carpeta de fotos)
+  ./web fotos <carpeta>             prepara las fotos de una aventura (quita GPS, optimiza)
+  ./web proyecto "Nombre"           crea un proyecto en "Sobre mí"
+  ./web libro                       añade un libro a la Biblioteca (pregunta los datos)
+  ./web editar <qué>                abre un archivo de datos: trayectoria, formacion,
+                                    publicaciones, idiomas, reconocimientos, libros
+  ./web comprobar                   compila la web entera para ver que no hay errores
+  ./web publicar ["mensaje"]        guarda los cambios y los sube: la web se publica sola
+
+Ejecuta ./web <orden> --help para ver las opciones de cada orden.
+"""
+import argparse
+import datetime as dt
+import os
+import shutil
+import subprocess
+import sys
+import unicodedata
+from pathlib import Path
+
+RAIZ = Path(__file__).resolve().parent
+HOY = dt.date.today()
+
+DATOS = {
+    "trayectoria": "sobre-mi/datos/trayectoria.yml",
+    "formacion": "sobre-mi/datos/formacion.yml",
+    "publicaciones": "sobre-mi/datos/publicaciones.yml",
+    "idiomas": "sobre-mi/datos/idiomas.yml",
+    "reconocimientos": "sobre-mi/datos/reconocimientos.yml",
+    "libros": "biblioteca/datos/libros.yml",
+}
+
+
+# ---------------------------------------------------------------- utilidades
+
+def slug(texto):
+    """"Mi primera nota!" → "mi-primera-nota" (sin tildes ni símbolos)."""
+    t = unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode().lower()
+    return "-".join("".join(c if c.isalnum() else " " for c in t).split()) or "sin-titulo"
+
+
+def comillas(texto):
+    return '"' + texto.replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def carpeta_fechada(seccion, titulo):
+    """<sección>/<año>/<mes>-<nombre>/ ; falla si ya existe."""
+    carpeta = RAIZ / seccion / f"{HOY:%Y}" / f"{HOY:%m}-{slug(titulo)}"
+    if carpeta.exists():
+        sys.exit(f"Ya existe {carpeta.relative_to(RAIZ)}/")
+    return carpeta
+
+
+def abrir(ruta):
+    """Abre el archivo en VS Code (o en $EDITOR) si está disponible."""
+    editor = "code" if shutil.which("code") else os.environ.get("EDITOR")
+    if editor:
+        subprocess.run([editor, str(ruta)])
+
+
+def preview_activa():
+    return subprocess.run(["pgrep", "-f", "[q]uarto.js preview"], capture_output=True).returncode == 0
+
+
+def creado(ruta, siguiente):
+    print(f"✔ Creado {ruta.relative_to(RAIZ)}")
+    print(f"  Siguiente: {siguiente}")
+    abrir(ruta)
+
+
+# ---------------------------------------------------------------- órdenes
+
+def ver(_):
+    os.chdir(RAIZ)
+    os.execvp("quarto", ["quarto", "preview"])
+
+
+def nota(a):
+    carpeta = carpeta_fechada("notas", a.titulo)
+    carpeta.mkdir(parents=True)
+    etiquetas = ", ".join(e.strip() for e in a.etiquetas.split(",") if e.strip())
+    (carpeta / "index.qmd").write_text(f"""---
+title: {comillas(a.titulo)}
+description: "TODO: una línea de resumen."
+date: {HOY:%Y-%m-%d}
+categories: [{etiquetas}]
+---
+
+Escribe aquí la nota.
+""")
+    creado(carpeta / "index.qmd", "escribe la nota y publica con ./web publicar")
+
+
+def aventura(a):
+    carpeta = carpeta_fechada("aventuras", a.titulo)
+    (carpeta / "_originales").mkdir(parents=True)
+    rel = carpeta.relative_to(RAIZ)
+    (carpeta / "index.qmd").write_text(f"""---
+title: {comillas(a.titulo)}
+description: "TODO: una línea de resumen para la tarjeta de la lista."
+date: {HOY:%Y-%m-%d}
+# image: fotos/portada.webp       # se activa sola al ejecutar ./web fotos
+lugar: {comillas(a.lugar or "TODO: lugar")}
+# coordenadas: "38°13′N 2°43′W"                   # opcional
+# datos: [12 km, 250 m de desnivel, 2 h 30 min]   # opcional: cifras del reto
+---
+
+Cuenta aquí la aventura.
+
+<!-- fotos:inicio -->
+<!-- Aquí aparecerán las fotos al ejecutar: ./web fotos {rel} -->
+<!-- fotos:fin -->
+
+<!-- Vídeo de YouTube (se incrusta en modo de privacidad mejorada):
+{{{{< video https://youtu.be/ID_DEL_VIDEO >}}}}
+-->
+""")
+    creado(carpeta / "index.qmd",
+           f"mete las fotos en {rel}/_originales/ y ejecuta ./web fotos {rel} (las añade solas)")
+
+
+def proyecto(a):
+    carpeta = RAIZ / "sobre-mi" / "proyectos" / slug(a.nombre)
+    if carpeta.exists():
+        sys.exit(f"Ya existe {carpeta.relative_to(RAIZ)}/")
+    carpeta.mkdir(parents=True)
+    (carpeta / "index.qmd").write_text(f"""---
+title: {comillas(a.nombre)}
+description: "TODO: una línea que explique el proyecto."
+date: {HOY:%Y-%m-%d}
+inicio: "{HOY:%Y-%m}"          # se muestra en "Sobre mí" (sin fin = actualidad)
+# fin: "AAAA-MM"
+categories: []                 # aptitudes: [Python, Deep learning…]
+# asociado: "Universidad de Jaén"
+# siglas: "UJA"
+# enlace: https://…
+---
+
+## Qué es
+
+## Mi papel
+
+## Enlaces
+""")
+    creado(carpeta / "index.qmd", "rellena el proyecto; aparecerá solo en Sobre mí → Proyectos")
+
+
+def libro(_):
+    print("Nuevo libro para la Biblioteca (Enter para dejar un campo vacío)\n")
+    titulo = input("Título: ").strip()
+    if not titulo:
+        sys.exit("Hace falta un título.")
+    autor = input("Autor/a: ").strip()
+    isbn = input("ISBN (para la portada, opcional): ").replace("-", "").strip()
+    estado = ""
+    while estado not in ("leyendo", "leido", "pendiente"):
+        estado = input("Estado [leyendo / leido / pendiente]: ").strip().lower() or "leyendo"
+    rating = ""
+    if estado == "leido":
+        rating = input("Valoración 1-5: ").strip()
+    opinion = input("Tu opinión en una línea: ").strip()
+
+    bloque = [f"\n- title: {comillas(titulo)}", f"  autor: {comillas(autor)}"]
+    if isbn:
+        bloque.append(f"  image: https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg")
+    bloque += [f"  categories: [{estado}]", f"  date: {HOY:%Y-%m-%d}"]
+    if rating.isdigit():
+        bloque.append(f"  rating: {max(1, min(5, int(rating)))}")
+    if opinion:
+        bloque.append(f"  description: {comillas(opinion)}")
+
+    ruta = RAIZ / DATOS["libros"]
+    with ruta.open("a") as f:
+        f.write("\n".join(bloque) + "\n")
+    print(f"\n✔ Añadido a {DATOS['libros']}")
+    print("  Cuando lo termines, cambia su estado a [leido] y ponle valoración (./web editar libros)")
+
+
+def editar(a):
+    ruta = RAIZ / DATOS[a.que]
+    print(f"Abriendo {DATOS[a.que]} — las instrucciones de cada campo están al principio del archivo.")
+    abrir(ruta)
+
+
+GRAVEDAD = {"arriba": "north", "centro": "center", "abajo": "south"}
+EXTENSIONES = {".jpg", ".jpeg", ".png", ".heic", ".heif", ".webp", ".tif", ".tiff"}
+PERFILES_SRGB = ["/usr/share/color/icc/colord/sRGB.icc",
+                 "/usr/share/color/icc/ghostscript/srgb.icc",
+                 "/System/Library/ColorSync/Profiles/sRGB Profile.icc"]
+
+
+def fotos(a):
+    """Convierte _originales/* en fotos/01.webp… y fotos/portada.webp.
+    Borra GPS y metadatos, gira según la cámara, pasa el color a sRGB y comprime."""
+    im = next((c for c in ("magick", "convert") if shutil.which(c)), None)
+    if not im:
+        sys.exit("No encuentro ImageMagick (magick o convert).")
+    carpeta = Path(a.carpeta).resolve()
+    originales = sorted(p for p in (carpeta / "_originales").glob("*") if p.suffix.lower() in EXTENSIONES)
+    if not originales:
+        sys.exit(f"No hay fotos en {carpeta / '_originales'}/")
+    salida = carpeta / "fotos"
+    salida.mkdir(exist_ok=True)
+    perfil = next((p for p in PERFILES_SRGB if Path(p).exists()), None)
+
+    def convertir(origen, destino, extra):
+        cmd = [im, str(origen), "-auto-orient"] + (["-profile", perfil] if perfil else [])
+        subprocess.run(cmd + ["-strip"] + extra + ["-quality", "75", str(destino)], check=True)
+
+    for i, foto in enumerate(originales, 1):
+        convertir(foto, salida / f"{i:02d}.webp", ["-resize", "1600x1600>"])
+        print(f"  {foto.name} → fotos/{i:02d}.webp")
+    n = min(max(a.portada, 1), len(originales))
+    convertir(originales[n - 1], salida / "portada.webp",
+              ["-resize", "1200x800^", "-gravity", GRAVEDAD[a.encuadre], "-extent", "1200x800"])
+    print(f"  portada: {originales[n - 1].name} → fotos/portada.webp")
+
+    # Inserta la galería en el index.qmd (entre las marcas fotos:inicio y fotos:fin) y activa la portada
+    galeria = "\n\n".join(f'![](fotos/{i:02d}.webp){{group="galeria"}}' for i in range(1, len(originales) + 1))
+    qmd = carpeta / "index.qmd"
+    texto = qmd.read_text() if qmd.exists() else ""
+    ini, fin = "<!-- fotos:inicio -->", "<!-- fotos:fin -->"
+    if ini in texto and fin in texto:
+        antes, resto = texto.split(ini, 1)
+        texto = antes + ini + "\n" + galeria + "\n" + fin + resto.split(fin, 1)[1]
+        texto = texto.replace("# image: fotos/portada.webp", "image: fotos/portada.webp")
+        qmd.write_text(texto)
+        print(f"\n✔ Galería de {len(originales)} foto(s) añadida a {qmd.relative_to(RAIZ)}")
+    else:
+        print("\nNo encuentro las marcas <!-- fotos:inicio --> / <!-- fotos:fin --> en el index.qmd;")
+        print("pega esto donde quieras las fotos:\n\n" + galeria)
+
+
+def comprobar(_):
+    if preview_activa():
+        sys.exit("La vista previa está abierta: ciérrala antes (compilar a la vez corrompe la caché de Quarto).")
+    r = subprocess.run(["quarto", "render"], cwd=RAIZ)
+    print("\n✔ La web compila sin errores." if r.returncode == 0 else "\n✘ Hay errores: revisa los mensajes de arriba.")
+    sys.exit(r.returncode)
+
+
+def publicar(a):
+    os.chdir(RAIZ)
+    cambios = subprocess.run(["git", "status", "--porcelain"], capture_output=True, text=True).stdout.strip()
+    if not cambios:
+        sys.exit("No hay cambios que publicar.")
+    print("Cambios que se van a publicar:\n")
+    subprocess.run(["git", "status", "--short"])
+    mensaje = a.mensaje or f"Actualización de la web ({HOY:%d-%m-%Y})"
+    subprocess.run(["git", "add", "-A"], check=True)
+    subprocess.run(["git", "commit", "-q", "-m", mensaje], check=True)
+    subprocess.run(["git", "push", "-q"], check=True)
+    print("\n✔ Subido. GitHub está compilando y publicando la web (tarda 1-2 minutos).")
+    print("  Progreso: https://github.com/thisisjosepablo/personal_website/actions")
+
+
+# ---------------------------------------------------------------- menú
+
+def main():
+    ap = argparse.ArgumentParser(prog="./web", description=__doc__,
+                                 formatter_class=argparse.RawDescriptionHelpFormatter)
+    sub = ap.add_subparsers(dest="orden", metavar="<orden>")
+
+    sub.add_parser("ver", help="vista previa").set_defaults(fn=ver)
+    p = sub.add_parser("nota", help="nueva nota")
+    p.add_argument("titulo")
+    p.add_argument("--etiquetas", default="", help='separadas por comas: "datos, salud"')
+    p.set_defaults(fn=nota)
+    p = sub.add_parser("aventura", help="nueva aventura")
+    p.add_argument("titulo")
+    p.add_argument("--lugar", default="")
+    p.set_defaults(fn=aventura)
+    p = sub.add_parser("fotos", help="preparar las fotos de una aventura")
+    p.add_argument("carpeta")
+    p.add_argument("--portada", type=int, default=1, help="número de la foto de portada")
+    p.add_argument("--encuadre", choices=GRAVEDAD, default="centro", help="parte que se conserva al recortar la portada")
+    p.set_defaults(fn=fotos)
+    p = sub.add_parser("proyecto", help="nuevo proyecto")
+    p.add_argument("nombre")
+    p.set_defaults(fn=proyecto)
+    sub.add_parser("libro", help="añadir un libro").set_defaults(fn=libro)
+    p = sub.add_parser("editar", help="abrir un archivo de datos")
+    p.add_argument("que", choices=DATOS)
+    p.set_defaults(fn=editar)
+    sub.add_parser("comprobar", help="compilar para ver errores").set_defaults(fn=comprobar)
+    p = sub.add_parser("publicar", help="subir los cambios")
+    p.add_argument("mensaje", nargs="?")
+    p.set_defaults(fn=publicar)
+
+    a = ap.parse_args()
+    if not a.orden:
+        ap.print_help()
+        return
+    a.fn(a)
+
+
+if __name__ == "__main__":
+    main()

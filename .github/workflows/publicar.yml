@@ -1,0 +1,28 @@
+# Publica la web automáticamente en GitHub Pages cada vez que se suben cambios a main.
+# Lo lanza "./web publicar" (git push). También se puede lanzar a mano desde la pestaña Actions.
+name: Publicar web
+
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Instalar Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Compilar y publicar en GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

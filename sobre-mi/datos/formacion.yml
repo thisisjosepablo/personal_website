@@ -1,0 +1,15 @@
+# Formación académica, de la más reciente a la más antigua.
+# Campos: title (titulación), entidad (centro), inicio/fin ("AAAA-MM" o "AAAA"), siglas/logo,
+#         nota (opcional), description (opcional), aptitudes (opcional)
+
+- title: "Máster en Health Data Science"
+  entidad: "Universitat Rovira i Virgili (URV)"
+  inicio: "TODO"
+  siglas: "URV"
+  aptitudes: [Ciencia de datos, Salud digital]
+
+- title: "TODO: grado"
+  entidad: "TODO: universidad"
+  inicio: "TODO"
+  fin: "TODO"
+  siglas: "?"

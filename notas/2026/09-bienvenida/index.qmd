@@ -1,0 +1,8 @@
+---
+title: "Bienvenida"
+description: "Primera nota: por qué he creado esta web."
+date: 2026-09-24
+categories: [personal]
+---
+
+TODO: escribe aquí tu primera nota.

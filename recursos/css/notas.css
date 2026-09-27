@@ -1,0 +1,71 @@
+/* Notas: lista de notas.
+   Parte de los estilos de la web (recursos/css/). Los colores vienen de las variables
+   --sendero-* definidas en _sistema/tema/claro.scss y oscuro.scss */
+
+/* ---------- Notas ----------
+   Lista sencilla: fecha a la izquierda; título, resumen y etiquetas a la derecha */
+.nota {
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--sendero-border);
+}
+
+.notas-lista > .nota:first-child {
+  border-top: none;
+}
+
+.nota-fecha {
+  font-size: 0.85rem;
+  opacity: 0.65;
+  padding-top: 0.2rem;
+  font-variant-numeric: tabular-nums;
+}
+
+h3.nota-titulo {
+  margin: 0 0 0.3rem;
+  font-size: 1.25rem;
+  border: none;
+}
+
+.nota-titulo a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nota-titulo a:hover {
+  color: var(--sendero-primary);
+}
+
+.nota-resumen {
+  margin: 0 0 0.5rem;
+  opacity: 0.85;
+}
+
+.nota-etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.nota-etiqueta {
+  font-size: 0.75rem;
+  padding: 0.05rem 0.55rem;
+  border-radius: 1rem;
+  border: 1px solid var(--sendero-border);
+  background: var(--sendero-tint);
+  color: var(--sendero-primary);
+  text-decoration: none;
+}
+
+.nota-etiqueta:hover {
+  border-color: var(--sendero-primary);
+}
+
+@media (max-width: 575.98px) {
+  .nota {
+    grid-template-columns: 1fr;
+    gap: 0.2rem;
+  }
+}

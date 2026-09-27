@@ -1,0 +1,10 @@
+# Publicaciones: artículos, comunicaciones en congresos, pósters…
+# Campos: title, entidad (revista o congreso), fecha ("AAAA-MM"), autores, enlace (DOI o URL), description
+# Para ocultar la sección, borra su bloque ("::: {.perfil-card}" … ":::") en sobre-mi/index.qmd.
+
+- title: "TODO: título de la publicación o comunicación"
+  entidad: "TODO: revista o congreso"
+  fecha: "TODO"
+  autores: "TODO: autores"
+  # enlace: https://doi.org/...
+  description: "TODO: resumen de una o dos líneas."

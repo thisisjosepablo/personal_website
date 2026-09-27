@@ -1,0 +1,21 @@
+```{=html}
+<div class="list aventuras-lista">
+<% for (const item of items) { %>
+  <article class="aventura" <%= metadataAttrs(item) %>>
+    <a class="aventura-enlace" href="<%- item.path %>">
+      <% if (item.image) { %>
+        <img class="aventura-portada" src="<%- item.image %>" alt="" loading="lazy">
+      <% } %>
+      <div class="aventura-cuerpo">
+        <div class="aventura-meta">
+          <span class="listing-date"><%= item.date %></span>
+          <% if (item.lugar) { %> · <i class="bi bi-geo-alt"></i> <%= item.lugar %><% } %>
+        </div>
+        <h3 class="aventura-titulo listing-title"><%= item.title %></h3>
+        <% if (item.description) { %><p class="aventura-resumen listing-description"><%= item.description %></p><% } %>
+      </div>
+    </a>
+  </article>
+<% } %>
+</div>
+```

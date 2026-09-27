@@ -1,0 +1,38 @@
+# Identidad visual "Sendero" — modo oscuro (el bosque de noche)
+meta:
+  name: José Pablo Soriano Torres
+
+color:
+  palette:
+    brote: "#9fce6f"    # verde hoja aclarado para que se lea sobre fondo oscuro
+    hoja: "#6ca145"
+    luz: "#e3eadb"      # texto
+    noche: "#111a10"    # fondo
+    musgo: "#1f301c"
+    tierra: "#a39f84"
+    cielo: "#9cc3cf"
+  background: noche
+  foreground: luz
+  primary: brote
+  secondary: tierra
+  success: hoja
+  info: cielo
+  light: luz
+  dark: musgo
+
+typography:
+  fonts:
+    - family: Inter
+      source: google
+      weight: [400, 500, 600]
+    - family: Fraunces
+      source: google
+      weight: [500, 600, 700]
+  base:
+    family: Inter
+    line-height: 1.65
+  headings:
+    family: Fraunces
+    weight: 600
+  link:
+    color: brote

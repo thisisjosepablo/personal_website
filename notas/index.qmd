@@ -1,0 +1,17 @@
+---
+title: "Notas"
+subtitle: "Lo que voy aprendiendo por el camino."
+toc: false
+migas: false          # la lista de la sección no lleva migas de pan (las heredaría de _metadata.yml)
+# Cada nota es una carpeta notas/<año>/<mes>-<nombre>/ con su index.qmd (crea una con: ./web nota "Título")
+listing:
+  contents: "20*/*/index.qmd"
+  template: ../_sistema/plantillas/notas.ejs
+  sort: "date desc"
+  fields: [date, title, description, categories]
+  categories: true
+  filter-ui: true
+  sort-ui: false
+  feed: true
+  page-size: 15
+---

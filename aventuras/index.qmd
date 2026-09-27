@@ -1,0 +1,14 @@
+---
+title: "Aventuras"
+subtitle: "Rutas, retos y lugares que me encuentro por el camino."
+toc: false
+migas: false          # la lista de la sección no lleva migas de pan (las heredaría de _metadata.yml)
+# Cada aventura es una carpeta aventuras/<año>/<mes>-<nombre>/ con su index.qmd y sus fotos
+# (crea una con: ./web aventura "Título"; prepara las fotos con: ./web fotos <carpeta>)
+listing:
+  contents: "20*/*/index.qmd"
+  template: ../_sistema/plantillas/aventuras.ejs
+  sort: "date desc"
+  fields: [image, date, title, description]
+  page-size: 12
+---

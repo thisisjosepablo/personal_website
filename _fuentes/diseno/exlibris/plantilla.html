@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ex libris JPS</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500&family=Fraunces:wght@600&display=swap" rel="stylesheet">
+<style>
+  :root { --bosque:#2d6a2e; --musgo:#1a3017; --crema:#f8f6ef; --noche:#111a10; --brote:#9fce6f; --esparto:#b8955a; }
+  body { margin:0; padding:2rem 1rem 4rem; background:var(--crema); color:var(--musgo); font-family:Inter,sans-serif; }
+  h1,h2 { font-family:Fraunces,serif; font-weight:600; }
+  h1 { text-align:center; margin:0 0 .3rem; } .intro { text-align:center; max-width:42rem; margin:0 auto 2.5rem; opacity:.8; }
+  .concepto { max-width:62rem; margin:0 auto 2.5rem; padding:1.5rem; border-radius:1rem; background:#fff; border:1px solid rgba(45,106,46,.18); }
+  .concepto h2 { margin:0 0 .3rem; } .concepto p { margin:0 0 1.2rem; }
+  .fila { display:flex; flex-wrap:wrap; gap:1.5rem; align-items:flex-end; }
+  .caja { display:flex; flex-direction:column; align-items:center; gap:.4rem; font-size:.75rem; }
+  .fondo { display:grid; place-items:center; gap:.5rem; grid-auto-flow:column; border-radius:.75rem; padding:.9rem; }
+  .claro { background:var(--crema); border:1px solid rgba(45,106,46,.18); --linea:var(--bosque); --lago:#5f8fa0; --fondo:var(--crema); color:var(--bosque); }
+  .oscuro { background:var(--noche); --linea:var(--brote); --lago:#8fb9c7; --fondo:var(--noche); color:var(--brote); }
+  .navbar { display:flex; align-items:center; gap:.6rem; padding:.55rem 1rem; font-family:Fraunces,serif; font-weight:600; }
+  svg text { fill:currentColor; }
+  .jp { font-family:"Cormorant Garamond",serif; font-weight:600; letter-spacing:-.02em; }
+  .integrado { paint-order:stroke; stroke:var(--fondo); stroke-width:6px; stroke-linejoin:round; }
+  .anillo { font-family:Cinzel,serif; font-size:10.5px; letter-spacing:.18em; }
+</style></head>
+<body>
+<h1>Ex libris · JP</h1>
+<p class="intro">Contornos trazados de tu foto de la Sierra de Segura: la sierra rocosa, las dos laderas, la colina intermedia y las orillas del embalse.</p>
+
+<section class="concepto"><h2>A · Clásico</h2>
+<p>Sello de ex libris tradicional: anillo con <em>Ex libris</em> y tu nombre en capitales romanas (Cinzel), el paisaje dentro y <b>JP</b> en el cielo en Cormorant Garamond.</p>
+<div class="fila" data-svg="A"></div></section>
+
+<section class="concepto"><h2>B · Integrado</h2>
+<p>Las letras forman parte del paisaje: la <b>P</b> se apoya sobre la línea de la sierra y el trazo de la <b>J</b> se hunde en el embalse, como un reflejo.</p>
+<div class="fila" data-svg="B"></div></section>
+
+<section class="concepto"><h2>C · Mínimo</h2>
+<p>La versión reducida: solo la sierra, tres líneas de agua y <b>JP</b>. Pensada para favicon y navbar; puede acompañar a la A o la B como versión pequeña.</p>
+<div class="fila" data-svg="C"></div></section>
+
+<template id="A">{{A}}</template><template id="B">{{B}}</template><template id="C">{{C}}</template>
+<script>
+document.querySelectorAll('[data-svg]').forEach(function (fila) {
+  var src = document.getElementById(fila.dataset.svg).innerHTML;
+  var n = 0;
+  var s = function (px) { n++; return src.replace('<svg ', '<svg width="' + px + '" height="' + px + '" ').replace(/id="(c[ABC]|arcoSup|arcoInf|aguaC|agua)"/g, 'id="$1' + n + '"').replace(/#(c[ABC]|arcoSup|arcoInf|aguaC|agua)\b/g, '#$1' + n); };
+  fila.innerHTML =
+    '<div class="caja"><div class="fondo claro">' + s(240) + '</div>claro</div>' +
+    '<div class="caja"><div class="fondo oscuro">' + s(240) + '</div>oscuro</div>' +
+    '<div class="caja"><div class="fondo claro">' + s(64) + s(32) + s(16) + '</div>pequeño</div>' +
+    '<div class="caja"><div class="fondo claro navbar">' + s(34) + 'José Pablo Soriano Torres</div>navbar</div>';
+});
+</script>
+</body></html>

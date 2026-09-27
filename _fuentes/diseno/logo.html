@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuestas de logo JPS</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bosque: #2d6a2e; --hoja: #6ca145; --luz: #e8efdc; --musgo: #1a3017;
+    --tierra: #8a7f62; --crema: #f8f6ef; --noche: #111a10; --brote: #9fce6f;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 2rem 1rem 4rem; background: var(--crema); color: var(--musgo);
+         font-family: Inter, sans-serif; }
+  h1, h2 { font-family: Fraunces, serif; font-weight: 600; }
+  h1 { text-align: center; margin: 0 0 .25rem; }
+  .intro { text-align: center; max-width: 40rem; margin: 0 auto 2.5rem; opacity: .8; }
+  .concepto { max-width: 60rem; margin: 0 auto 3rem; padding: 1.5rem; border-radius: 1rem;
+              background: #fff; border: 1px solid rgba(45,106,46,.18); }
+  .concepto h2 { margin: 0 0 .25rem; }
+  .concepto p { margin: 0 0 1.25rem; }
+  .fila { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-end; }
+  .caja { display: flex; flex-direction: column; align-items: center; gap: .4rem; font-size: .75rem; opacity: .9; }
+  .fondo { display: grid; place-items: center; border-radius: .75rem; padding: .75rem; }
+  .claro { background: var(--crema); border: 1px solid rgba(45,106,46,.18); }
+  .oscuro { background: var(--noche); }
+  .navbar { display: flex; align-items: center; gap: .6rem; padding: .6rem 1rem; border-radius: .6rem;
+            background: var(--crema); border: 1px solid rgba(45,106,46,.18);
+            font-family: Fraunces, serif; font-weight: 600; font-size: 1.05rem; }
+  .oscuro.navbar { color: #e3eadb; }
+  /* colores del logo según fondo */
+  .claro, .navbar { --c-principal: var(--bosque); --c-acento: var(--hoja); --c-camino: var(--tierra); --c-fondo: var(--crema); }
+  .oscuro { --c-principal: var(--brote); --c-acento: var(--hoja); --c-camino: #b3a986; --c-fondo: var(--noche); }
+  .clave { font-size: .85rem; margin-top: 1rem; line-height: 1.6; }
+  .clave b { color: var(--bosque); }
+</style>
+</head>
+<body>
+<h1>Propuestas de logo · JPS</h1>
+<p class="intro">Tres conceptos en boceto. Cada uno se muestra grande, en tamaño favicon (32 y 16 px), sobre fondo claro y oscuro, y en el navbar.</p>
+
+<!-- ============ SÍMBOLOS ============ -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- 1 · BROTE: el tallo es la J (raíz que se curva), la hoja es el bucle de la P, el sendero es la S -->
+    <symbol id="brote" viewBox="0 0 120 120">
+      <!-- S: sendero serpenteante -->
+      <path d="M110 50 C 94 46, 88 64, 100 70 C 114 77, 112 100, 90 100"
+            fill="none" stroke="var(--c-camino)" stroke-width="7" stroke-linecap="round" stroke-dasharray="0.1 11"/>
+      <!-- P: hoja unida al tallo -->
+      <path d="M54 16 C 96 6, 104 58, 54 60 Z" fill="var(--c-acento)"/>
+      <path d="M56 20 C 74 26, 80 42, 58 56" fill="none" stroke="var(--c-fondo)" stroke-width="3" stroke-linecap="round"/>
+      <!-- J: tallo que baja y se curva como una raíz -->
+      <path d="M54 14 L54 82 C 54 102, 32 106, 24 90"
+            fill="none" stroke="var(--c-principal)" stroke-width="9" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- 2 · CUMBRE: el sendero sube en S por la montaña, la bandera de cumbre es la P, un arroyo es la J -->
+    <symbol id="cumbre" viewBox="0 0 120 120">
+      <!-- montaña -->
+      <path d="M8 104 L64 30 L112 104 Z" fill="var(--c-principal)"/>
+      <!-- S: sendero en zigzag suave subiendo -->
+      <path d="M84 100 C 58 96, 58 84, 70 78 C 84 71, 80 60, 64 56"
+            fill="none" stroke="var(--c-fondo)" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="0.1 8"/>
+      <!-- P: mástil y bandera en la cumbre -->
+      <path d="M64 32 L64 8" stroke="var(--c-principal)" stroke-width="4" stroke-linecap="round"/>
+      <path d="M64 8 C 84 8, 84 26, 64 24 Z" fill="var(--c-acento)"/>
+      <!-- J: arroyo que baja por la ladera y se curva en la base -->
+      <path d="M46 62 L46 90 C 46 100, 36 101, 32 94"
+            fill="none" stroke="var(--c-fondo)" stroke-width="5" stroke-linecap="round"/>
+    </symbol>
+
+    <!-- 3 · HELECHO: el tallo del helecho es la J, la espiral que se desenrolla es la P, un zarcillo/camino es la S -->
+    <symbol id="helecho" viewBox="0 0 124 120">
+      <!-- S -->
+      <path d="M108 44 C 90 40, 84 60, 98 66 C 112 72, 110 96, 86 96"
+            fill="none" stroke="var(--c-acento)" stroke-width="7" stroke-linecap="round"/>
+      <path d="M108 44 C 112 34, 120 32, 122 30 C 120 40, 114 44, 108 44 Z" fill="var(--c-acento)"/>
+      <!-- P: báculo de helecho (espiral) -->
+      <path d="M54 58 C 80 60, 86 32, 70 22 C 56 14, 46 30, 58 36 C 66 40, 70 32, 64 30"
+            fill="none" stroke="var(--c-principal)" stroke-width="8" stroke-linecap="round"/>
+      <!-- pequeñas hojitas del helecho -->
+            <!-- J -->
+      <path d="M54 30 L54 84 C 54 102, 34 106, 26 92"
+            fill="none" stroke="var(--c-principal)" stroke-width="9" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ============ PRESENTACIÓN ============ -->
+<section class="concepto">
+  <h2>1 · Brote</h2>
+  <p>Una planta que nace: el <b>tallo</b> baja y se curva como una raíz (J), la <b>hoja</b> forma el bucle de la P y un <b>sendero</b> de puntos serpentea a su lado (S). Habla de crecer y de tu camino.</p>
+  <div class="fila" data-logo="brote"></div>
+</section>
+
+<section class="concepto">
+  <h2>2 · Cumbre</h2>
+  <p>Una montaña: el <b>sendero</b> sube en S por la ladera, la <b>bandera de cumbre</b> es la P y un <b>arroyo</b> baja y se curva en la base (J). Conecta con el deporte y con tu foto de perfil en la montaña.</p>
+  <div class="fila" data-logo="cumbre"></div>
+</section>
+
+<section class="concepto">
+  <h2>3 · Helecho</h2>
+  <p>Un helecho desenrollándose: el <b>tallo</b> es la J, la <b>espiral</b> del brote joven es la P y un <b>zarcillo</b> ondulado es la S. Más orgánico y elegante.</p>
+  <div class="fila" data-logo="helecho"></div>
+</section>
+
+<script>
+  document.querySelectorAll('[data-logo]').forEach(function (fila) {
+    var id = fila.dataset.logo;
+    var svg = function (s) { return '<svg width="' + s + '" height="' + s + '"><use href="#' + id + '"/></svg>'; };
+    fila.innerHTML =
+      '<div class="caja"><div class="fondo claro">' + svg(160) + '</div>claro</div>' +
+      '<div class="caja"><div class="fondo oscuro">' + svg(160) + '</div>oscuro</div>' +
+      '<div class="caja"><div class="fondo claro">' + svg(32) + svg(16) + '</div>favicon</div>' +
+      '<div class="caja"><div class="fondo oscuro">' + svg(32) + svg(16) + '</div>favicon</div>' +
+      '<div class="caja"><div class="navbar">' + svg(30) + 'José Pablo Soriano Torres</div>navbar</div>';
+  });
+</script>
+</body>
+</html>

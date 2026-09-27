@@ -1,0 +1,55 @@
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera. -->
+<header id="title-block-header" class="quarto-title-block default">
+$if(migas)$
+<nav class="migas" aria-label="Migas de pan">
+  <ol>
+    $for(migas)$
+    <li><a href="$migas.enlace$">$migas.texto$</a></li>
+    $endfor$
+    <li aria-current="page">$title$</li>
+  </ol>
+</nav>
+$endif$
+<div class="quarto-title">
+$if(title)$
+<h1 class="title">$title$</h1>
+$endif$
+$if(subtitle)$
+<p class="subtitle lead">$subtitle$</p>
+$endif$
+$if(categories)$
+  $if(quarto-template-params.title-block-categories)$
+<div class="quarto-categories">
+  $for(categories)$
+  <div class="quarto-category">$categories$</div>
+  $endfor$
+</div>
+  $endif$
+$endif$
+</div>
+
+$if(hide-description)$
+$elseif(description)$
+<div>
+  <div class="description">
+    $description$
+  </div>
+</div>
+$endif$
+
+$if(lugar)$
+<p class="cronica-lugar"><i class="bi bi-geo-alt"></i> $lugar$$if(coordenadas)$ <span class="cronica-coords">· $coordenadas$</span>$endif$</p>
+$endif$
+$if(datos)$
+<ul class="cronica-datos">
+  $for(datos)$
+  <li>$datos$</li>
+  $endfor$
+</ul>
+$endif$
+
+$title-metadata.html()$
+
+</header>

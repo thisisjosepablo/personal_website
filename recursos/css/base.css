@@ -1,0 +1,145 @@
+/* Base: navbar, pie, logo, migas de pan y cabecera de páginas interiores.
+   Parte de los estilos de la web (recursos/css/). Los colores vienen de las variables
+   --sendero-* definidas en _sistema/tema/claro.scss y oscuro.scss */
+
+/* ---------- General ---------- */
+.navbar {
+  border-bottom: 1px solid var(--sendero-border);
+}
+
+/* ---------- Logo (piezas del ex libris JPST) ----------
+   Se pintan con máscaras CSS para que la tinta tome el color del tema.
+   El texto original se mantiene oculto a la vista para lectores de pantalla y buscadores. */
+.navbar-brand .navbar-title,
+.exlibris-pie,
+.exlibris-cabecera {
+  display: inline-block;
+  color: transparent !important;
+  background-color: var(--sendero-primary);
+  -webkit-mask: var(--pieza) center / contain no-repeat;
+  mask: var(--pieza) center / contain no-repeat;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 100%;
+  text-decoration: none;
+}
+
+/* Navbar: cartela JPST en lugar del nombre (proporción 402:150) */
+.navbar-brand .navbar-title {
+  --pieza: url("../img/logo/cartela-corta.svg");
+  height: 1.9rem;
+  width: calc(1.9rem * 402 / 150);
+  vertical-align: middle;
+}
+
+.navbar-brand:hover .navbar-title {
+  background-color: var(--sendero-leaf);
+}
+
+/* Pie de página: ex libris pequeño, como el sello al final de un libro (proporción 1522:770) */
+.nav-footer {
+  border-top: 1px solid var(--sendero-border);
+}
+
+.exlibris-pie {
+  --pieza: url("../img/logo/exlibris-jpst.svg");
+  width: 8rem;
+  height: calc(8rem * 770 / 1522);
+  opacity: 0.85;
+  transition: opacity 0.15s ease;
+}
+
+.exlibris-pie:hover {
+  opacity: 1;
+}
+
+/* Cabecera de la Biblioteca */
+.exlibris-cabecera {
+  --pieza: url("../img/logo/exlibris-jpst.svg");
+  display: block;
+  width: min(100%, 26rem);
+  aspect-ratio: 1522 / 770;
+  margin: 0.5rem auto 2rem;
+}
+
+::selection {
+  background: var(--sendero-leaf);
+  color: #fff;
+}
+
+/* ---------- Migas de pan (notas y proyectos) ----------
+   Plantilla en _sistema/parciales/title-block.html; las migas se definen en el _metadata.yml de cada carpeta */
+.migas ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem;
+  font-size: 0.85rem;
+}
+
+.migas li {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* Separador entre migas */
+.migas li + li::before {
+  content: "/";
+  margin: 0 0.5rem;
+  opacity: 0.4;
+}
+
+.migas a {
+  color: var(--sendero-primary);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.migas a:hover {
+  text-decoration: underline;
+}
+
+/* Flecha de "volver" en la primera miga */
+.migas li:first-child a::before {
+  content: "←";
+  display: inline-block;
+  margin-right: 0.35rem;
+  transition: transform 0.15s ease;
+}
+
+.migas li:first-child a:hover::before {
+  transform: translateX(-3px);
+}
+
+/* Página actual: atenuada y recortada si el título es largo */
+.migas li[aria-current="page"] {
+  opacity: 0.6;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  display: block;
+}
+
+/* ---------- Cabecera de notas y proyectos ---------- */
+/* Web de un solo autor: se oculta "Autor/a" y se deja solo la fecha
+   (el autor sigue en los metadatos de la página para buscadores) */
+.quarto-title-meta > div:not(:has(.date)) {
+  display: none;
+}
+
+/* Etiquetas del título con el mismo estilo de píldora que en la lista de notas */
+#title-block-header .quarto-categories .quarto-category {
+  font-size: 0.75rem;
+  text-transform: none;
+  letter-spacing: normal;
+  padding: 0.05rem 0.55rem;
+  border-radius: 1rem;
+  border: 1px solid var(--sendero-border);
+  background: var(--sendero-tint);
+  color: var(--sendero-primary);
+  opacity: 1;
+}

@@ -1,0 +1,12 @@
+```{=html}
+<div class="list perfil-lista">
+<% for (const item of items) { %>
+  <div class="perfil-entrada sin-logo" <%= metadataAttrs(item) %>>
+    <div class="perfil-entrada-cuerpo">
+      <div class="perfil-entrada-titulo listing-title"><%= item.title %></div>
+      <% if (item.nivel) { %><div class="perfil-entrada-meta"><%= item.nivel %></div><% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```

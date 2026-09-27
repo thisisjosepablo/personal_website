@@ -1,0 +1,7 @@
+# Quarto: caché y web compilada (la compila GitHub al publicar)
+/.quarto/
+/_site/
+**/*.quarto_ipynb
+
+# Fotos originales de las aventuras (llevan GPS): no se suben al repositorio
+**/_originales/

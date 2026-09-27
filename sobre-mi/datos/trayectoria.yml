@@ -1,0 +1,27 @@
+# Trayectoria profesional, de la más reciente a la más antigua (se muestra en este orden).
+# Campos:
+#   title:       puesto
+#   entidad:     empresa, universidad o grupo
+#   tipo:        Jornada completa, Media jornada, Contrato de investigación, Prácticas…
+#   inicio/fin:  "AAAA-MM" (sin fin = actualidad). La duración se calcula sola.
+#   ubicacion:   ciudad, región, país
+#   modalidad:   Presencial, Híbrido, En remoto
+#   siglas:      texto del cuadrado del logo si no hay imagen (p. ej. UJA)
+#   logo:        imagen del logo (opcional, p. ej. imagenes/logos/uja.png dentro de sobre-mi/)
+#   description: qué haces o hiciste
+#   aptitudes:   lista de habilidades
+
+- title: "Investigador"
+  entidad: "Universidad de Jaén"
+  tipo: "TODO: tipo de contrato"
+  inicio: "TODO"
+  ubicacion: "Jaén, Andalucía, España"
+  modalidad: "TODO: Presencial / Híbrido"
+  siglas: "UJA"
+  description: >-
+    Aplico ciencia de datos, machine learning y deep learning al análisis de imágenes de
+    pacientes ostomizados en el proyecto EPPIA.
+  aptitudes: [Deep learning, Machine learning, Ciencia de datos, Imagen médica]
+
+
+

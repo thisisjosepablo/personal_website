@@ -1,0 +1,8 @@
+# Opciones comunes a todas las aventuras (aventuras/<año>/<mes>-<nombre>/index.qmd)
+toc: false
+lightbox: auto          # las fotos se amplían al pulsarlas; las del grupo "galeria" se recorren con flechas
+template-partials:
+  - ../_sistema/parciales/title-block.html
+migas:
+  - texto: Aventuras
+    enlace: /aventuras/index.qmd

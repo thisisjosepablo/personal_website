@@ -1,0 +1,8 @@
+# Opciones comunes a todas las páginas de proyectos (sobre-mi/proyectos/<proyecto>/index.qmd)
+template-partials:
+  - ../../_sistema/parciales/title-block.html
+migas:
+  - texto: Sobre mí
+    enlace: /sobre-mi/index.qmd
+  - texto: Proyectos
+    enlace: /sobre-mi/index.qmd#proyectos

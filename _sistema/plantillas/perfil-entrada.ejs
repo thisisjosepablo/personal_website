@@ -1,0 +1,60 @@
+```{=html}
+<%
+  // Entradas del perfil al estilo LinkedIn: trayectoria, formación, publicaciones y reconocimientos.
+  const MESES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."];
+  const leer = (s) => {
+    const m = /^(\d{4})(?:-(\d{1,2}))?$/.exec(String(s ?? "").trim());
+    return m ? { y: +m[1], m: m[2] ? +m[2] : null } : null;
+  };
+  const fecha = (s) => {
+    const p = leer(s);
+    if (!p) return s ?? "";
+    return p.m ? `${MESES[p.m - 1]} ${p.y}` : `${p.y}`;
+  };
+  // Duración en años y meses, contando el mes de inicio (como LinkedIn)
+  const duracion = (a, b) => {
+    const p = leer(a);
+    const hoy = new Date();
+    const q = b ? leer(b) : { y: hoy.getFullYear(), m: hoy.getMonth() + 1 };
+    if (!p || !p.m || !q || !q.m) return "";
+    const n = (q.y - p.y) * 12 + (q.m - p.m) + 1;
+    if (n < 1) return "";
+    const anios = Math.floor(n / 12), meses = n % 12;
+    return [anios ? `${anios} ${anios === 1 ? "año" : "años"}` : "",
+            meses ? `${meses} ${meses === 1 ? "mes" : "meses"}` : ""].filter(Boolean).join(" ");
+  };
+%>
+<div class="list perfil-lista">
+<% for (const item of items) { %>
+  <div class="perfil-entrada <%= (item.logo || item.siglas) ? '' : 'sin-logo' %>" <%= metadataAttrs(item) %>>
+    <% if (item.logo) { %>
+      <img class="perfil-logo" src="<%- item.logo %>" alt="" loading="lazy">
+    <% } else if (item.siglas) { %>
+      <div class="perfil-logo perfil-siglas" aria-hidden="true"><%= item.siglas %></div>
+    <% } %>
+    <div class="perfil-entrada-cuerpo">
+      <div class="perfil-entrada-titulo listing-title"><%= item.title %></div>
+      <% const linea = [item.entidad, item.tipo].filter(Boolean).join(" · "); %>
+      <% if (linea) { %><div class="perfil-entrada-entidad"><%= linea %></div><% } %>
+      <% if (item.inicio) { %>
+        <% const d = duracion(item.inicio, item.fin); %>
+        <div class="perfil-entrada-meta"><%= fecha(item.inicio) %> – <%= item.fin ? fecha(item.fin) : "actualidad" %><%= d ? " · " + d : "" %></div>
+      <% } else if (item.fecha) { %>
+        <div class="perfil-entrada-meta"><%= fecha(item.fecha) %></div>
+      <% } %>
+      <% const lugar = [item.ubicacion, item.modalidad].filter(Boolean).join(" · "); %>
+      <% if (lugar) { %><div class="perfil-entrada-meta"><%= lugar %></div><% } %>
+      <% if (item.autores) { %><div class="perfil-entrada-meta"><%= item.autores %></div><% } %>
+      <% if (item.nota) { %><div class="perfil-entrada-meta">Nota: <%= item.nota %></div><% } %>
+      <% if (item.description) { %><p class="perfil-entrada-texto"><%= item.description %></p><% } %>
+      <% if (item.aptitudes && item.aptitudes.length) { %>
+        <div class="perfil-aptitudes"><i class="bi bi-gem"></i> <strong>Aptitudes:</strong> <%= item.aptitudes.join(" · ") %></div>
+      <% } %>
+      <% if (item.enlace) { %>
+        <a class="btn perfil-boton-sec" href="<%- item.enlace %>" target="_blank" rel="noopener">Ver publicación <i class="bi bi-box-arrow-up-right"></i></a>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```
