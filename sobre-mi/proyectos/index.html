@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.38">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -12,10 +12,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,14 +45,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-0a6b7249c26820e032cb0bd839ff02b1.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-b85bc7c33db8c58e0ec93c3465666fed.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-b581d11febff0d951c49fd5f769cd90c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-225ebbe8c0d4ad1cf1ca4b8d38e4bdbd.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-b581d11febff0d951c49fd5f769cd90c.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-d5f085cf6dd052ff2e75e80f8992d383.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-fa15ca055055c9342019901eeab0680a.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-d5f085cf6dd052ff2e75e80f8992d383.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,7 +111,7 @@ ul.task-list li input[type="checkbox"] {
   </script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -422,7 +425,7 @@ window.Quarto = {
 
 <div class="list perfil-lista">
 
-  <div class="perfil-entrada " data-index="0" data-categories="U2lzdGVtYSUyMGRlJTIwcmVjb21lbmRhY2klQzMlQjNuJTJDUHJvZHVjdG8lMjBkaWdpdGFsJTJDQ29tdW5pZGFkJTJDUnVubmluZw==" data-listing-file-modified-sort="1790523972639" data-listing-reading-time-sort="2" data-listing-word-count-sort="201">
+  <div class="perfil-entrada " data-index="0" data-categories="U2lzdGVtYSUyMGRlJTIwcmVjb21lbmRhY2klQzMlQjNuJTJDUHJvZHVjdG8lMjBkaWdpdGFsJTJDQ29tdW5pZGFkJTJDUnVubmluZw==" data-listing-file-modified-sort="1790582000335" data-listing-reading-time-sort="2" data-listing-word-count-sort="201">
     
       <img class="perfil-logo" src="../../sobre-mi/proyectos/radar-de-carreras/../../imagenes/logos/radar.webp" alt="" loading="lazy">
     
@@ -446,7 +449,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="1" data-categories="UHl0aG9uJTJDTGFuZ0NoYWluJTJDQ2hyb21hREIlMkNMTE0=" data-listing-date-sort="1789941600000" data-listing-file-modified-sort="1790506676876" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
+  <div class="perfil-entrada sin-logo" data-index="1" data-categories="UHl0aG9uJTJDTGFuZ0NoYWluJTJDQ2hyb21hREIlMkNMTE0=" data-listing-date-sort="1789948800000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="122">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/rag-langchain/index.html">Sistema RAG con LangChain</a></div>
@@ -468,7 +471,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="2" data-categories="UHl0aG9uJTJDUG9ldHJ5JTJDSW52ZXN0aWdhY2klQzMlQjNu" data-listing-date-sort="1785362400000" data-listing-file-modified-sort="1790506676873" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
+  <div class="perfil-entrada sin-logo" data-index="2" data-categories="UHl0aG9uJTJDUG9ldHJ5JTJDSW52ZXN0aWdhY2klQzMlQjNu" data-listing-date-sort="1785369600000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/papers2code/index.html">Papers2Code</a></div>
@@ -490,7 +493,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="3" data-categories="UHl0aG9uJTJDRmFzdEFQSSUyQ1B5VG9yY2glMkNEb2NrZXIlMkNKYXZhU2NyaXB0" data-listing-date-sort="1785103200000" data-listing-file-modified-sort="1790506676869" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="138">
+  <div class="perfil-entrada sin-logo" data-index="3" data-categories="UHl0aG9uJTJDRmFzdEFQSSUyQ1B5VG9yY2glMkNEb2NrZXIlMkNKYXZhU2NyaXB0" data-listing-date-sort="1785110400000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="138">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/cutout-studio/index.html">Cutout Studio</a></div>
@@ -512,7 +515,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="4" data-categories="UmVhY3QlMkNGbGFzayUyQ3NjaWtpdC1sZWFybiUyQ0NoYXJ0LmpzJTJDcGFuZGFz" data-listing-date-sort="1768950000000" data-listing-file-modified-sort="1790506676875" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="111">
+  <div class="perfil-entrada sin-logo" data-index="4" data-categories="UmVhY3QlMkNGbGFzayUyQ3NjaWtpdC1sZWFybiUyQ0NoYXJ0LmpzJTJDcGFuZGFz" data-listing-date-sort="1768953600000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="111">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/physickd/index.html">PhysiCKD</a></div>
@@ -534,7 +537,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="5" data-categories="UHl0aG9uJTJDc2Npa2l0LWxlYXJuJTJDTkxQ" data-listing-date-sort="1745272800000" data-listing-file-modified-sort="1790506676871" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="71">
+  <div class="perfil-entrada sin-logo" data-index="5" data-categories="UHl0aG9uJTJDc2Npa2l0LWxlYXJuJTJDTkxQ" data-listing-date-sort="1745280000000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="71">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/huffpost-clasificacion/index.html">Clasificación de noticias de HuffPost</a></div>
@@ -556,7 +559,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="6" data-categories="UHl0aG9uJTJDRmxhc2slMkNwYW5kYXMlMkNCb290c3RyYXA=" data-listing-date-sort="1731625200000" data-listing-file-modified-sort="1790506676867" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
+  <div class="perfil-entrada sin-logo" data-index="6" data-categories="UHl0aG9uJTJDRmxhc2slMkNwYW5kYXMlMkNCb290c3RyYXA=" data-listing-date-sort="1731628800000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="89">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/ahp-solver/index.html">AHP Solver</a></div>
@@ -578,7 +581,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="7" data-categories="UHl0aG9uJTJDRmxhc2slMkNKYXZhU2NyaXB0" data-listing-date-sort="1728856800000" data-listing-file-modified-sort="1790506676878" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="94">
+  <div class="perfil-entrada sin-logo" data-index="7" data-categories="UHl0aG9uJTJDRmxhc2slMkNKYXZhU2NyaXB0" data-listing-date-sort="1728864000000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="94">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/simplex-app/index.html">Simplex App</a></div>
@@ -600,7 +603,7 @@ window.Quarto = {
     </div>
   </div>
 
-  <div class="perfil-entrada sin-logo" data-index="8" data-categories="UHl0aG9uJTJDTkxUSyUyQ3BhbmRhcyUyQ1NjaVB5" data-listing-date-sort="1715205600000" data-listing-file-modified-sort="1790506676880" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
+  <div class="perfil-entrada sin-logo" data-index="8" data-categories="UHl0aG9uJTJDTkxUSyUyQ3BhbmRhcyUyQ1NjaVB5" data-listing-date-sort="1715212800000" data-listing-file-modified-sort="1790582000335" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="98">
     
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="../../sobre-mi/proyectos/sri/index.html">Sistema de Recuperación de Información</a></div>
