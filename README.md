@@ -1,7 +1,7 @@
 # Web personal · José Pablo Soriano Torres
 
 Web hecha con [Quarto](https://quarto.org) y publicada automáticamente en GitHub Pages:
-<https://thisisjosepablo.github.io/personal_website/>
+<https://thisisjosepablo.github.io/>
 
 ## Uso diario: la orden `./web`
 

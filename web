@@ -291,7 +291,7 @@ def publicar(a):
     subprocess.run(["git", "commit", "-q", "-m", mensaje], check=True)
     subprocess.run(["git", "push", "-q"], check=True)
     print("\n✔ Subido. GitHub está compilando y publicando la web (tarda 1-2 minutos).")
-    print("  Progreso: https://github.com/thisisjosepablo/personal_website/actions")
+    print("  Progreso: https://github.com/thisisjosepablo/thisisjosepablo.github.io/actions")
 
 
 # ---------------------------------------------------------------- menú

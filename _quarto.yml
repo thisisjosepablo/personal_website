@@ -14,8 +14,8 @@ project:
 website:
   title: "José Pablo Soriano Torres"
   description: "Web personal de José Pablo Soriano Torres: proyectos, notas, lecturas y aventuras."
-  site-url: https://thisisjosepablo.github.io/personal_website/
-  repo-url: https://github.com/thisisjosepablo/personal_website
+  site-url: https://thisisjosepablo.github.io/
+  repo-url: https://github.com/thisisjosepablo/thisisjosepablo.github.io
   favicon: recursos/img/logo/favicon.svg
   image: recursos/img/logo/og-exlibris.png
   open-graph: true
