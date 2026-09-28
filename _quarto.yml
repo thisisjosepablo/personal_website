@@ -10,6 +10,7 @@ project:
     - "**/*.qmd"            # solo se publican las páginas .qmd (README.md queda fuera)
   resources:
     - recursos/img/          # imágenes comunes que se usan desde el CSS
+    - robots.txt             # indica a los buscadores dónde está el sitemap
 
 website:
   title: "José Pablo Soriano Torres"

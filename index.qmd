@@ -1,8 +1,17 @@
 ---
-pagetitle: "José Pablo Soriano Torres"
+pagetitle: "Investigador en IA para la salud"   # Quarto añade " – José Pablo Soriano Torres"
+# Descripción para buscadores y redes (no se muestra en la página)
+description: "Web de José Pablo Soriano Torres (Soriano-Torres), investigador en inteligencia artificial para la salud en la Universidad de Jaén y estudiante del Máster en Health Data Science (URV). Proyectos, publicaciones, notas, lecturas y aventuras."
+hide-description: true
+# Solo en la portada: ficha de persona para buscadores (schema.org) y verificación de Google Search Console
+include-in-header:
+  - _sistema/includes/persona.html
+  - _sistema/includes/google-verificacion.html
 toc: false
 page-layout: full
 image: recursos/img/logo/og-exlibris.png
+open-graph:
+  title: "José Pablo Soriano Torres · Investigador en IA para la salud"   # título al compartir en redes
 ---
 
 ::: {.hero .column-screen}
