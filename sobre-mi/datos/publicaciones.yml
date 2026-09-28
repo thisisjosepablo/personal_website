@@ -1,10 +1,34 @@
-# Publicaciones: artículos, comunicaciones en congresos, pósters…
-# Campos: title, entidad (revista o congreso), fecha ("AAAA-MM"), autores, enlace (DOI o URL), description
+# Publicaciones: artículos, comunicaciones en congresos, pósters… (de la más reciente a la más antigua)
+# Campos:
+#   title:       título tal cual se publicó
+#   entidad:     revista o congreso (y editorial)
+#   tipo:        Artículo en revista, Comunicación en congreso, Póster…
+#   fecha:       "AAAA-MM"
+#   autores:     lista de autores; tu nombre ("Soriano-Torres") se resalta solo en negrita
+#   doi:         el DOI sin "https://doi.org/" → botón "Ver publicación" y DOI visible
+#   enlace:      alternativa al DOI si la publicación no tiene (URL)
+#   acceso:      "abierto" para mostrar la etiqueta de acceso abierto
+#   asociado:    proyecto al que pertenece (opcional); asociado-enlace: su página; asociado-siglas: texto del cuadradito
+#   description: resumen de una o dos líneas
+# Truco: con el DOI, los datos oficiales están en https://api.crossref.org/works/<DOI>
 # Para ocultar la sección, borra su bloque ("::: {.perfil-card}" … ":::") en sobre-mi/index.qmd.
 
-- title: "TODO: título de la publicación o comunicación"
-  entidad: "TODO: revista o congreso"
-  fecha: "TODO"
-  autores: "TODO: autores"
-  # enlace: https://doi.org/...
-  description: "TODO: resumen de una o dos líneas."
+- title: "Identification of Peristomal Skin Alterations Using Convolutional Artificial Neural Networks"
+  entidad: "Nursing Research and Practice · Wiley"
+  tipo: "Artículo en revista"
+  fecha: "2026-06"
+  autores: >-
+    López-Medina IM, Hueso-Montoro C, Charte-Ojeda F, Álvarez-Nieto C, Soriano-Torres JP,
+    García-Fernández FP, Capilla-Díaz C, Montesinos-Gálvez AC, Moya-Muñoz N, Cuevas-Sánchez C,
+    Pérez-Godoy MD
+  doi: "10.1155/nrp/2927548"
+  acceso: "abierto"
+  asociado: "EPPIA"
+  asociado-enlace: https://proyectoeppia.com
+  asociado-siglas: "EP"
+  asociado-logo: imagenes/logos/eppia.webp
+  description: >-
+    Redes neuronales convolucionales preentrenadas para distinguir piel periestomal sana de piel
+    con lesiones a partir de fotografías: 1165 imágenes recogidas por 24 enfermeras estomaterapeutas
+    de 17 hospitales, con explicabilidad mediante Grad-CAM. Sienta las bases del diagnóstico
+    automático y la atención a distancia de pacientes ostomizados.

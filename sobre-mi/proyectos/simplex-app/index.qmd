@@ -1,0 +1,26 @@
+---
+title: "Simplex App"
+description: "Aplicación web que resuelve problemas de programación lineal con el algoritmo símplex en su forma tabular."
+tipo: "Optimización"
+date: 2024-10-14
+categories: [Python, Flask, JavaScript]
+codigo: https://github.com/thisisjosepablo/simplex-tableau
+demo: https://thisisjosepablo2.pythonanywhere.com/
+---
+
+## Qué es
+
+Una aplicación web para resolver problemas de **programación lineal** con una implementación propia del **algoritmo símplex tabular**, con una interfaz gráfica sencilla.
+
+## Funcionalidades
+
+- Añadir y quitar **restricciones y variables** desde la interfaz.
+- Definir la **función objetivo** del problema.
+- Cargar problemas desde **archivos CSV**.
+- Resolver y ver el resultado al momento.
+
+## Detalles de implementación
+
+- Resuelve problemas de **maximización** con restricciones de tipo **≤**.
+- Incluye un **límite de 100 iteraciones** para evitar bucles infinitos y devuelve un resultado vacío cuando el problema no tiene solución.
+- Backend en Python con Flask; frontend en HTML, CSS y JavaScript.

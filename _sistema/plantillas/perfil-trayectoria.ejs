@@ -1,0 +1,95 @@
+```{=html}
+<%
+  // Trayectoria al estilo LinkedIn: los puestos seguidos en la misma entidad se agrupan bajo un
+  // único logo, con los puestos unidos por una línea vertical.
+  // Duraciones: las de puestos terminados se calculan aquí (no cambian); las de puestos en curso
+  // las calcula el navegador al abrir la página (.duracion-viva), para que no se queden desfasadas.
+  // Nota: en las plantillas de Quarto "<%=" inserta tal cual y "<%-" escapa el HTML.
+  const MESES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."];
+  const leer = (s) => {
+    const m = /^(\d{4})(?:-(\d{1,2}))?$/.exec(String(s ?? "").trim());
+    return m ? { y: +m[1], m: m[2] ? +m[2] : null } : null;
+  };
+  const fecha = (s) => {
+    const p = leer(s);
+    if (!p) return s ?? "";
+    return p.m ? `${MESES[p.m - 1]} ${p.y}` : `${p.y}`;
+  };
+  const hoy = new Date();
+  const HOY = { y: hoy.getFullYear(), m: hoy.getMonth() + 1 };
+  // Meses entre dos fechas, contando el mes de inicio (como LinkedIn); null si falta algún mes
+  const meses = (a, b) => {
+    const p = leer(a), q = b ? leer(b) : HOY;
+    if (!p || !p.m || !q || !q.m) return null;
+    const n = (q.y - p.y) * 12 + (q.m - p.m) + 1;
+    return n > 0 ? n : null;
+  };
+  const texto = (n) => {
+    if (!n) return "";
+    const a = Math.floor(n / 12), m = n % 12;
+    return [a ? `${a} ${a === 1 ? "año" : "años"}` : "", m ? `${m} ${m === 1 ? "mes" : "meses"}` : ""]
+      .filter(Boolean).join(" ");
+  };
+  const periodo = (it) => {
+    if (it.fin) {
+      const d = texto(meses(it.inicio, it.fin));
+      return `${fecha(it.inicio)} – ${fecha(it.fin)}${d ? " · " + d : ""}`;
+    }
+    const vivo = leer(it.inicio)?.m ? `<span class="duracion-viva" data-inicio="${it.inicio}"></span>` : "";
+    return `${fecha(it.inicio)} – actualidad${vivo}`;
+  };
+
+  // Agrupar puestos consecutivos de la misma entidad
+  const grupos = [];
+  for (const it of items) {
+    const ultimo = grupos[grupos.length - 1];
+    if (ultimo && it.entidad && ultimo.entidad === it.entidad) ultimo.puestos.push(it);
+    else grupos.push({ entidad: it.entidad, puestos: [it] });
+  }
+%>
+<% const logo = (it) => it.logo
+     ? `<img class="perfil-logo" src="${it.logo}" alt="" loading="lazy">`
+     : (it.siglas ? `<div class="perfil-logo perfil-siglas" aria-hidden="true">${it.siglas}</div>` : ""); %>
+<% const detalle = (it, conTitulo) => { %>
+  <% if (conTitulo) { %><div class="perfil-entrada-titulo listing-title"><%= it.title %></div><% } %>
+  <% const linea = conTitulo ? [it.entidad, it.tipo].filter(Boolean).join(" · ") : it.tipo; %>
+  <% if (linea) { %><div class="perfil-entrada-entidad"><%= linea %></div><% } %>
+  <% if (it.inicio) { %><div class="perfil-entrada-meta"><%= periodo(it) %></div><% } %>
+  <% const lugar = [it.ubicacion, it.modalidad].filter(Boolean).join(" · "); %>
+  <% if (lugar) { %><div class="perfil-entrada-meta"><%= lugar %></div><% } %>
+  <% if (it.proyecto) { %>
+    <div class="perfil-proyecto"><i class="bi bi-folder2-open"></i> Proyecto:
+      <% if (it["proyecto-enlace"]) { %><a href="<%- it["proyecto-enlace"] %>"><%= it.proyecto %></a><% } else { %><em><%= it.proyecto %></em><% } %>
+    </div>
+  <% } %>
+  <% if (it.description) { %><p class="perfil-entrada-texto"><%= it.description %></p><% } %>
+  <% if (it.aptitudes && it.aptitudes.length) { %>
+    <div class="perfil-aptitudes"><i class="bi bi-gem"></i> <strong>Aptitudes:</strong> <%= it.aptitudes.join(" · ") %></div>
+  <% } %>
+<% } %>
+<div class="list perfil-lista">
+<% for (const g of grupos) { const primero = g.puestos[0]; %>
+  <div class="perfil-entrada" <%= metadataAttrs(primero) %>>
+    <%= logo(primero) %>
+    <div class="perfil-entrada-cuerpo">
+      <% if (g.puestos.length === 1) { %>
+        <% detalle(primero, true); %>
+      <% } else { %>
+        <div class="perfil-entrada-titulo"><%= g.entidad %></div>
+        <div class="perfil-entrada-meta"><%= g.puestos.length %> puestos</div>
+        <% const lugar = primero.ubicacion; %>
+        <% if (lugar) { %><div class="perfil-entrada-meta"><%= lugar %></div><% } %>
+        <ol class="perfil-puestos">
+          <% for (const p of g.puestos) { %>
+            <li class="perfil-puesto">
+              <div class="perfil-entrada-titulo"><%= p.title %></div>
+              <% detalle(Object.assign({}, p, { ubicacion: null }), false); %>
+            </li>
+          <% } %>
+        </ol>
+      <% } %>
+    </div>
+  </div>
+<% } %>
+</div>
+```

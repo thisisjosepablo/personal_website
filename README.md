@@ -22,6 +22,10 @@ Todo se hace desde la terminal, en la carpeta de la web:
 `./web publicar` sube los cambios a GitHub y GitHub compila y publica la web solo (1-2 minutos).
 El progreso se ve en la pestaña **Actions** del repositorio.
 
+> **Vista previa:** recoge sola los cambios en páginas `.qmd`, pero **no** los de `_quarto.yml`
+> (menú, pie…), `_sistema/` (plantillas, tema) ni los archivos de `datos/`. Si cambias alguno de
+> esos, cierra la vista previa (Ctrl+C) y vuelve a lanzar `./web ver`.
+
 ## Estructura
 
 Cada sección de la web es una carpeta con **su página, sus datos, sus imágenes y su contenido**.
@@ -50,6 +54,7 @@ personal_website/
 │
 ├── aventuras/
 │   ├── index.qmd           ← la lista de aventuras
+│   ├── _ejemplo/           ← aventura de referencia (no se publica)
 │   └── <año>/<mes>-<nombre>/            ← ✏️ cada aventura
 │       ├── index.qmd       ← el texto
 │       ├── _originales/    ← tus fotos tal cual (no se publican ni se suben a git)

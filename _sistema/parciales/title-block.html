@@ -1,6 +1,7 @@
 <!-- Copia del title-block.html de Quarto con migas de pan al principio.
      Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
-     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera. -->
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
 <header id="title-block-header" class="quarto-title-block default">
 $if(migas)$
 <nav class="migas" aria-label="Migas de pan">
@@ -13,6 +14,12 @@ $if(migas)$
 </nav>
 $endif$
 <div class="quarto-title">
+$if(proyecto-logo)$
+<img class="perfil-logo proyecto-logo" src="$proyecto-logo$" alt="">
+$endif$
+$if(tipo)$
+<p class="proyecto-tipo">$tipo$</p>
+$endif$
 $if(title)$
 <h1 class="title">$title$</h1>
 $endif$
@@ -48,6 +55,30 @@ $if(datos)$
   <li>$datos$</li>
   $endfor$
 </ul>
+$endif$
+
+$if(codigo)$
+<div class="proyecto-acciones">
+$elseif(demo)$
+<div class="proyecto-acciones">
+$elseif(enlace)$
+<div class="proyecto-acciones">
+$endif$
+$if(codigo)$
+  <a class="btn perfil-boton" href="$codigo$" target="_blank" rel="noopener"><i class="bi bi-github"></i> Ver código</a>
+$endif$
+$if(demo)$
+  <a class="btn perfil-boton-sec" href="$demo$" target="_blank" rel="noopener"><i class="bi bi-play-circle"></i> Probar demo</a>
+$endif$
+$if(enlace)$
+  <a class="btn perfil-boton-sec" href="$enlace$" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Web del proyecto</a>
+$endif$
+$if(codigo)$
+</div>
+$elseif(demo)$
+</div>
+$elseif(enlace)$
+</div>
 $endif$
 
 $title-metadata.html()$

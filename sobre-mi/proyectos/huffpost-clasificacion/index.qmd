@@ -1,0 +1,24 @@
+---
+title: "Clasificación de noticias de HuffPost"
+description: "Clasificador de texto con TF-IDF y SVM lineal, con optimización de hiperparámetros y evaluación con matriz de confusión."
+tipo: "Procesamiento del lenguaje"
+date: 2025-04-22
+categories: [Python, scikit-learn, NLP]
+codigo: https://github.com/thisisjosepablo/huffpost_analysis
+---
+
+## Qué es
+
+Un sistema de **clasificación de texto** aplicado a datos de noticias de HuffPost, construido con máquinas de vectores de soporte.
+
+## Flujo de trabajo
+
+1. **Preparación de datos**: unión y preprocesado de los textos.
+2. **Vectorización TF-IDF** y generación de *embeddings*.
+3. **Entrenamiento** de un modelo `LinearSVC`.
+4. **Optimización de hiperparámetros** y **evaluación**, con visualización de la matriz de confusión.
+5. Las predicciones, gráficos y el modelo serializado se guardan como resultados.
+
+## Stack
+
+Python 3.8+, scikit-learn y joblib.

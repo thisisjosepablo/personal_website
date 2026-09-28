@@ -1,0 +1,26 @@
+---
+title: "Proyectos"
+subtitle: "Lo que he construido: sistemas de recomendación, inteligencia artificial, datos y optimización."
+toc: false
+# La lista de proyectos no es un proyecto: sus migas llevan solo a "Sobre mí"
+migas:
+  - texto: Sobre mí
+    enlace: /sobre-mi/index.qmd
+# Cada proyecto es una carpeta sobre-mi/proyectos/<nombre>/ con su index.qmd (crea uno con: ./web proyecto "Nombre")
+listing:
+  id: todos-los-proyectos
+  contents: "*/index.qmd"
+  template: ../../_sistema/plantillas/perfil-proyectos.ejs
+  sort: "date desc"
+  date-format: "MMM YYYY"
+  categories: true
+  filter-ui: true
+  sort-ui: false
+---
+
+::: {.perfil-card}
+::: {#todos-los-proyectos}
+:::
+:::
+
+Hay más experimentos y prácticas en mi [perfil de GitHub](https://github.com/thisisjosepablo).

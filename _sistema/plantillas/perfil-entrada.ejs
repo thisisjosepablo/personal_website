@@ -11,6 +11,10 @@
     if (!p) return s ?? "";
     return p.m ? `${MESES[p.m - 1]} ${p.y}` : `${p.y}`;
   };
+  // Autores con tu nombre resaltado (cualquier autor que contenga "Soriano")
+  const esc = (t) => String(t).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const autores = (t) => String(t).split(",").map((a) => a.trim()).filter(Boolean)
+    .map((a) => /soriano/i.test(a) ? `<strong>${esc(a)}</strong>` : esc(a)).join(", ");
   // Duración en años y meses, contando el mes de inicio (como LinkedIn)
   const duracion = (a, b) => {
     const p = leer(a);
@@ -37,21 +41,40 @@
       <% const linea = [item.entidad, item.tipo].filter(Boolean).join(" · "); %>
       <% if (linea) { %><div class="perfil-entrada-entidad"><%= linea %></div><% } %>
       <% if (item.inicio) { %>
-        <% const d = duracion(item.inicio, item.fin); %>
-        <div class="perfil-entrada-meta"><%= fecha(item.inicio) %> – <%= item.fin ? fecha(item.fin) : "actualidad" %><%= d ? " · " + d : "" %></div>
+        <%/* Como en la formación de LinkedIn: solo fechas; la duración únicamente si se indica a mano (duracion) */%>
+        <div class="perfil-entrada-meta"><%= fecha(item.inicio) %> – <%= item.fin ? fecha(item.fin) : "actualidad" %><%= item.duracion ? " · " + item.duracion : "" %></div>
       <% } else if (item.fecha) { %>
         <div class="perfil-entrada-meta"><%= fecha(item.fecha) %></div>
       <% } %>
       <% const lugar = [item.ubicacion, item.modalidad].filter(Boolean).join(" · "); %>
       <% if (lugar) { %><div class="perfil-entrada-meta"><%= lugar %></div><% } %>
-      <% if (item.autores) { %><div class="perfil-entrada-meta"><%= item.autores %></div><% } %>
-      <% if (item.nota) { %><div class="perfil-entrada-meta">Nota: <%= item.nota %></div><% } %>
+      <% if (item.autores) { %><div class="perfil-entrada-meta perfil-autores"><%= autores(item.autores) %></div><% } %>
+      <% if (item.doi || item.acceso) { %>
+        <div class="perfil-entrada-meta perfil-doi">
+          <% if (item.acceso === "abierto") { %><span class="perfil-acceso"><i class="bi bi-unlock"></i> Acceso abierto</span><% } %>
+          <% if (item.doi) { %>DOI <a href="https://doi.org/<%- item.doi %>" target="_blank" rel="noopener"><%= item.doi %></a><% } %>
+        </div>
+      <% } %>
+      <% if (item.nota) { %><div class="perfil-entrada-meta">Nota media: <%= item.nota %></div><% } %>
+      <% if (item.asociado) { %>
+        <div class="perfil-asociado">
+          <% if (item.logo) { %>
+          <% } else if (item["asociado-logo"]) { %>
+            <img class="perfil-logo perfil-logo-mini" src="<%- item["asociado-logo"] %>" alt="">
+          <% } else { %>
+            <span class="perfil-logo perfil-siglas perfil-logo-mini" aria-hidden="true"><%= item["asociado-siglas"] || String(item.asociado).slice(0, 1) %></span>
+          <% } %>
+          Asociado con <% if (item["asociado-enlace"]) { %><a href="<%- item["asociado-enlace"] %>"><%= item.asociado %></a><% } else { %><%= item.asociado %><% } %>
+        </div>
+      <% } %>
       <% if (item.description) { %><p class="perfil-entrada-texto"><%= item.description %></p><% } %>
       <% if (item.aptitudes && item.aptitudes.length) { %>
         <div class="perfil-aptitudes"><i class="bi bi-gem"></i> <strong>Aptitudes:</strong> <%= item.aptitudes.join(" · ") %></div>
       <% } %>
-      <% if (item.enlace) { %>
-        <a class="btn perfil-boton-sec" href="<%- item.enlace %>" target="_blank" rel="noopener">Ver publicación <i class="bi bi-box-arrow-up-right"></i></a>
+      <% if (item.doi || item.enlace) { %>
+        <div class="perfil-botones-entrada">
+          <a class="btn perfil-boton-sec" href="<%- item.doi ? 'https://doi.org/' + item.doi : item.enlace %>" target="_blank" rel="noopener">Ver publicación <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
       <% } %>
     </div>
   </div>

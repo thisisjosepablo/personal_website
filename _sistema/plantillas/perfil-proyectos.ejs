@@ -1,7 +1,11 @@
 ```{=html}
 <%
   // Proyectos al estilo LinkedIn. Lee el front matter de cada sobre-mi/proyectos/*/index.qmd:
-  //   title, description, categories, inicio/fin ("AAAA-MM"), asociado, siglas, enlace
+  //   title, description, tipo, date (o inicio/fin "AAAA-MM"), categories (aptitudes),
+  //   asociado + siglas o asociado-logo (ruta desde la carpeta del proyecto),
+  //   codigo (repositorio), demo, enlace (web del proyecto), proyecto-logo (opcional, ruta desde su carpeta)
+  // La ruta del logo se resuelve desde la carpeta del proyecto, así funciona en cualquier lista.
+  const desdeProyecto = (item, ruta) => String(item.path).replace(/[^/]*$/, "") + ruta;
   const MESES = ["ene.", "feb.", "mar.", "abr.", "may.", "jun.", "jul.", "ago.", "sept.", "oct.", "nov.", "dic."];
   const fecha = (s) => {
     const m = /^(\d{4})(?:-(\d{1,2}))?$/.exec(String(s ?? "").trim());
@@ -11,27 +15,37 @@
 %>
 <div class="list perfil-lista">
 <% for (const item of items) { %>
-  <div class="perfil-entrada sin-logo" <%= metadataAttrs(item) %>>
+  <div class="perfil-entrada <%= item["proyecto-logo"] ? "" : "sin-logo" %>" <%= metadataAttrs(item) %>>
+    <% if (item["proyecto-logo"]) { %>
+      <img class="perfil-logo" src="<%- desdeProyecto(item, item["proyecto-logo"]) %>" alt="" loading="lazy">
+    <% } %>
     <div class="perfil-entrada-cuerpo">
       <div class="perfil-entrada-titulo listing-title"><a href="<%- item.path %>"><%= item.title %></a></div>
+      <% if (item.tipo) { %><div class="perfil-entrada-entidad"><%= item.tipo %></div><% } %>
       <% if (item.inicio) { %>
         <div class="perfil-entrada-meta"><%= fecha(item.inicio) %> – <%= item.fin ? fecha(item.fin) : "actualidad" %></div>
+      <% } else if (item.date) { %>
+        <div class="perfil-entrada-meta listing-date"><%= item.date %></div>
       <% } %>
       <% if (item.asociado) { %>
         <div class="perfil-asociado">
-          <span class="perfil-logo perfil-siglas perfil-logo-mini" aria-hidden="true"><%= item.siglas || item.asociado.slice(0, 1) %></span>
+          <% if (item["asociado-logo"]) { %>
+            <img class="perfil-logo perfil-logo-mini" src="<%- desdeProyecto(item, item["asociado-logo"]) %>" alt="">
+          <% } else { %>
+            <span class="perfil-logo perfil-siglas perfil-logo-mini" aria-hidden="true"><%= item.siglas || item.asociado.slice(0, 1) %></span>
+          <% } %>
           Asociado con <%= item.asociado %>
         </div>
       <% } %>
-      <% if (item.description) { %><p class="perfil-entrada-texto"><%= item.description %></p><% } %>
+      <% if (item.description) { %><p class="perfil-entrada-texto listing-description"><%= item.description %></p><% } %>
       <% if (item.categories && item.categories.length) { %>
         <div class="perfil-aptitudes"><i class="bi bi-gem"></i> <strong>Aptitudes:</strong> <%= item.categories.join(" · ") %></div>
       <% } %>
       <div class="perfil-botones-entrada">
         <a class="btn perfil-boton-sec" href="<%- item.path %>">Ver proyecto</a>
-        <% if (item.enlace) { %>
-          <a class="btn perfil-boton-sec" href="<%- item.enlace %>" target="_blank" rel="noopener">Web <i class="bi bi-box-arrow-up-right"></i></a>
-        <% } %>
+        <% if (item.codigo) { %><a class="btn perfil-boton-sec" href="<%- item.codigo %>" target="_blank" rel="noopener"><i class="bi bi-github"></i> Código</a><% } %>
+        <% if (item.demo) { %><a class="btn perfil-boton-sec" href="<%- item.demo %>" target="_blank" rel="noopener"><i class="bi bi-play-circle"></i> Demo</a><% } %>
+        <% if (item.enlace) { %><a class="btn perfil-boton-sec" href="<%- item.enlace %>" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i> Web</a><% } %>
       </div>
     </div>
   </div>

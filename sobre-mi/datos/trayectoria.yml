@@ -1,27 +1,70 @@
 # Trayectoria profesional, de la más reciente a la más antigua (se muestra en este orden).
+# Los puestos seguidos en la misma entidad se agrupan solos bajo un único logo, como en LinkedIn.
 # Campos:
 #   title:       puesto
-#   entidad:     empresa, universidad o grupo
-#   tipo:        Jornada completa, Media jornada, Contrato de investigación, Prácticas…
-#   inicio/fin:  "AAAA-MM" (sin fin = actualidad). La duración se calcula sola.
+#   entidad:     empresa, universidad o grupo (escríbela igual en todos sus puestos para agruparlos)
+#   tipo:        Jornada completa, Media jornada, Contrato de investigación, Beca, Prácticas…
+#   inicio/fin:  "AAAA-MM" (o "AAAA" si no recuerdas el mes). Sin fin = actualidad.
+#                La duración se calcula sola cuando las fechas llevan mes; la de lo que sigue en
+#                curso la calcula el navegador al abrir la página, así nunca se queda desfasada.
 #   ubicacion:   ciudad, región, país
 #   modalidad:   Presencial, Híbrido, En remoto
 #   siglas:      texto del cuadrado del logo si no hay imagen (p. ej. UJA)
-#   logo:        imagen del logo (opcional, p. ej. imagenes/logos/uja.png dentro de sobre-mi/)
+#   logo:        imagen del logo, cuadrada (opcional; ruta desde sobre-mi/, p. ej. imagenes/logos/uja.webp)
+#   proyecto:    nombre del proyecto (opcional); proyecto-enlace: su página en la web
 #   description: qué haces o hiciste
 #   aptitudes:   lista de habilidades
 
 - title: "Investigador"
   entidad: "Universidad de Jaén"
-  tipo: "TODO: tipo de contrato"
-  inicio: "TODO"
+  inicio: "2026-09"
   ubicacion: "Jaén, Andalucía, España"
-  modalidad: "TODO: Presencial / Híbrido"
   siglas: "UJA"
+  logo: imagenes/logos/uja.webp
+  proyecto: "Avances en el desarrollo de modelos de IA confiable para contribuir a la adopción y uso de IA responsable en Salud"
   description: >-
-    Aplico ciencia de datos, machine learning y deep learning al análisis de imágenes de
-    pacientes ostomizados en el proyecto EPPIA.
-  aptitudes: [Deep learning, Machine learning, Ciencia de datos, Imagen médica]
+    Investigación en modelos de inteligencia artificial confiable para impulsar una adopción
+    responsable de la IA en el ámbito sanitario.
+  aptitudes: [IA confiable, IA responsable, Machine learning, Salud digital]
 
+- title: "Investigador"
+  entidad: "Universidad de Jaén"
+  inicio: "2025-10"
+  fin: "2026-08"
+  ubicacion: "Jaén, Andalucía, España"
+  siglas: "UJA"
+  logo: imagenes/logos/uja.webp
+  proyecto: "EPPIA"
+  proyecto-enlace: https://proyectoeppia.com
+  description: >-
+    Ciencia de datos, machine learning y deep learning aplicados al análisis de imágenes de
+    pacientes ostomizados. Coautor del artículo publicado en Nursing Research and Practice (2026).
+  aptitudes: [Deep learning, Visión por computador, Machine learning, Imagen médica]
 
+- title: "Becario de colaboración"
+  entidad: "Universidad de Jaén"
+  tipo: "Beca de colaboración"
+  inicio: "2024-09"
+  fin: "2025-06"
+  ubicacion: "Jaén, Andalucía, España"
+  siglas: "UJA"
+  logo: imagenes/logos/uja.webp
+  description: >-
+    Revisión bibliográfica sobre métodos de detección e identificación de defectos en paneles
+    fotovoltaicos: análisis y clasificación de las técnicas existentes y construcción de una
+    taxonomía de los métodos. Estudio del diseño de sistemas RAG sobre distintos LLM para
+    abordar la tarea del proyecto y redacción de la documentación.
+  aptitudes: [Revisión bibliográfica, RAG, LLM, Documentación técnica]
 
+- title: "Desarrollador Python en prácticas"
+  entidad: "Yusapi"
+  tipo: "Prácticas"
+  inicio: "2024-06"
+  fin: "2024-08"
+  ubicacion: "Jaén, Andalucía, España"
+  siglas: "YU"
+  logo: imagenes/logos/yusapi.webp
+  description: >-
+    Automatización con Python de los procesos de un servicio de impresión que vendía sus
+    productos a través de Amazon y de su propia tienda online.
+  aptitudes: [Python, Automatización de procesos, Comercio electrónico]

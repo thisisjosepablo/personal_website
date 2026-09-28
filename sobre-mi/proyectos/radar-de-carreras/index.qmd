@@ -1,0 +1,30 @@
+---
+title: "Radar de Carreras"
+description: "Sistema de recomendación de carreras populares, trail y maratones en Andalucía: cada día selecciona 3 carreras y las publica en una comunidad de WhatsApp."
+tipo: "Proyecto propio · En curso"
+# date: AAAA-MM-DD      # sin fecha, aparece el primero de la lista de proyectos
+inicio: "2026-06"
+categories: [Sistema de recomendación, Producto digital, Comunidad, Running]   # puedes añadir aquí las tecnologías que usa
+enlace: https://www.radardecarreras.es
+proyecto-logo: ../../imagenes/logos/radar.webp   # ruta desde la carpeta del proyecto
+---
+
+## Qué es
+
+**Radar de Carreras** reúne en un solo sitio las carreras populares, pruebas de *trail running* y maratones de las ocho provincias de Andalucía. Las carreras suelen estar repartidas entre cientos de webs y redes sociales, y muchas veces se descubren cuando ya no quedan dorsales: el radar hace ese trabajo por el corredor.
+
+## Cómo funciona
+
+1. **Rastrea el calendario andaluz** de carreras, semana a semana.
+2. **Evalúa cada carrera** con criterios propios: recorrido, organización, precio y disponibilidad de dorsales, resumidos en un ***Radar Score***.
+3. **Publica cada día 3 carreras recomendadas** en una comunidad de WhatsApp, sin *spam*: cada una con su ubicación, fecha, precio y enlace de inscripción.
+
+Además de las recomendaciones diarias, la web ofrece un calendario mensual de carreras.
+
+## Hacia dónde va
+
+El objetivo es construir el mayor radar de carreras populares de Andalucía: empezar con las recomendaciones diarias y evolucionar hacia una plataforma para descubrir, comparar y encontrar la próxima carrera.
+
+## Mi papel
+
+Es un proyecto mío de principio a fin, que empecé en junio de 2026: desde la idea y el desarrollo del sistema de recomendación hasta la selección diaria de carreras y la gestión de la comunidad. La comunidad de WhatsApp va creciendo poco a poco mientras sigo mejorando el sistema.

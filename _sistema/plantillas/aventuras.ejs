@@ -1,4 +1,10 @@
 ```{=html}
+<% if (items.length === 0) { %>
+  <div class="aventuras-vacio">
+    <i class="bi bi-compass"></i>
+    <p>Todavía no hay aventuras publicadas.<br>Las primeras rutas están en camino.</p>
+  </div>
+<% } %>
 <div class="list aventuras-lista">
 <% for (const item of items) { %>
   <article class="aventura" <%= metadataAttrs(item) %>>

@@ -1,15 +1,42 @@
-# Formación académica, de la más reciente a la más antigua.
-# Campos: title (titulación), entidad (centro), inicio/fin ("AAAA-MM" o "AAAA"), siglas/logo,
-#         nota (opcional), description (opcional), aptitudes (opcional)
+# Formación académica y complementaria, de la más reciente a la más antigua.
+# Campos:
+#   title:       titulación o curso
+#   entidad:     centro (universidad, escuela…)
+#   tipo:        opcional (p. ej. Escuela de verano, Curso)
+#   inicio/fin:  "AAAA-MM" (o "AAAA"). Sin fin = en curso.
+#   duracion:    opcional, se muestra junto a las fechas (p. ej. "4 semanas" en cursos cortos)
+#   ubicacion:   opcional
+#   logo:        imagen del logo (ruta desde sobre-mi/); siglas: texto si no hay logo
+#   nota:        nota media (opcional)
+#   description: logros, contenido… (opcional)
+#   aptitudes:   lista de habilidades (opcional)
 
 - title: "Máster en Health Data Science"
   entidad: "Universitat Rovira i Virgili (URV)"
-  inicio: "TODO"
+  inicio: "2025-09"
   siglas: "URV"
+  logo: imagenes/logos/urv.webp
+  description: "Máster de dos años."
   aptitudes: [Ciencia de datos, Salud digital]
 
-- title: "TODO: grado"
-  entidad: "TODO: universidad"
-  inicio: "TODO"
-  fin: "TODO"
-  siglas: "?"
+- title: "Escuela de verano de robótica"
+  entidad: "Universidad de Örebro"
+  tipo: "Escuela de verano"
+  inicio: "2025-07"
+  fin: "2025-08"
+  duracion: "4 semanas"
+  ubicacion: "Örebro, Suecia"
+  siglas: "ÖU"
+  logo: imagenes/logos/orebro.webp
+  description: "Del 15 de julio al 8 de agosto: robótica con ROS y Python."
+  aptitudes: [ROS, Python, Robótica]
+
+- title: "Grado en Ingeniería Informática"
+  entidad: "Universidad de Jaén"
+  inicio: "2021-09"
+  fin: "2025-06"
+  siglas: "UJA"
+  logo: imagenes/logos/uja.webp
+  nota: "9,4"
+  description: >-
+    Obtuve matrícula de honor en el 51% de las asignaturas.

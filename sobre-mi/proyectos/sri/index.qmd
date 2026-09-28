@@ -1,0 +1,24 @@
+---
+title: "Sistema de Recuperación de Información"
+description: "Motor de búsqueda sobre un corpus de Wikipedia con índice invertido, ponderación TF-IDF y búsqueda BM25."
+tipo: "Recuperación de información"
+date: 2024-05-09
+categories: [Python, NLTK, pandas, SciPy]
+codigo: https://github.com/thisisjosepablo/SRI
+---
+
+## Qué es
+
+Un sistema de recuperación de información (SRI) escrito en Python que **indexa documentos y permite consultarlos** de forma eficiente. Trabaja sobre un corpus de Wikipedia y sigue el flujo clásico de procesamiento documental, módulo a módulo.
+
+## Qué incluye
+
+- **Preprocesado**: tokenización, normalización, eliminación de palabras vacías y *stemming* (Porter y Snowball).
+- **Indexación**: construcción de un índice invertido con ponderación **TF-IDF**.
+- **Búsqueda**: varios algoritmos, incluidos **BM25** y reordenación (*reranking*) de resultados.
+- **Expansión de documentos** con factores configurables.
+- **Configuración en JSON**, separada para el procesado de documentos y para las consultas.
+
+## Stack
+
+Python 3 con `bs4`, `pandas`, `unidecode`, `nltk`, `scipy` y `clize`.

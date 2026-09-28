@@ -38,6 +38,9 @@ website:
       - icon: github
         aria-label: GitHub
         href: https://github.com/thisisjosepablo
+      - icon: twitter-x
+        aria-label: X (Twitter)
+        href: https://x.com/thisisjosepablo
       - icon: envelope
         aria-label: Email
         href: "#email"   # se completa con _sistema/includes/email.html

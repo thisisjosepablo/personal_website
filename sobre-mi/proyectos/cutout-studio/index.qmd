@@ -1,0 +1,28 @@
+---
+title: "Cutout Studio"
+description: "Herramienta autoalojada para quitar el fondo de imágenes: recorte automático con IA y refinado manual con un clic."
+tipo: "Visión por computador"
+date: 2026-07-27
+categories: [Python, FastAPI, PyTorch, Docker, JavaScript]
+codigo: https://github.com/thisisjosepablo/remove-bg
+---
+
+## Qué es
+
+Una aplicación libre y autoalojada para eliminar el fondo de imágenes. Combina un **recorte automático** con un modo de **refinado manual**, pensado para uso personal en tu propio equipo en lugar de depender de un servicio externo.
+
+## Cómo funciona
+
+1. **Recorte automático** con [BiRefNet](https://github.com/ZhengPeng7/BiRefNet): subes una imagen y obtienes la máscara y un PNG con fondo transparente.
+2. **Refinado manual** con [SAM2](https://github.com/facebookresearch/sam2) (Meta): haces clic para incluir o excluir regiones, o dibujas un recuadro, para corregir los bordes.
+3. Las sesiones se mantienen en memoria, un diseño deliberadamente simple para un uso personal.
+
+## Decisiones técnicas
+
+- **Un único backend en FastAPI** y un frontend en HTML, CSS y JavaScript sin paso de compilación.
+- Funciona en **CPU o GPU NVIDIA**, con imágenes Docker para ambos casos.
+- Los modelos se descargan desde Hugging Face.
+
+## Licencia
+
+Código bajo licencia MIT. Modelos: BiRefNet (MIT) y SAM2 (Apache-2.0).

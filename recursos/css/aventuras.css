@@ -97,3 +97,22 @@ h3.aventura-titulo {
 main.content .lightbox img {
   border-radius: 0.6rem;
 }
+
+/* Mensaje cuando aún no hay aventuras publicadas (desaparece solo con la primera) */
+.aventuras-vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 1rem;
+  border: 1px dashed var(--sendero-border);
+  border-radius: 0.75rem;
+  opacity: 0.8;
+}
+
+.aventuras-vacio .bi {
+  font-size: 2rem;
+  color: var(--sendero-primary);
+}
+
+.aventuras-vacio p {
+  margin: 0.5rem 0 0;
+}

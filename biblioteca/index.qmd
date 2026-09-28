@@ -19,7 +19,10 @@ listing:
 
 [Ex libris de José Pablo Soriano Torres]{.exlibris-cabecera role="img" aria-label="Ex libris de José Pablo Soriano Torres"}
 
-Para añadir un libro, edita `biblioteca/datos/libros.yml`.
+::: {style="text-align: center; padding: 2.5rem;  margin: 2rem 0;"}
+## 🚧 Biblioteca bajo construcción 🚧 
+:::
+
 
 ## 📖 Leyendo ahora
 

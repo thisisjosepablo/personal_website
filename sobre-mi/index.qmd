@@ -1,11 +1,14 @@
 ---
 pagetitle: "Sobre mí"
-toc: false
+# Índice lateral con las secciones del perfil; resalta la sección visible al hacer scroll
+toc: true
+toc-title: "En esta página"
+toc-depth: 2
 # Cada tarjeta carga sus datos de sobre-mi/datos/*.yml (y los proyectos de sobre-mi/proyectos/)
 listing:
   - id: trayectoria
     contents: datos/trayectoria.yml
-    template: ../_sistema/plantillas/perfil-entrada.ejs
+    template: ../_sistema/plantillas/perfil-trayectoria.ejs
     sort: false
   - id: formacion
     contents: datos/formacion.yml
@@ -15,6 +18,8 @@ listing:
     contents: "proyectos/*/index.qmd"
     template: ../_sistema/plantillas/perfil-proyectos.ejs
     sort: "date desc"
+    date-format: "MMM YYYY"
+    max-items: 3                 # el resto, en sobre-mi/proyectos/ ("Mostrar todos los proyectos")
   - id: publicaciones
     contents: datos/publicaciones.yml
     template: ../_sistema/plantillas/perfil-entrada.ejs
@@ -44,12 +49,14 @@ listing:
         <p class="perfil-ubicacion">Jaén, Andalucía, España · <a href="#email">Información de contacto</a></p>
         <div class="perfil-acciones">
           <a class="btn perfil-boton" href="#email"><i class="bi bi-envelope"></i> Contactar</a>
+          <a class="btn perfil-boton-sec" href="https://orcid.org/0009-0008-3150-2528" rel="me" aria-label="ORCID 0009-0008-3150-2528"><svg class="orcid-id" viewBox="0 0 256 256" aria-hidden="true"><path fill="#A6CE39" d="M256 128c0 70.7-57.3 128-128 128S0 198.7 0 128 57.3 0 128 0s128 57.3 128 128z"/><path fill="#fff" d="M86.3 186.2H70.9V79.1h15.4v107.1zM108.9 79.1h41.6c39.6 0 57 28.3 57 53.6 0 27.5-21.5 53.6-56.8 53.6h-41.8V79.1zm15.4 93.3h24.5c34.9 0 42.9-26.5 42.9-39.7 0-21.5-13.7-39.7-43.7-39.7h-23.7v79.4zM88.7 56.8c0 5.5-4.5 10.1-10.1 10.1s-10.1-4.6-10.1-10.1c0-5.6 4.5-10.1 10.1-10.1s10.1 4.5 10.1 10.1z"/></svg> ORCID</a>
           <a class="btn perfil-boton-sec perfil-boton-icono" href="https://github.com/thisisjosepablo" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a class="btn perfil-boton-sec perfil-boton-icono" href="https://x.com/thisisjosepablo" rel="me" aria-label="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
         </div>
       </div>
       <ul class="perfil-organizaciones">
-        <li><span class="perfil-logo perfil-siglas perfil-logo-mini">UJA</span> Universidad de Jaén</li>
-        <li><span class="perfil-logo perfil-siglas perfil-logo-mini">URV</span> Universitat Rovira i Virgili</li>
+        <li><img class="perfil-logo perfil-logo-mini" src="imagenes/logos/uja.webp" alt=""> Universidad de Jaén</li>
+        <li><img class="perfil-logo perfil-logo-mini" src="imagenes/logos/urv.webp" alt=""> Universitat Rovira i Virgili</li>
       </ul>
     </div>
   </div>
@@ -59,9 +66,9 @@ listing:
 ::: {.perfil-card}
 ## Acerca de
 
-Soy investigador en la Universidad de Jaén, donde aplico ciencia de datos, *machine learning* y *deep learning* al análisis de imágenes de pacientes ostomizados en el proyecto [EPPIA](https://proyectoeppia.com). Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible.
+Vengo de **Santisteban del Puerto**, un pueblo de la provincia de Jaén de raíces íberas y con menos de 5000 habitantes. De pequeño me encantaban las novelas policiacas y quería ser forense, pero a medida que fui creciendo, las consolas, los móviles y los ordenadores me hicieron cambiar de rumbo hacia la informática. Con los años, la medicina ha vuelto a cruzarse en mi camino, esta vez a través de los datos.
 
-TODO: amplía con tu historia. De dónde vienes, cómo llegaste a la informática y a la salud, y qué te motiva.
+Hoy soy investigador en la Universidad de Jaén, en un proyecto sobre modelos de **IA confiable** para impulsar un uso responsable de la inteligencia artificial en salud. Antes trabajé en el proyecto [EPPIA](https://proyectoeppia.com), aplicando ciencia de datos, *machine learning* y *deep learning* al análisis de imágenes de pacientes ostomizados. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible.
 :::
 
 ::: {.perfil-card}
@@ -83,6 +90,8 @@ TODO: amplía con tu historia. De dónde vienes, cómo llegaste a la informátic
 
 ::: {#proyectos}
 :::
+
+[Mostrar todos los proyectos →](proyectos/index.qmd){.perfil-ver-todo}
 :::
 
 ::: {.perfil-card}
@@ -90,6 +99,8 @@ TODO: amplía con tu historia. De dónde vienes, cómo llegaste a la informátic
 
 ::: {#publicaciones}
 :::
+
+[Ver todas mis publicaciones en ORCID →](https://orcid.org/0009-0008-3150-2528){.perfil-ver-todo}
 :::
 
 ::: {.perfil-card}
@@ -105,3 +116,18 @@ TODO: amplía con tu historia. De dónde vienes, cómo llegaste a la informátic
 ::: {#reconocimientos}
 :::
 :::
+
+```{=html}
+<script>
+  // Duración de lo que sigue en curso ("sept. 2026 – actualidad · 1 mes"), calculada al abrir la
+  // página para que la web estática nunca muestre una duración desfasada. Cuenta el mes de inicio.
+  document.querySelectorAll(".duracion-viva").forEach(function (el) {
+    var p = el.dataset.inicio.split("-").map(Number), hoy = new Date();
+    var n = (hoy.getFullYear() - p[0]) * 12 + (hoy.getMonth() + 1 - p[1]) + 1;
+    if (!p[1] || n < 1) return;
+    var a = Math.floor(n / 12), m = n % 12;
+    el.textContent = " · " + [a ? a + (a === 1 ? " año" : " años") : "", m ? m + (m === 1 ? " mes" : " meses") : ""]
+      .filter(Boolean).join(" ");
+  });
+</script>
+```

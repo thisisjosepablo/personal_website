@@ -1,8 +1,29 @@
-# Reconocimientos y premios.
-# Campos: title, entidad (quién lo concede), fecha ("AAAA-MM"), asociado (opcional), description
+# Reconocimientos y premios, del más reciente al más antiguo.
+# Campos:
+#   title:           nombre del reconocimiento
+#   entidad:         quién lo concede
+#   fecha:           "AAAA-MM" (o "AAAA")
+#   asociado:        estudios o puesto con el que está relacionado (opcional)
+#   logo:            logo de quien lo concede (ruta desde sobre-mi/, p. ej. imagenes/logos/uja.webp)
+#   asociado-logo:   logo del cuadradito de "Asociado con" (solo si la entrada no lleva logo propio)
+#   description:     breve descripción (opcional)
 # Para ocultar la sección, borra su bloque ("::: {.perfil-card}" … ":::") en sobre-mi/index.qmd.
 
-- title: "TODO: nombre del reconocimiento"
-  entidad: "TODO: entidad que lo concede"
-  fecha: "TODO"
-  description: "TODO: breve descripción."
+- title: "Premio Extraordinario de Grado"
+  entidad: "Universidad de Jaén"
+  fecha: "2025"
+  logo: imagenes/logos/uja.webp
+  asociado: "Grado en Ingeniería Informática"
+
+- title: "Reconocimiento al mejor expediente del curso 2024/2025"
+  entidad: "Universidad de Jaén"
+  fecha: "2025"
+  logo: imagenes/logos/uja.webp
+  asociado: "Grado en Ingeniería Informática"
+  description: "Nota media de 9,4 y 20 matrículas de honor."
+
+- title: "Beca de Excelencia 360"
+  entidad: "Banco Santander"
+  logo: imagenes/logos/santander.webp
+  fecha: "2025"
+  description: "Beca muy competitiva, concedida a estudiantes con trayectoria académica destacada."

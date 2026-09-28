@@ -2,27 +2,53 @@
 #   estado:  leyendo | leido | pendiente
 #   rating:  1-5 (solo para leídos)
 #   image:   portada; con ISBN puedes usar https://covers.openlibrary.org/b/isbn/<ISBN>-M.jpg
+#            (si esa URL sale vacía, busca el libro en openlibrary.org y usa .../b/id/<número de portada>-M.jpg)
 #   date:    fecha en que lo terminaste (o empezaste, si lo estás leyendo)
 
-- title: "Dune"
-  autor: "Frank Herbert"
-  image: https://covers.openlibrary.org/b/isbn/9780441172719-M.jpg
+- title: "Patria"
+  autor: "Fernando Aramburu"
+  image: https://covers.openlibrary.org/b/id/12334964-M.jpg   # su ISBN no tiene portada en Open Library
   categories: [leyendo]
-  date: 2026-09-10
-  description: "TODO: primeras impresiones."
+  date: 2026-07-28
+  description: ""
 
-- title: "Sapiens"
-  autor: "Yuval Noah Harari"
-  image: https://covers.openlibrary.org/b/isbn/9780062316097-M.jpg
+# Trilogía "La asistenta" (Freida McFadden), en orden de lectura
+- title: "La asistenta"
+  autor: "Freida McFadden"
+  image: https://covers.openlibrary.org/b/isbn/9788491294283-M.jpg
   categories: [leido]
-  date: 2026-08-15
+  date: 2026-01     # TODO: cuándo lo terminaste (ordena la lista de leídos)
+  rating: 5          # TODO: tu valoración
+  description: ""
+
+- title: "El secreto de la asistenta"
+  autor: "Freida McFadden"
+  image: https://covers.openlibrary.org/b/isbn/9788419835734-M.jpg
+  categories: [leido]
+  date: 2026-01
   rating: 4
-  description: "TODO: tu opinión en una línea."
+  description: ""
+
+- title: "La asistenta te vigila"
+  autor: "Freida McFadden"
+  image: https://covers.openlibrary.org/b/isbn/9788410257184-M.jpg
+  categories: [leido]
+  date: 2026-01
+  rating: 3
+  description: ""
 
 - title: "Hábitos atómicos"
   autor: "James Clear"
   image: https://covers.openlibrary.org/b/isbn/9780735211292-M.jpg
   categories: [leido]
-  date: 2026-06-02
+  date: 2025-06-02
+  rating: 3
+  description: ""
+
+- title: "Reina Roja"
+  autor: "Juan Gómez Jurado"
+  image: https://covers.openlibrary.org/b/id/9256100-M.jpg
+  categories: [leido]
+  date: 2026-09-28
   rating: 5
-  description: "TODO: tu opinión en una línea."
+  description: "Engancha la historia y sobretodo el persona principal"

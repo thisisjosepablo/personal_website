@@ -143,3 +143,74 @@
   color: var(--sendero-primary);
   opacity: 1;
 }
+
+/* Proyectos: tipo encima del título y botones de código / demo / web bajo la descripción */
+.proyecto-tipo {
+  margin: 0 0 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--sendero-primary);
+}
+
+.proyecto-acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.9rem 0 0.25rem;
+}
+
+/* Logo del proyecto en su página, encima del tipo (misma placa clara que en "Sobre mí") */
+.proyecto-logo {
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 0.6rem;
+  border-radius: 0.5rem;
+  background: #fff;
+  border: 1px solid var(--sendero-border);
+  padding: 3px;
+  object-fit: contain;
+}
+
+/* Índice lateral de la página ("En esta página"): resalta la sección visible al hacer scroll.
+   Lo usan "Sobre mí" y las páginas de proyecto. */
+#TOC #toc-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.6;
+  margin-bottom: 0.6rem;
+  border: none;
+}
+
+#TOC > ul {
+  border-left: 2px solid var(--sendero-border);
+  padding-left: 0;
+}
+
+#TOC .nav-link {
+  display: block;
+  font-size: 0.86rem;
+  line-height: 1.35;
+  padding: 0.3rem 0 0.3rem 0.85rem;
+  margin-left: -2px;
+  border-left: 2px solid transparent;
+  color: inherit;
+  opacity: 0.65;
+  transition: opacity 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+#TOC .nav-link:hover {
+  opacity: 1;
+}
+
+#TOC .nav-link.active {
+  opacity: 1;
+  font-weight: 600;
+  color: var(--sendero-primary);
+  border-left-color: var(--sendero-primary);
+}

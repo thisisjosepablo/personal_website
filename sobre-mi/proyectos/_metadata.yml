@@ -5,4 +5,4 @@ migas:
   - texto: Sobre mí
     enlace: /sobre-mi/index.qmd
   - texto: Proyectos
-    enlace: /sobre-mi/index.qmd#proyectos
+    enlace: /sobre-mi/proyectos/index.qmd

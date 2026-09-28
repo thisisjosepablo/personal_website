@@ -25,7 +25,7 @@ image: recursos/img/logo/og-exlibris.png
 :::
 
 ::: {.home-intro .column-screen-inset}
-Soy investigador en la Universidad de Jaén, donde aplico ciencia de datos, *machine learning* y *deep learning* al análisis de imágenes de pacientes ostomizados en el proyecto [EPPIA](https://proyectoeppia.com), entre otras cosas. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.
+Soy investigador en la Universidad de Jaén, donde trabajo en modelos de IA confiable para un uso responsable de la inteligencia artificial en salud; antes apliqué *deep learning* al análisis de imágenes de pacientes ostomizados en el proyecto [EPPIA](https://proyectoeppia.com). Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.
 :::
 
 <!-- Epígrafe: comprobar el texto exacto con la traducción de referencia antes de publicar -->

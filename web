@@ -21,6 +21,9 @@ import shutil
 import subprocess
 import sys
 import unicodedata
+import urllib.parse
+import urllib.request
+import json
 from pathlib import Path
 
 RAIZ = Path(__file__).resolve().parent
@@ -132,13 +135,16 @@ def proyecto(a):
     (carpeta / "index.qmd").write_text(f"""---
 title: {comillas(a.nombre)}
 description: "TODO: una línea que explique el proyecto."
-date: {HOY:%Y-%m-%d}
-inicio: "{HOY:%Y-%m}"          # se muestra en "Sobre mí" (sin fin = actualidad)
+tipo: "TODO: p. ej. Machine learning · Salud"
+date: {HOY:%Y-%m-%d}              # ordena la lista de proyectos (más recientes primero)
+categories: []                   # aptitudes/tecnologías: [Python, PyTorch…]
+# codigo: https://github.com/thisisjosepablo/…   # botón "Código"
+# demo: https://…                               # botón "Demo"
+# enlace: https://…                             # botón "Web" (web del proyecto)
+# inicio: "AAAA-MM"   # opcional: muestra "inicio – fin/actualidad" en vez de la fecha
 # fin: "AAAA-MM"
-categories: []                 # aptitudes: [Python, Deep learning…]
-# asociado: "Universidad de Jaén"
+# asociado: "Universidad de Jaén"               # opcional: "Asociado con…"
 # siglas: "UJA"
-# enlace: https://…
 ---
 
 ## Qué es
@@ -148,6 +154,30 @@ categories: []                 # aptitudes: [Python, Deep learning…]
 ## Enlaces
 """)
     creado(carpeta / "index.qmd", "rellena el proyecto; aparecerá solo en Sobre mí → Proyectos")
+
+
+def portada(isbn, titulo, autor):
+    """URL de portada de Open Library: la del ISBN si existe; si no, la de la edición que
+    encuentre buscando por título y autor. None si no hay ninguna (o no hay conexión)."""
+    def existe(url):
+        try:
+            with urllib.request.urlopen(url + "?default=false", timeout=15) as r:
+                return r.status == 200
+        except Exception:
+            return False
+    if isbn:
+        url = f"https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg"
+        if existe(url):
+            return url
+    try:
+        q = urllib.parse.urlencode({"title": titulo, "author": autor, "fields": "cover_i", "limit": 5})
+        with urllib.request.urlopen(f"https://openlibrary.org/search.json?{q}", timeout=15) as r:
+            for doc in json.load(r).get("docs", []):
+                if doc.get("cover_i"):
+                    return f"https://covers.openlibrary.org/b/id/{doc['cover_i']}-M.jpg"
+    except Exception:
+        pass
+    return None
 
 
 def libro(_):
@@ -166,8 +196,13 @@ def libro(_):
     opinion = input("Tu opinión en una línea: ").strip()
 
     bloque = [f"\n- title: {comillas(titulo)}", f"  autor: {comillas(autor)}"]
-    if isbn:
-        bloque.append(f"  image: https://covers.openlibrary.org/b/isbn/{isbn}-M.jpg")
+    print("\nBuscando la portada en Open Library…")
+    url = portada(isbn, titulo, autor)
+    if url:
+        bloque.append(f"  image: {url}")
+        print(f"  Portada: {url}  (ábrela para comprobar que es la edición correcta)")
+    else:
+        print("  No he encontrado portada: el libro se mostrará sin ella (puedes añadir 'image:' a mano).")
     bloque += [f"  categories: [{estado}]", f"  date: {HOY:%Y-%m-%d}"]
     if rating.isdigit():
         bloque.append(f"  rating: {max(1, min(5, int(rating)))}")
