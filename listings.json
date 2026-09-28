@@ -1,0 +1,44 @@
+[
+  {
+    "listing": "/sobre-mi/proyectos/index.html",
+    "items": [
+      "/sobre-mi/proyectos/radar-de-carreras/index.html",
+      "/sobre-mi/proyectos/rag-langchain/index.html",
+      "/sobre-mi/proyectos/papers2code/index.html",
+      "/sobre-mi/proyectos/cutout-studio/index.html",
+      "/sobre-mi/proyectos/physickd/index.html",
+      "/sobre-mi/proyectos/huffpost-clasificacion/index.html",
+      "/sobre-mi/proyectos/ahp-solver/index.html",
+      "/sobre-mi/proyectos/simplex-app/index.html",
+      "/sobre-mi/proyectos/sri/index.html"
+    ]
+  },
+  {
+    "listing": "/sobre-mi/index.html",
+    "items": [
+      "/sobre-mi/proyectos/radar-de-carreras/index.html",
+      "/sobre-mi/proyectos/rag-langchain/index.html",
+      "/sobre-mi/proyectos/papers2code/index.html",
+      "/sobre-mi/proyectos/cutout-studio/index.html",
+      "/sobre-mi/proyectos/physickd/index.html",
+      "/sobre-mi/proyectos/huffpost-clasificacion/index.html",
+      "/sobre-mi/proyectos/ahp-solver/index.html",
+      "/sobre-mi/proyectos/simplex-app/index.html",
+      "/sobre-mi/proyectos/sri/index.html"
+    ]
+  },
+  {
+    "listing": "/biblioteca/index.html",
+    "items": []
+  },
+  {
+    "listing": "/aventuras/index.html",
+    "items": []
+  },
+  {
+    "listing": "/notas/index.html",
+    "items": [
+      "/notas/2026/09-bienvenida/index.html"
+    ]
+  }
+]

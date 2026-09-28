@@ -1,0 +1,118 @@
+/* Aventuras: tarjetas con foto y cabecera de cada crónica.
+   Parte de los estilos de la web (recursos/css/). Los colores vienen de las variables
+   --sendero-* definidas en _sistema/tema/claro.scss y oscuro.scss */
+
+/* ---------- Aventuras ----------
+   Lista visual: tarjetas con foto de portada, de la más reciente a la más antigua */
+.aventuras-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.aventura-enlace {
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+  background: var(--sendero-card);
+  border: 1px solid var(--sendero-border);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.aventura-enlace:hover {
+  color: inherit;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(26, 48, 23, 0.15);
+}
+
+.aventura-portada {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.aventura-cuerpo {
+  padding: 1rem 1.1rem 1.2rem;
+}
+
+.aventura-meta {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+h3.aventura-titulo {
+  margin: 0.3rem 0 0.35rem;
+  font-size: 1.3rem;
+  border: none;
+}
+
+.aventura-resumen {
+  margin: 0;
+  font-size: 0.92rem;
+  opacity: 0.85;
+}
+
+/* Cabecera de cada crónica: lugar, coordenadas y datos del reto */
+.cronica-lugar {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 0.92rem;
+}
+
+.cronica-lugar .bi {
+  color: var(--sendero-primary);
+}
+
+.cronica-coords {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  opacity: 0.7;
+}
+
+.cronica-datos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.cronica-datos li {
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.1rem 0.6rem;
+  border-radius: 1rem;
+  background: var(--sendero-primary);
+  color: var(--sendero-bg);
+}
+
+/* Fotos dentro de la crónica: esquinas suaves como las tarjetas */
+.cronica-foto,
+main.content .lightbox img {
+  border-radius: 0.6rem;
+}
+
+/* Mensaje cuando aún no hay aventuras publicadas (desaparece solo con la primera) */
+.aventuras-vacio {
+  text-align: center;
+  padding: 3rem 1rem;
+  margin-top: 1rem;
+  border: 1px dashed var(--sendero-border);
+  border-radius: 0.75rem;
+  opacity: 0.8;
+}
+
+.aventuras-vacio .bi {
+  font-size: 2rem;
+  color: var(--sendero-primary);
+}
+
+.aventuras-vacio p {
+  margin: 0.5rem 0 0;
+}

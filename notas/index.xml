@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>José Pablo Soriano Torres</title>
+<link>https://thisisjosepablo.github.io/personal_website/notas/</link>
+<atom:link href="https://thisisjosepablo.github.io/personal_website/notas/index.xml" rel="self" type="application/rss+xml"/>
+<description>Web personal de José Pablo Soriano Torres: proyectos, notas, lecturas y aventuras.</description>
+<image>
+<url>https://thisisjosepablo.github.io/personal_website/recursos/img/logo/og-exlibris.png</url>
+<title>José Pablo Soriano Torres</title>
+<link>https://thisisjosepablo.github.io/personal_website/notas/</link>
+<height>76</height>
+<width>144</width>
+</image>
+<generator>quarto-1.9.38</generator>
+<lastBuildDate>Wed, 23 Sep 2026 22:00:00 GMT</lastBuildDate>
+<item>
+  <title>Bienvenida</title>
+  <dc:creator>José Pablo Soriano Torres</dc:creator>
+  <link>https://thisisjosepablo.github.io/personal_website/notas/2026/09-bienvenida/</link>
+  <description><![CDATA[ 
+
+
+<!-- Copia del title-block.html de Quarto con migas de pan al principio.
+     Las migas se definen con "migas" (lista de {texto, enlace}) en el _metadata.yml de cada carpeta.
+     En las aventuras muestra también lugar, coordenadas y datos si están en la cabecera;
+     en los proyectos, el tipo y los botones de código, demo y web. -->
+
+
+
+<p>Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)</p>
+<p>No me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.</p>
+<p>No obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.</p>
+<p>Así, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)</p>
+<p>En él, además de servir como portfolio, le daré las siguientes utilidades:</p>
+<ul>
+<li>Publicación de notas tanto profesionales como personales.</li>
+<li>Mantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.</li>
+<li>Sección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.</li>
+</ul>
+<p>Y bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.</p>
+<p>Post data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA.</p>
+
+
+
+ ]]></description>
+  <category>personal</category>
+  <guid>https://thisisjosepablo.github.io/personal_website/notas/2026/09-bienvenida/</guid>
+  <pubDate>Wed, 23 Sep 2026 22:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,380 @@
+[
+  {
+    "objectID": "sobre-mi/proyectos/sri/index.html",
+    "href": "sobre-mi/proyectos/sri/index.html",
+    "title": "Sistema de Recuperación de Información",
+    "section": "",
+    "text": "Un sistema de recuperación de información (SRI) escrito en Python que indexa documentos y permite consultarlos de forma eficiente. Trabaja sobre un corpus de Wikipedia y sigue el flujo clásico de procesamiento documental, módulo a módulo."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/sri/index.html#qué-es",
+    "href": "sobre-mi/proyectos/sri/index.html#qué-es",
+    "title": "Sistema de Recuperación de Información",
+    "section": "",
+    "text": "Un sistema de recuperación de información (SRI) escrito en Python que indexa documentos y permite consultarlos de forma eficiente. Trabaja sobre un corpus de Wikipedia y sigue el flujo clásico de procesamiento documental, módulo a módulo."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/sri/index.html#qué-incluye",
+    "href": "sobre-mi/proyectos/sri/index.html#qué-incluye",
+    "title": "Sistema de Recuperación de Información",
+    "section": "Qué incluye",
+    "text": "Qué incluye\n\nPreprocesado: tokenización, normalización, eliminación de palabras vacías y stemming (Porter y Snowball).\nIndexación: construcción de un índice invertido con ponderación TF-IDF.\nBúsqueda: varios algoritmos, incluidos BM25 y reordenación (reranking) de resultados.\nExpansión de documentos con factores configurables.\nConfiguración en JSON, separada para el procesado de documentos y para las consultas."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/sri/index.html#stack",
+    "href": "sobre-mi/proyectos/sri/index.html#stack",
+    "title": "Sistema de Recuperación de Información",
+    "section": "Stack",
+    "text": "Stack\nPython 3 con bs4, pandas, unidecode, nltk, scipy y clize."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/rag-langchain/index.html",
+    "href": "sobre-mi/proyectos/rag-langchain/index.html",
+    "title": "Sistema RAG con LangChain",
+    "section": "",
+    "text": "Un modelo de lenguaje solo conoce los datos con los que se entrenó. La generación aumentada por recuperación (RAG) resuelve esa limitación: antes de responder, el sistema busca los fragmentos relevantes en tus documentos y se los pasa al modelo como contexto."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/rag-langchain/index.html#el-problema",
+    "href": "sobre-mi/proyectos/rag-langchain/index.html#el-problema",
+    "title": "Sistema RAG con LangChain",
+    "section": "",
+    "text": "Un modelo de lenguaje solo conoce los datos con los que se entrenó. La generación aumentada por recuperación (RAG) resuelve esa limitación: antes de responder, el sistema busca los fragmentos relevantes en tus documentos y se los pasa al modelo como contexto."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/rag-langchain/index.html#qué-hace",
+    "href": "sobre-mi/proyectos/rag-langchain/index.html#qué-hace",
+    "title": "Sistema RAG con LangChain",
+    "section": "Qué hace",
+    "text": "Qué hace\n\nProcesa PDF y los divide en fragmentos.\nGenera embeddings y los guarda en una base de datos vectorial ChromaDB.\nResponde con atribución de fuentes: nombre del archivo, autor y número de página.\nLas respuestas se basan en tus documentos y no solo en lo que el modelo aprendió durante el entrenamiento."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/rag-langchain/index.html#stack",
+    "href": "sobre-mi/proyectos/rag-langchain/index.html#stack",
+    "title": "Sistema RAG con LangChain",
+    "section": "Stack",
+    "text": "Stack\n\nLangChain como framework de orquestación.\nAPI de Anthropic como modelo de lenguaje, configurable para usar otros LLM.\nChromaDB como almacén vectorial y Poetry para gestionar dependencias."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/physickd/index.html",
+    "href": "sobre-mi/proyectos/physickd/index.html",
+    "title": "PhysiCKD",
+    "section": "",
+    "text": "Una aplicación web pensada para profesionales sanitarios: introducen los datos del paciente (presión arterial, edad, valores de laboratorio…) y obtienen una estimación del riesgo de enfermedad renal crónica (ERC) acompañada de analíticas visuales."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/physickd/index.html#qué-es",
+    "href": "sobre-mi/proyectos/physickd/index.html#qué-es",
+    "title": "PhysiCKD",
+    "section": "",
+    "text": "Una aplicación web pensada para profesionales sanitarios: introducen los datos del paciente (presión arterial, edad, valores de laboratorio…) y obtienen una estimación del riesgo de enfermedad renal crónica (ERC) acompañada de analíticas visuales."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/physickd/index.html#funcionalidades",
+    "href": "sobre-mi/proyectos/physickd/index.html#funcionalidades",
+    "title": "PhysiCKD",
+    "section": "Funcionalidades",
+    "text": "Funcionalidades\n\nPredicción con machine learning mediante un modelo de Gradient Boosting.\nFormulario interactivo con validación en tiempo real y diseño adaptable.\nVisualizaciones: distribución del riesgo, comparación de parámetros y estadísticas de población.\nAnálisis estadístico que sitúa los valores del paciente frente a referencias poblacionales."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/physickd/index.html#stack",
+    "href": "sobre-mi/proyectos/physickd/index.html#stack",
+    "title": "PhysiCKD",
+    "section": "Stack",
+    "text": "Stack\n\nFrontend: React 19, Vite, Chart.js y React Chart.js 2.\nBackend: Flask, scikit-learn, pandas, joblib y Flask-CORS.\n\n\n\n\n\n\n\nProyecto con fines educativos y de investigación. No sustituye el consejo, diagnóstico ni tratamiento médico profesional."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/index.html",
+    "href": "sobre-mi/proyectos/index.html",
+    "title": "Proyectos",
+    "section": "",
+    "text": "Radar de Carreras\n      Proyecto propio · En curso\n      \n        jun. 2026 – actualidad\n      \n      \n      Sistema de recomendación de carreras populares, trail y maratones en Andalucía: cada día selecciona 3 carreras y las publica en una comunidad de WhatsApp.\n      \n         Aptitudes: Sistema de recomendación · Producto digital · Comunidad · Running\n      \n      \n        Ver proyecto\n        \n        \n         Web\n      \n    \n  \n\n  \n    \n    \n      Sistema RAG con LangChain\n      IA generativa\n      \n        sep 2026\n      \n      \n      Asistente que responde preguntas sobre tus propios PDF citando la fuente: archivo, autor y página.\n      \n         Aptitudes: Python · LangChain · ChromaDB · LLM\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      Papers2Code\n      Aprendizaje · En curso\n      \n        jul 2026\n      \n      \n      Implementaciones desde cero de artículos de investigación, junto con mis notas de estudio de cada paper.\n      \n         Aptitudes: Python · Poetry · Investigación\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      Cutout Studio\n      Visión por computador\n      \n        jul 2026\n      \n      \n      Herramienta autoalojada para quitar el fondo de imágenes: recorte automático con IA y refinado manual con un clic.\n      \n         Aptitudes: Python · FastAPI · PyTorch · Docker · JavaScript\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      PhysiCKD\n      Machine learning · Salud\n      \n        ene 2026\n      \n      \n      Aplicación web que estima el riesgo de enfermedad renal crónica a partir de datos clínicos, con visualizaciones para el profesional sanitario.\n      \n         Aptitudes: React · Flask · scikit-learn · Chart.js · pandas\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      Clasificación de noticias de HuffPost\n      Procesamiento del lenguaje\n      \n        abr 2025\n      \n      \n      Clasificador de texto con TF-IDF y SVM lineal, con optimización de hiperparámetros y evaluación con matriz de confusión.\n      \n         Aptitudes: Python · scikit-learn · NLP\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      AHP Solver\n      Apoyo a la decisión\n      \n        nov 2024\n      \n      \n      Aplicación web para resolver problemas de decisión multicriterio con el Proceso Analítico Jerárquico (AHP).\n      \n         Aptitudes: Python · Flask · pandas · Bootstrap\n      \n      \n        Ver proyecto\n         Código\n         Demo\n        \n      \n    \n  \n\n  \n    \n    \n      Simplex App\n      Optimización\n      \n        oct 2024\n      \n      \n      Aplicación web que resuelve problemas de programación lineal con el algoritmo símplex en su forma tabular.\n      \n         Aptitudes: Python · Flask · JavaScript\n      \n      \n        Ver proyecto\n         Código\n         Demo\n        \n      \n    \n  \n\n  \n    \n    \n      Sistema de Recuperación de Información\n      Recuperación de información\n      \n        may 2024\n      \n      \n      Motor de búsqueda sobre un corpus de Wikipedia con índice invertido, ponderación TF-IDF y búsqueda BM25.\n      \n         Aptitudes: Python · NLTK · pandas · SciPy\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n\nNo hay resultados\n\n\nHay más experimentos y prácticas en mi perfil de GitHub."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/cutout-studio/index.html",
+    "href": "sobre-mi/proyectos/cutout-studio/index.html",
+    "title": "Cutout Studio",
+    "section": "",
+    "text": "Una aplicación libre y autoalojada para eliminar el fondo de imágenes. Combina un recorte automático con un modo de refinado manual, pensado para uso personal en tu propio equipo en lugar de depender de un servicio externo."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/cutout-studio/index.html#qué-es",
+    "href": "sobre-mi/proyectos/cutout-studio/index.html#qué-es",
+    "title": "Cutout Studio",
+    "section": "",
+    "text": "Una aplicación libre y autoalojada para eliminar el fondo de imágenes. Combina un recorte automático con un modo de refinado manual, pensado para uso personal en tu propio equipo en lugar de depender de un servicio externo."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/cutout-studio/index.html#cómo-funciona",
+    "href": "sobre-mi/proyectos/cutout-studio/index.html#cómo-funciona",
+    "title": "Cutout Studio",
+    "section": "Cómo funciona",
+    "text": "Cómo funciona\n\nRecorte automático con BiRefNet: subes una imagen y obtienes la máscara y un PNG con fondo transparente.\nRefinado manual con SAM2 (Meta): haces clic para incluir o excluir regiones, o dibujas un recuadro, para corregir los bordes.\nLas sesiones se mantienen en memoria, un diseño deliberadamente simple para un uso personal."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/cutout-studio/index.html#decisiones-técnicas",
+    "href": "sobre-mi/proyectos/cutout-studio/index.html#decisiones-técnicas",
+    "title": "Cutout Studio",
+    "section": "Decisiones técnicas",
+    "text": "Decisiones técnicas\n\nUn único backend en FastAPI y un frontend en HTML, CSS y JavaScript sin paso de compilación.\nFunciona en CPU o GPU NVIDIA, con imágenes Docker para ambos casos.\nLos modelos se descargan desde Hugging Face."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/cutout-studio/index.html#licencia",
+    "href": "sobre-mi/proyectos/cutout-studio/index.html#licencia",
+    "title": "Cutout Studio",
+    "section": "Licencia",
+    "text": "Licencia\nCódigo bajo licencia MIT. Modelos: BiRefNet (MIT) y SAM2 (Apache-2.0)."
+  },
+  {
+    "objectID": "sobre-mi/index.html",
+    "href": "sobre-mi/index.html",
+    "title": "José Pablo Soriano Torres",
+    "section": "",
+    "text": "38°13′N 2°43′W\n  \n  \n    \n    \n      \n        José Pablo Soriano Torres\n        Investigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n        Jaén, Andalucía, España · Información de contacto\n        \n           Contactar\n           ORCID\n          \n          \n        \n      \n      \n         Universidad de Jaén\n         Universitat Rovira i Virgili"
+  },
+  {
+    "objectID": "sobre-mi/index.html#acerca-de",
+    "href": "sobre-mi/index.html#acerca-de",
+    "title": "José Pablo Soriano Torres",
+    "section": "Acerca de",
+    "text": "Acerca de\nVengo de Santisteban del Puerto, un pueblo de la provincia de Jaén de raíces íberas y con menos de 5000 habitantes. De pequeño me encantaban las novelas policiacas y quería ser forense, pero a medida que fui creciendo, las consolas, los móviles y los ordenadores me hicieron cambiar de rumbo hacia la informática. Con los años, la medicina ha vuelto a cruzarse en mi camino, esta vez a través de los datos.\nHoy soy investigador en la Universidad de Jaén, en un proyecto sobre modelos de IA confiable para impulsar un uso responsable de la inteligencia artificial en salud. Antes trabajé en el proyecto EPPIA, aplicando ciencia de datos, machine learning y deep learning al análisis de imágenes de pacientes ostomizados. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible."
+  },
+  {
+    "objectID": "sobre-mi/index.html#trayectoria",
+    "href": "sobre-mi/index.html#trayectoria",
+    "title": "José Pablo Soriano Torres",
+    "section": "Trayectoria",
+    "text": "Trayectoria\n\n\n\n\n  \n    \n    \n      \n        Universidad de Jaén\n        3 puestos\n        \n        Jaén, Andalucía, España\n        \n          \n            \n              Investigador\n              \n  \n  \n  \n  sept. 2026 – actualidad\n  \n  \n  \n     Proyecto:\n      Avances en el desarrollo de modelos de IA confiable para contribuir a la adopción y uso de IA responsable en Salud\n    \n  \n  Investigación en modelos de inteligencia artificial confiable para impulsar una adopción responsable de la IA en el ámbito sanitario.\n  \n     Aptitudes: IA confiable · IA responsable · Machine learning · Salud digital\n  \n\n            \n          \n            \n              Investigador\n              \n  \n  \n  \n  oct. 2025 – ago. 2026 · 11 meses\n  \n  \n  \n     Proyecto:\n      EPPIA\n    \n  \n  Ciencia de datos, machine learning y deep learning aplicados al análisis de imágenes de pacientes ostomizados. Coautor del artículo publicado en Nursing Research and Practice (2026).\n  \n     Aptitudes: Deep learning · Visión por computador · Machine learning · Imagen médica\n  \n\n            \n          \n            \n              Becario de colaboración\n              \n  \n  \n  Beca de colaboración\n  sept. 2024 – jun. 2025 · 10 meses\n  \n  \n  \n  Revisión bibliográfica sobre métodos de detección e identificación de defectos en paneles fotovoltaicos: análisis y clasificación de las técnicas existentes y construcción de una taxonomía de los métodos. Estudio del diseño de sistemas RAG sobre distintos LLM para abordar la tarea del proyecto y redacción de la documentación.\n  \n     Aptitudes: Revisión bibliográfica · RAG · LLM · Documentación técnica\n  \n\n            \n          \n        \n      \n    \n  \n\n  \n    \n    \n      \n        \n  Desarrollador Python en prácticas\n  \n  Yusapi · Prácticas\n  jun. 2024 – ago. 2024 · 3 meses\n  \n  Jaén, Andalucía, España\n  \n  Automatización con Python de los procesos de un servicio de impresión que vendía sus productos a través de Amazon y de su propia tienda online.\n  \n     Aptitudes: Python · Automatización de procesos · Comercio electrónico\n  \n\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "sobre-mi/index.html#formación",
+    "href": "sobre-mi/index.html#formación",
+    "title": "José Pablo Soriano Torres",
+    "section": "Formación",
+    "text": "Formación\n\n\n\n\n  \n    \n      \n    \n    \n      Máster en Health Data Science\n      \n      Universitat Rovira i Virgili (URV)\n      \n        \n        sept. 2025 – actualidad\n      \n      \n      \n      \n      \n      \n      \n      Máster de dos años.\n      \n         Aptitudes: Ciencia de datos · Salud digital\n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Escuela de verano de robótica\n      \n      Universidad de Örebro · Escuela de verano\n      \n        \n        jul. 2025 – ago. 2025 · 4 semanas\n      \n      \n      Örebro, Suecia\n      \n      \n      \n      \n      Del 15 de julio al 8 de agosto: robótica con ROS y Python.\n      \n         Aptitudes: ROS · Python · Robótica\n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Grado en Ingeniería Informática\n      \n      Universidad de Jaén\n      \n        \n        sept. 2021 – jun. 2025\n      \n      \n      \n      \n      \n      Nota media: 9,4\n      \n      Obtuve matrícula de honor en el 51% de las asignaturas.\n      \n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "sobre-mi/index.html#proyectos",
+    "href": "sobre-mi/index.html#proyectos",
+    "title": "José Pablo Soriano Torres",
+    "section": "Proyectos",
+    "text": "Proyectos\n\n\n\n\n  \n    \n      \n    \n    \n      Radar de Carreras\n      Proyecto propio · En curso\n      \n        jun. 2026 – actualidad\n      \n      \n      Sistema de recomendación de carreras populares, trail y maratones en Andalucía: cada día selecciona 3 carreras y las publica en una comunidad de WhatsApp.\n      \n         Aptitudes: Sistema de recomendación · Producto digital · Comunidad · Running\n      \n      \n        Ver proyecto\n        \n        \n         Web\n      \n    \n  \n\n  \n    \n    \n      Sistema RAG con LangChain\n      IA generativa\n      \n        sep 2026\n      \n      \n      Asistente que responde preguntas sobre tus propios PDF citando la fuente: archivo, autor y página.\n      \n         Aptitudes: Python · LangChain · ChromaDB · LLM\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n  \n    \n    \n      Papers2Code\n      Aprendizaje · En curso\n      \n        jul 2026\n      \n      \n      Implementaciones desde cero de artículos de investigación, junto con mis notas de estudio de cada paper.\n      \n         Aptitudes: Python · Poetry · Investigación\n      \n      \n        Ver proyecto\n         Código\n        \n        \n      \n    \n  \n\n\nNo hay resultados\n\nMostrar todos los proyectos →"
+  },
+  {
+    "objectID": "sobre-mi/index.html#publicaciones",
+    "href": "sobre-mi/index.html#publicaciones",
+    "title": "José Pablo Soriano Torres",
+    "section": "Publicaciones",
+    "text": "Publicaciones\n\n\n\n\n  \n    \n    \n      Identification of Peristomal Skin Alterations Using Convolutional Artificial Neural Networks\n      \n      Nursing Research and Practice · Wiley · Artículo en revista\n      \n        jun. 2026\n      \n      \n      \n      López-Medina IM, Hueso-Montoro C, Charte-Ojeda F, Álvarez-Nieto C, Soriano-Torres JP, García-Fernández FP, Capilla-Díaz C, Montesinos-Gálvez AC, Moya-Muñoz N, Cuevas-Sánchez C, Pérez-Godoy MD\n      \n        \n           Acceso abierto\n          DOI 10.1155/nrp/2927548\n        \n      \n      \n      \n        \n          \n            \n          \n          Asociado con EPPIA\n        \n      \n      Redes neuronales convolucionales preentrenadas para distinguir piel periestomal sana de piel con lesiones a partir de fotografías: 1165 imágenes recogidas por 24 enfermeras estomaterapeutas de 17 hospitales, con explicabilidad mediante Grad-CAM. Sienta las bases del diagnóstico automático y la atención a distancia de pacientes ostomizados.\n      \n      \n        \n          Ver publicación \n        \n      \n    \n  \n\n\nNo hay resultados\n\nVer todas mis publicaciones en ORCID →"
+  },
+  {
+    "objectID": "sobre-mi/index.html#idiomas",
+    "href": "sobre-mi/index.html#idiomas",
+    "title": "José Pablo Soriano Torres",
+    "section": "Idiomas",
+    "text": "Idiomas\n\n\n\n  \n    \n      Español\n      Competencia bilingüe o nativa\n    \n  \n\n  \n    \n      Inglés\n      B2 Cambridge, pero con uso diario en el trabajo y en los estudios\n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "sobre-mi/index.html#reconocimientos-y-premios",
+    "href": "sobre-mi/index.html#reconocimientos-y-premios",
+    "title": "José Pablo Soriano Torres",
+    "section": "Reconocimientos y premios",
+    "text": "Reconocimientos y premios\n\n\n\n\n  \n    \n      \n    \n    \n      Premio Extraordinario de Grado\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      \n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Reconocimiento al mejor expediente del curso 2024/2025\n      \n      Universidad de Jaén\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n        \n          \n          \n          Asociado con Grado en Ingeniería Informática\n        \n      \n      Nota media de 9,4 y 20 matrículas de honor.\n      \n      \n    \n  \n\n  \n    \n      \n    \n    \n      Beca de Excelencia 360\n      \n      Banco Santander\n      \n        2025\n      \n      \n      \n      \n      \n      \n      \n      Beca muy competitiva, concedida a estudiantes con trayectoria académica destacada.\n      \n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "notas/2026/09-bienvenida/index.html",
+    "href": "notas/2026/09-bienvenida/index.html",
+    "title": "Bienvenida",
+    "section": "",
+    "text": "Hola. Esta es mi primera nota de la web, así que, quería saludarte antes de todo :)\nNo me gustan demasiado las redes sociales, por ello no tengo ni Instagram, TikTok o incluso Linkedin. Aunque sí es cierto que tengo X/Twitter, pero el algoritmo entrenado por mí mismo de tal manera que es solo meterte en la aplicación y te empiece a aburrir XD.\nNo obstante, Linkedin me gustaba bastante, pero desde mi punto de vista, se ha convertido en algo que no me gusta (me reservo la opinión :P). Por tanto, durante mucho tiempo pensé de crear mi página web personal que sirviera para poder reemplazar este tipo de redes sociales, con la diferencia de que no existen algoritmos adictivos que te hacen scrollear mucho tiempo, y bueno, la restricción de tener que ajustarme a la manera de que cada red social te obliga a publicar contenido.\nAsí, nace este proyecto con mucha ilusión y, además, con un diseño que evoca al lugar donde nací. Así como, algunos easter eggs :)\nEn él, además de servir como portfolio, le daré las siguientes utilidades:\n\nPublicación de notas tanto profesionales como personales.\nMantendré actualizada mi biblioteca digital que no es más que un enlace simbólico a mi biblioteca física. No obstante, está sin acabar y la iré construyendo poco a poco con el paso del tiempo.\nSección de aventuras. Como una alacena donde iré guardando recuerdos y experiencias para que perduren en el tiempo.\n\nY bueno, hasta aquí la nota. Si habeís llegado hasta aquí leyendo, me apiado de vosotros, ya que aguantarme seguro que no ha tenido que ser muy fácil jeje.\nPost data (Detrás de los datos ?): esta sección es un poco más informal y personal, así que, el estilo de escritura, palabras usadas, entre otras cosas, se adaptarán a ello. Ademaś de que en esta sección ESTÁ PROHIBIDO EL USO DE IA."
+  },
+  {
+    "objectID": "biblioteca/index.html",
+    "href": "biblioteca/index.html",
+    "title": "Biblioteca",
+    "section": "",
+    "text": "Ex libris de José Pablo Soriano Torres"
+  },
+  {
+    "objectID": "biblioteca/index.html#biblioteca-bajo-construcción",
+    "href": "biblioteca/index.html#biblioteca-bajo-construcción",
+    "title": "Biblioteca",
+    "section": "🚧 Biblioteca bajo construcción 🚧",
+    "text": "🚧 Biblioteca bajo construcción 🚧"
+  },
+  {
+    "objectID": "biblioteca/index.html#leyendo-ahora",
+    "href": "biblioteca/index.html#leyendo-ahora",
+    "title": "Biblioteca",
+    "section": "📖 Leyendo ahora",
+    "text": "📖 Leyendo ahora\n\n\n\n  \n    \n      \n    \n    \n      Patria\n      Fernando Aramburu\n      \n      \n      \n        28 jul 2026\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "biblioteca/index.html#leídos",
+    "href": "biblioteca/index.html#leídos",
+    "title": "Biblioteca",
+    "section": "✅ Leídos",
+    "text": "✅ Leídos\n\n\n\n  \n    \n      \n    \n    \n      Reina Roja\n      Juan Gómez Jurado\n      \n        ★★★★★\n      \n      \n        Engancha la historia y sobretodo el persona principal\n      \n      \n        28 sept 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta\n      Freida McFadden\n      \n        ★★★★★\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      El secreto de la asistenta\n      Freida McFadden\n      \n        ★★★★☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      La asistenta te vigila\n      Freida McFadden\n      \n        ★★★☆☆\n      \n      \n      \n        1 ene 2026\n      \n    \n  \n\n  \n    \n      \n    \n    \n      Hábitos atómicos\n      James Clear\n      \n        ★★★☆☆\n      \n      \n      \n        2 jun 2025\n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "aventuras/index.html",
+    "href": "aventuras/index.html",
+    "title": "Aventuras",
+    "section": "",
+    "text": "Todavía no hay aventuras publicadas.Las primeras rutas están en camino.\n  \n\n\n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "José Pablo Soriano Torres",
+    "section": "",
+    "text": "José Pablo Soriano Torres\nInvestigador en la Universidad de Jaén · Máster en Health Data Science (URV)\n\n GitHub  Sobre mí\n\n\n\n 59°15′N 14°56′E\n\n\nSoy investigador en la Universidad de Jaén, donde trabajo en modelos de IA confiable para un uso responsable de la inteligencia artificial en salud; antes apliqué deep learning al análisis de imágenes de pacientes ostomizados en el proyecto EPPIA. Estudio el Máster en Health Data Science en la URV para especializarme en el ámbito sanitario: quiero acercar la informática a la medicina para ayudar a tantas personas como sea posible. Aquí comparto lo que voy aprendiendo por el camino: proyectos, notas, lecturas y alguna que otra aventura.\n\n\n\n\n«[…] ellos exigen del individuo la más absoluta impersonalidad, ¡y en eso cifran la sal de la vida! ¡No ser uno mismo, parecerse lo menos posible a sí mismo!»\nFiódor Dostoievski, Crimen y castigo"
+  },
+  {
+    "objectID": "notas/index.html",
+    "href": "notas/index.html",
+    "title": "Notas",
+    "section": "",
+    "text": "24 sept 2026\n    \n      Bienvenida\n      \n        Primera nota: por qué he creado esta web.\n      \n      \n        \n          \n            personal\n          \n        \n      \n    \n  \n\n\nNo hay resultados"
+  },
+  {
+    "objectID": "sobre-mi/proyectos/ahp-solver/index.html",
+    "href": "sobre-mi/proyectos/ahp-solver/index.html",
+    "title": "AHP Solver",
+    "section": "",
+    "text": "Una aplicación Flask para analizar decisiones con varios criterios mediante el Proceso Analítico Jerárquico (AHP). Cargas los datos, eliges el método y obtienes un ranking de alternativas."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/ahp-solver/index.html#qué-es",
+    "href": "sobre-mi/proyectos/ahp-solver/index.html#qué-es",
+    "title": "AHP Solver",
+    "section": "",
+    "text": "Una aplicación Flask para analizar decisiones con varios criterios mediante el Proceso Analítico Jerárquico (AHP). Cargas los datos, eliges el método y obtienes un ranking de alternativas."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/ahp-solver/index.html#funcionalidades",
+    "href": "sobre-mi/proyectos/ahp-solver/index.html#funcionalidades",
+    "title": "AHP Solver",
+    "section": "Funcionalidades",
+    "text": "Funcionalidades\n\nCarga de CSV con las matrices de criterios y alternativas.\nTres métodos de resolución: autovalores, método aproximado y media geométrica.\nRanking de alternativas con sus puntuaciones ponderadas.\nInformación de consistencia (CI, RI y CR) para el método de autovalores.\nInterfaz adaptable basada en Bootstrap."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/ahp-solver/index.html#stack",
+    "href": "sobre-mi/proyectos/ahp-solver/index.html#stack",
+    "title": "AHP Solver",
+    "section": "Stack",
+    "text": "Stack\nPython 3.10, Flask, pandas y Bootstrap. Hay una versión desplegada en PythonAnywhere para probarla sin instalar nada."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/huffpost-clasificacion/index.html",
+    "href": "sobre-mi/proyectos/huffpost-clasificacion/index.html",
+    "title": "Clasificación de noticias de HuffPost",
+    "section": "",
+    "text": "Un sistema de clasificación de texto aplicado a datos de noticias de HuffPost, construido con máquinas de vectores de soporte."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/huffpost-clasificacion/index.html#qué-es",
+    "href": "sobre-mi/proyectos/huffpost-clasificacion/index.html#qué-es",
+    "title": "Clasificación de noticias de HuffPost",
+    "section": "",
+    "text": "Un sistema de clasificación de texto aplicado a datos de noticias de HuffPost, construido con máquinas de vectores de soporte."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/huffpost-clasificacion/index.html#flujo-de-trabajo",
+    "href": "sobre-mi/proyectos/huffpost-clasificacion/index.html#flujo-de-trabajo",
+    "title": "Clasificación de noticias de HuffPost",
+    "section": "Flujo de trabajo",
+    "text": "Flujo de trabajo\n\nPreparación de datos: unión y preprocesado de los textos.\nVectorización TF-IDF y generación de embeddings.\nEntrenamiento de un modelo LinearSVC.\nOptimización de hiperparámetros y evaluación, con visualización de la matriz de confusión.\nLas predicciones, gráficos y el modelo serializado se guardan como resultados."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/huffpost-clasificacion/index.html#stack",
+    "href": "sobre-mi/proyectos/huffpost-clasificacion/index.html#stack",
+    "title": "Clasificación de noticias de HuffPost",
+    "section": "Stack",
+    "text": "Stack\nPython 3.8+, scikit-learn y joblib."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/papers2code/index.html",
+    "href": "sobre-mi/proyectos/papers2code/index.html",
+    "title": "Papers2Code",
+    "section": "",
+    "text": "Una forma de aprender a fondo: estudiar un artículo de investigación y programarlo desde cero. El repositorio combina teoría y práctica."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/papers2code/index.html#la-idea",
+    "href": "sobre-mi/proyectos/papers2code/index.html#la-idea",
+    "title": "Papers2Code",
+    "section": "",
+    "text": "Una forma de aprender a fondo: estudiar un artículo de investigación y programarlo desde cero. El repositorio combina teoría y práctica."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/papers2code/index.html#estructura",
+    "href": "sobre-mi/proyectos/papers2code/index.html#estructura",
+    "title": "Papers2Code",
+    "section": "Estructura",
+    "text": "Estructura\n\npapers/: los artículos con anotaciones y notas de estudio.\nsrc/: las implementaciones.\n\nEs un proyecto vivo que va creciendo a medida que estudio nuevos trabajos."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/radar-de-carreras/index.html",
+    "href": "sobre-mi/proyectos/radar-de-carreras/index.html",
+    "title": "Radar de Carreras",
+    "section": "",
+    "text": "Radar de Carreras reúne en un solo sitio las carreras populares, pruebas de trail running y maratones de las ocho provincias de Andalucía. Las carreras suelen estar repartidas entre cientos de webs y redes sociales, y muchas veces se descubren cuando ya no quedan dorsales: el radar hace ese trabajo por el corredor."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/radar-de-carreras/index.html#qué-es",
+    "href": "sobre-mi/proyectos/radar-de-carreras/index.html#qué-es",
+    "title": "Radar de Carreras",
+    "section": "",
+    "text": "Radar de Carreras reúne en un solo sitio las carreras populares, pruebas de trail running y maratones de las ocho provincias de Andalucía. Las carreras suelen estar repartidas entre cientos de webs y redes sociales, y muchas veces se descubren cuando ya no quedan dorsales: el radar hace ese trabajo por el corredor."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/radar-de-carreras/index.html#cómo-funciona",
+    "href": "sobre-mi/proyectos/radar-de-carreras/index.html#cómo-funciona",
+    "title": "Radar de Carreras",
+    "section": "Cómo funciona",
+    "text": "Cómo funciona\n\nRastrea el calendario andaluz de carreras, semana a semana.\nEvalúa cada carrera con criterios propios: recorrido, organización, precio y disponibilidad de dorsales, resumidos en un Radar Score.\nPublica cada día 3 carreras recomendadas en una comunidad de WhatsApp, sin spam: cada una con su ubicación, fecha, precio y enlace de inscripción.\n\nAdemás de las recomendaciones diarias, la web ofrece un calendario mensual de carreras."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/radar-de-carreras/index.html#hacia-dónde-va",
+    "href": "sobre-mi/proyectos/radar-de-carreras/index.html#hacia-dónde-va",
+    "title": "Radar de Carreras",
+    "section": "Hacia dónde va",
+    "text": "Hacia dónde va\nEl objetivo es construir el mayor radar de carreras populares de Andalucía: empezar con las recomendaciones diarias y evolucionar hacia una plataforma para descubrir, comparar y encontrar la próxima carrera."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/radar-de-carreras/index.html#mi-papel",
+    "href": "sobre-mi/proyectos/radar-de-carreras/index.html#mi-papel",
+    "title": "Radar de Carreras",
+    "section": "Mi papel",
+    "text": "Mi papel\nEs un proyecto mío de principio a fin, que empecé en junio de 2026: desde la idea y el desarrollo del sistema de recomendación hasta la selección diaria de carreras y la gestión de la comunidad. La comunidad de WhatsApp va creciendo poco a poco mientras sigo mejorando el sistema."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/simplex-app/index.html",
+    "href": "sobre-mi/proyectos/simplex-app/index.html",
+    "title": "Simplex App",
+    "section": "",
+    "text": "Una aplicación web para resolver problemas de programación lineal con una implementación propia del algoritmo símplex tabular, con una interfaz gráfica sencilla."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/simplex-app/index.html#qué-es",
+    "href": "sobre-mi/proyectos/simplex-app/index.html#qué-es",
+    "title": "Simplex App",
+    "section": "",
+    "text": "Una aplicación web para resolver problemas de programación lineal con una implementación propia del algoritmo símplex tabular, con una interfaz gráfica sencilla."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/simplex-app/index.html#funcionalidades",
+    "href": "sobre-mi/proyectos/simplex-app/index.html#funcionalidades",
+    "title": "Simplex App",
+    "section": "Funcionalidades",
+    "text": "Funcionalidades\n\nAñadir y quitar restricciones y variables desde la interfaz.\nDefinir la función objetivo del problema.\nCargar problemas desde archivos CSV.\nResolver y ver el resultado al momento."
+  },
+  {
+    "objectID": "sobre-mi/proyectos/simplex-app/index.html#detalles-de-implementación",
+    "href": "sobre-mi/proyectos/simplex-app/index.html#detalles-de-implementación",
+    "title": "Simplex App",
+    "section": "Detalles de implementación",
+    "text": "Detalles de implementación\n\nResuelve problemas de maximización con restricciones de tipo ≤.\nIncluye un límite de 100 iteraciones para evitar bucles infinitos y devuelve un resultado vacío cuando el problema no tiene solución.\nBackend en Python con Flask; frontend en HTML, CSS y JavaScript."
+  }
+]
